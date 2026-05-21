@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Findbar — Type a keyword in Safari, jump anywhere</title>
+    <meta name="description" content="Findbar is a Safari Web Extension for macOS, iOS, and iPadOS. Type g foo → Google, gh user/repo → GitHub, w foo → Wikipedia, and 27 more shortcuts you can edit.">
+    <link rel="icon" type="image/png" href="icon-128.png">
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f4f5f7;
+            --fg: #1c1c1e;
+            --muted: #6e6e73;
+            --accent: #2563eb;
+            --card: rgba(0, 0, 0, 0.03);
+            --border: rgba(0, 0, 0, 0.08);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0d0d0f;
+                --fg: #f4f5f7;
+                --muted: #98989f;
+                --accent: #5f8fff;
+                --card: rgba(255, 255, 255, 0.04);
+                --border: rgba(255, 255, 255, 0.08);
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font: 15px/1.6 -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Text", sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        header {
+            text-align: center;
+            padding: 80px 24px 40px;
+        }
+        .app-icon {
+            width: 128px; height: 128px;
+            border-radius: 22.5%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        h1 {
+            margin: 20px 0 8px;
+            font-size: 44px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+        .tagline {
+            color: var(--muted);
+            font-size: 19px;
+            margin: 0 auto;
+            max-width: 540px;
+        }
+        .cta {
+            display: inline-block;
+            margin-top: 28px;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        main {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 20px 24px 80px;
+        }
+        section { margin: 56px 0; }
+        h2 {
+            font-size: 22px;
+            margin: 0 0 12px;
+        }
+        .demo {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 22px;
+            font-family: ui-monospace, SF Mono, Menlo, monospace;
+            font-size: 14px;
+        }
+        .demo b { color: var(--accent); font-weight: 600; }
+        .demo .arrow { color: var(--muted); margin: 0 8px; }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+        .feature {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 20px;
+        }
+        .feature h3 {
+            margin: 0 0 6px;
+            font-size: 15px;
+        }
+        .feature p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+        footer {
+            text-align: center;
+            color: var(--muted);
+            padding: 40px 24px;
+            font-size: 13px;
+            border-top: 1px solid var(--border);
+        }
+        footer a { color: inherit; }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="icon-128.png" alt="Findbar" class="app-icon">
+        <h1>Findbar</h1>
+        <p class="tagline">Type a keyword in Safari's address bar, jump anywhere.</p>
+        <a href="#" class="cta">Coming soon to the App Store</a>
+    </header>
+    <main>
+        <section>
+            <h2>How it works</h2>
+            <div class="demo">
+                <div><b>g</b> swiftui animations<span class="arrow">→</span>google.com/search?q=swiftui+animations</div>
+                <div><b>gh</b> apple/swift<span class="arrow">→</span>github.com/apple/swift</div>
+                <div><b>w</b> ada lovelace<span class="arrow">→</span>wikipedia.org/wiki/Ada_Lovelace</div>
+                <div><b>!g</b> foo <b>!w</b> bar<span class="arrow">→</span>Google in current tab, Wikipedia in new tab</div>
+            </div>
+        </section>
+        <section>
+            <h2>What you get</h2>
+            <div class="features">
+                <div class="feature"><h3>30+ built-in shortcuts</h3><p>Google, GitHub, Wikipedia, Stack Overflow, Amazon, Reddit, npm, MDN, Translate, Hacker News, Wolfram Alpha, Wayback Machine, and more.</p></div>
+                <div class="feature"><h3>Edit everything</h3><p>Change any default, add your own, remove what you don't use. Your list, your rules.</p></div>
+                <div class="feature"><h3>Multi-tab chaining</h3><p>Run multiple searches at once: <code>!g foo !w bar</code> opens two tabs in one keystroke.</p></div>
+                <div class="feature"><h3>Regex keywords</h3><p>Pattern-matched shortcuts for power users. <code>gh/(\S+)/(\S+)</code> → repo navigation.</p></div>
+                <div class="feature"><h3>URL rewriting</h3><p>Optional, off by default: redirect twitter→nitter, reddit→old.reddit, and other privacy-friendly frontends.</p></div>
+                <div class="feature"><h3>100% on-device</h3><p>No account, no telemetry, no cloud. Your keywords stay on your Mac, iPhone, and iPad.</p></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        Made by <a href="https://corvusdevs.com">CorvusDevs</a> &middot;
+        <a href="privacy.html">Privacy</a> &middot;
+        <a href="https://github.com/CorvusDevs/Findbar-For-Safari/issues">Support</a>
+    </footer>
+</body>
+</html>

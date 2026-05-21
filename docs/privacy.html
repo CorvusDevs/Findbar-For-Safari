@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Findbar — Privacy Policy</title>
+    <link rel="icon" type="image/png" href="icon-128.png">
+    <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #f4f5f7; --fg: #1c1c1e; --muted: #6e6e73; --accent: #2563eb;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root { --bg: #0d0d0f; --fg: #f4f5f7; --muted: #98989f; --accent: #5f8fff; }
+        }
+        body {
+            margin: 0; background: var(--bg); color: var(--fg);
+            font: 15px/1.65 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+        main { max-width: 680px; margin: 0 auto; padding: 60px 24px; }
+        h1 { font-size: 32px; margin: 0 0 8px; letter-spacing: -0.5px; }
+        h2 { font-size: 18px; margin: 32px 0 8px; }
+        .updated { color: var(--muted); margin: 0 0 32px; }
+        a { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Findbar Privacy Policy</h1>
+        <p class="updated">Last updated: 2026-05-21</p>
+
+        <p>Findbar is built to be as private as possible. The rules below are the policy, but they are also the technical reality — there is no telemetry endpoint, no account system, no cloud sync, and no analytics SDK in this app.</p>
+
+        <h2>What Findbar does NOT collect</h2>
+        <ul>
+            <li>Your search queries</li>
+            <li>The URLs you visit</li>
+            <li>Your keyword list, custom shortcuts, or URL-rewrite rules</li>
+            <li>Any identifier — no advertising ID, no email, no account</li>
+            <li>Any usage analytics — Findbar has no telemetry of any kind</li>
+        </ul>
+
+        <h2>What Findbar stores locally on your device</h2>
+        <p>Your keyword list, URL-rewrite rules, and Findbar's preferences are saved in Safari's per-extension storage on your device. They never leave your Mac, iPhone, or iPad. Uninstalling Findbar removes them.</p>
+
+        <h2>Permissions Findbar requests</h2>
+        <ul>
+            <li><strong>Search engine domains</strong> (google.com, bing.com, duckduckgo.com, yahoo.com, ecosia.org, brave.com, kagi.com, startpage.com): so Findbar can read the search query Safari is about to send and redirect it to your keyword's target.</li>
+            <li><strong>webNavigation</strong>: same purpose &mdash; lets Findbar catch the navigation early enough to redirect.</li>
+            <li><strong>storage</strong>: to remember your keyword list locally.</li>
+            <li><strong>declarativeNetRequest</strong>: for built-in keywords, Findbar uses Safari's built-in redirect engine instead of intercepting in JavaScript. This is faster (no visible flash) and more private (Safari handles the redirect, Findbar never sees the URL).</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>Questions? <a href="https://github.com/CorvusDevs/Findbar-For-Safari/issues">Open a GitHub issue</a> or email <a href="mailto:hello@corvusdevs.com">hello@corvusdevs.com</a>.</p>
+    </main>
+</body>
+</html>
