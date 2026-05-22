@@ -2,57 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Findbar — Privacy Policy</title>
-    <link rel="icon" type="image/png" href="icon-128.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Findbar For Safari</title>
+    <link rel="icon" type="image/png" href="icon.png">
     <style>
-        :root {
-            color-scheme: light dark;
-            --bg: #f4f5f7; --fg: #1c1c1e; --muted: #6e6e73; --accent: #2563eb;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root { --bg: #0d0d0f; --fg: #f4f5f7; --muted: #98989f; --accent: #5f8fff; }
-        }
-        body {
-            margin: 0; background: var(--bg); color: var(--fg);
-            font: 15px/1.65 -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-        }
-        main { max-width: 680px; margin: 0 auto; padding: 60px 24px; }
-        h1 { font-size: 32px; margin: 0 0 8px; letter-spacing: -0.5px; }
-        h2 { font-size: 18px; margin: 32px 0 8px; }
-        .updated { color: var(--muted); margin: 0 0 32px; }
-        a { color: var(--accent); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif; background: #0a0a0c; color: #e8e8ed; line-height: 1.6; }
+        .container { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+        h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+        .date { color: #7c7c84; margin-bottom: 40px; }
+        h2 { font-size: 1.25rem; font-weight: 600; margin: 32px 0 12px; }
+        p, li { color: #d1d1d6; font-size: 1rem; margin-bottom: 12px; }
+        ul { padding-left: 20px; }
+        a { color: #2563eb; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-block; margin-bottom: 32px; color: #2563eb; font-size: 0.95rem; }
+        code { background: #19191e; border-radius: 4px; padding: 1px 6px; font-size: 0.92em; color: #5f8fff; }
     </style>
 </head>
 <body>
-    <main>
-        <h1>Findbar Privacy Policy</h1>
-        <p class="updated">Last updated: 2026-05-21</p>
+    <div class="container">
+        <a href="./" class="back">&larr; Back to Findbar</a>
+        <h1>Privacy Policy</h1>
+        <p class="date">Last updated: May 22, 2026</p>
 
-        <p>Findbar is built to be as private as possible. The rules below are the policy, but they are also the technical reality — there is no telemetry endpoint, no account system, no cloud sync, and no analytics SDK in this app.</p>
+        <h2>Overview</h2>
+        <p>Findbar For Safari is a browser extension that turns Safari's address bar into a keyword shortcut launcher. Your privacy is important to us. This policy explains what data we collect (none) and how the extension works.</p>
 
-        <h2>What Findbar does NOT collect</h2>
+        <h2>Data Collection</h2>
+        <p>Findbar does <strong>not</strong> collect, store, or transmit any personal data. Specifically:</p>
         <ul>
-            <li>Your search queries</li>
-            <li>The URLs you visit</li>
-            <li>Your keyword list, custom shortcuts, or URL-rewrite rules</li>
-            <li>Any identifier — no advertising ID, no email, no account</li>
-            <li>Any usage analytics — Findbar has no telemetry of any kind</li>
+            <li>No analytics or tracking of any kind</li>
+            <li>No user accounts or sign-in required</li>
+            <li>No browsing history is recorded or sent anywhere</li>
+            <li>No cookies are set by the extension</li>
+            <li>No data is shared with third parties</li>
+            <li>No network requests are made by Findbar's own code &mdash; the only network activity is Safari navigating to the destination URL of whichever keyword you typed</li>
         </ul>
 
-        <h2>What Findbar stores locally on your device</h2>
-        <p>Your keyword list, URL-rewrite rules, and Findbar's preferences are saved in Safari's per-extension storage on your device. They never leave your Mac, iPhone, or iPad. Uninstalling Findbar removes them.</p>
+        <h2>Local Storage</h2>
+        <p>Your keyword list, URL-rewrite rules, preferences, language choice, trash bin, and "what's new" acknowledgements are stored locally on your device using Safari's <code>browser.storage.local</code> API. This data never leaves your device and is only used to remember your settings between sessions. If you sign in to Safari with iCloud, the same storage may sync across your Apple devices via Apple's mechanisms; that sync is handled by Safari itself, not by Findbar.</p>
 
-        <h2>Permissions Findbar requests</h2>
+        <h2>Third-Party Services</h2>
+        <p>Findbar does <strong>not</strong> contact any third-party servers. The extension has no external API calls of its own.</p>
+        <p>When you type a keyword and press Enter, Safari navigates to the destination URL configured for that keyword. That navigation is identical to typing the destination URL directly into Safari &mdash; Findbar simply translates <code>g foo</code> into the corresponding Google search URL and lets Safari handle the rest. The remote site you're navigating to (Google, GitHub, Wikipedia, etc.) sees the same request it would see if you typed its URL by hand.</p>
+        <p>The optional URL rewriting feature (off by default) redirects requests to alternative frontends like Nitter, Piped, or old.reddit.com. These are public services run by independent operators, not affiliated with Findbar. Findbar does not transmit any information to them beyond what Safari already sends when fetching a webpage.</p>
+
+        <h2>Permissions</h2>
         <ul>
-            <li><strong>Search engine domains</strong> (google.com, bing.com, duckduckgo.com, yahoo.com, ecosia.org, brave.com, kagi.com, startpage.com): so Findbar can read the search query Safari is about to send and redirect it to your keyword's target.</li>
-            <li><strong>webNavigation</strong>: same purpose &mdash; lets Findbar catch the navigation early enough to redirect.</li>
-            <li><strong>storage</strong>: to remember your keyword list locally.</li>
-            <li><strong>declarativeNetRequest</strong>: for built-in keywords, Findbar uses Safari's built-in redirect engine instead of intercepting in JavaScript. This is faster (no visible flash) and more private (Safari handles the redirect, Findbar never sees the URL).</li>
+            <li><strong>storage</strong> &mdash; saves your keyword list and preferences locally on your device.</li>
+            <li><strong>tabs</strong> &mdash; opens new tabs for multi-tab chaining (the <code>!g foo !w bar</code> feature).</li>
+            <li><strong>webNavigation</strong> &mdash; detects when Safari is about to navigate to a search-engine URL so Findbar can intercept and route the typed keyword to its destination.</li>
+            <li><strong>declarativeNetRequest</strong> &mdash; allows Findbar to install URL-rewrite rules that Safari evaluates natively, with no JavaScript involvement. This is what enables zero-flash redirects for built-in keywords.</li>
+            <li><strong>Host permissions</strong> &mdash; limited to the major search engines (Google, DuckDuckGo, Bing, etc.) and the sites involved in optional URL-rewriting rules. Findbar does not request blanket access to all websites.</li>
         </ul>
+
+        <h2>Children's Privacy</h2>
+        <p>Findbar does not knowingly collect any information from anyone, including children under 13.</p>
+
+        <h2>Changes</h2>
+        <p>If this policy is updated, the changes will be posted on this page with an updated date.</p>
 
         <h2>Contact</h2>
-        <p>Questions? <a href="https://github.com/CorvusDevs/Findbar-For-Safari/issues">Open a GitHub issue</a> or email <a href="mailto:hello@corvusdevs.com">hello@corvusdevs.com</a>.</p>
-    </main>
+        <p>If you have questions about this privacy policy, please open an issue on <a href="https://github.com/CorvusDevs/Findbar-For-Safari/issues">GitHub</a>.</p>
+    </div>
 </body>
 </html>

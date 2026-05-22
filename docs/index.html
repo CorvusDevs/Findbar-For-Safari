@@ -2,152 +2,482 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Findbar — Type a keyword in Safari, jump anywhere</title>
-    <meta name="description" content="Findbar is a Safari Web Extension for macOS, iOS, and iPadOS. Type g foo → Google, gh user/repo → GitHub, w foo → Wikipedia, and 27 more shortcuts you can edit.">
-    <link rel="icon" type="image/png" href="icon-128.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Findbar — Type a keyword in Safari's address bar, jump anywhere</title>
+    <meta name="description" content="Findbar turns Safari's address bar into a power-user launcher: 30 built-in keyword shortcuts, bang chaining, regex keywords, and optional URL rewriting. Native Safari extension for macOS, iOS, and iPadOS.">
+    <link rel="canonical" href="https://corvusdevs.github.io/Findbar-For-Safari/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://corvusdevs.github.io/Findbar-For-Safari/">
+    <meta property="og:title" content="Findbar — Type a keyword in Safari, jump anywhere">
+    <meta property="og:description" content="Address-bar keyword shortcuts for Safari: g foo for Google, gh user/repo for GitHub, w foo for Wikipedia, and 27 more. Native extension for macOS, iOS, iPadOS.">
+    <meta property="og:image" content="https://corvusdevs.github.io/Findbar-For-Safari/icon.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="CorvusDevs">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Findbar for Safari">
+    <meta name="twitter:description" content="Type a keyword in Safari's address bar, jump anywhere. 30 built-in shortcuts + bang chaining + regex + URL rewriting.">
+    <meta name="twitter:image" content="https://corvusdevs.github.io/Findbar-For-Safari/icon.png">
+    <meta name="twitter:image:alt" content="Findbar for Safari app icon">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="safari extension, address bar shortcuts, keyword search, omnibox safari, custom search engines, url rewriting, regex keywords, macos, ios, ipados, findbar">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Findbar for Safari",
+        "description": "Type a keyword in Safari's address bar to jump anywhere — 30 built-in shortcuts plus bang chaining, regex keywords, and optional URL rewriting.",
+        "operatingSystem": "macOS 14.0+, iOS 17.0+, iPadOS 17.0+",
+        "applicationCategory": "BrowserApplication",
+        "applicationSubCategory": "Productivity",
+        "screenshot": "https://corvusdevs.github.io/Findbar-For-Safari/icon.png",
+        "downloadUrl": "https://apps.apple.com/app/findbar-for-safari/",
+        "offers": { "@type": "Offer", "price": "0.99", "priceCurrency": "USD" },
+        "author": { "@type": "Organization", "name": "CorvusDevs", "url": "https://corvusdevs.github.io" }
+    }
+    </script>
+    <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
     <style>
         :root {
-            color-scheme: light dark;
-            --bg: #f4f5f7;
-            --fg: #1c1c1e;
-            --muted: #6e6e73;
+            --bg: #0a0a0c;
+            --surface: #111114;
+            --surface-2: #19191e;
+            --border: #252530;
+            --text: #e8e8ed;
+            --text-secondary: #7c7c84;
             --accent: #2563eb;
-            --card: rgba(0, 0, 0, 0.03);
-            --border: rgba(0, 0, 0, 0.08);
+            --accent-light: #5f8fff;
+            --accent-dim: rgba(37, 99, 235, 0.1);
+            --accent-glow: rgba(37, 99, 235, 0.06);
         }
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #0d0d0f;
-                --fg: #f4f5f7;
-                --muted: #98989f;
-                --accent: #5f8fff;
-                --card: rgba(255, 255, 255, 0.04);
-                --border: rgba(255, 255, 255, 0.08);
-            }
-        }
-        * { box-sizing: border-box; }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
             background: var(--bg);
-            color: var(--fg);
-            font: 15px/1.6 -apple-system, BlinkMacSystemFont, system-ui, "SF Pro Text", sans-serif;
+            color: var(--text);
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
-        header {
+
+        /* Nav */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+        }
+        .nav-brand {
+            font-size: 18px; font-weight: 700;
+            color: var(--text); text-decoration: none;
+            letter-spacing: -0.3px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .nav-brand img { width: 32px; height: 32px; border-radius: 8px; display: block; }
+        .nav-brand span { color: var(--accent); }
+        .nav-links { display: flex; gap: 28px; list-style: none; }
+        .nav-links a {
+            font-size: 14px; color: var(--text-secondary);
+            text-decoration: none; transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--text); }
+
+        /* Hero */
+        .hero {
             text-align: center;
-            padding: 80px 24px 40px;
+            padding: 140px 24px 80px;
+            position: relative; overflow: visible;
         }
-        .app-icon {
-            width: 128px; height: 128px;
-            border-radius: 22.5%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        .hero::before {
+            content: ''; position: absolute;
+            top: -200px; left: 50%; transform: translateX(-50%);
+            width: 1000px; height: 1000px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.10) 0%, transparent 50%);
+            pointer-events: none;
         }
-        h1 {
-            margin: 20px 0 8px;
-            font-size: 44px;
-            font-weight: 700;
-            letter-spacing: -1px;
+        .hero-icon {
+            width: 120px; height: 120px;
+            border-radius: 28px; margin-bottom: 28px;
+            border: 2px solid var(--border);
+            box-shadow: 0 0 60px 20px rgba(37, 99, 235, 0.22), 0 0 120px 50px rgba(37, 99, 235, 0.08);
         }
-        .tagline {
-            color: var(--muted);
-            font-size: 19px;
-            margin: 0 auto;
-            max-width: 540px;
+        .hero h1 {
+            font-size: 64px; font-weight: 800;
+            letter-spacing: -3px; line-height: 1.05;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-light) 100%);
+            -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent; color: transparent;
         }
-        .cta {
-            display: inline-block;
-            margin-top: 28px;
+        .hero .subtitle {
+            font-size: 19px; color: var(--text-secondary);
+            max-width: 620px; margin: 0 auto 40px;
+            font-weight: 400; line-height: 1.6;
+        }
+        .hero-cta {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 16px 36px;
             background: var(--accent);
-            color: #fff;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 12px;
-            font-weight: 500;
+            color: #fff; font-size: 16px; font-weight: 600;
+            border-radius: 14px; text-decoration: none;
+            transition: all 0.2s; border: none; cursor: pointer;
         }
-        main {
-            max-width: 760px;
-            margin: 0 auto;
-            padding: 20px 24px 80px;
+        .hero-cta:hover {
+            filter: brightness(1.15); transform: translateY(-1px);
+            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.35);
         }
-        section { margin: 56px 0; }
-        h2 {
-            font-size: 22px;
-            margin: 0 0 12px;
+        .hero-cta svg { width: 20px; height: 20px; }
+        .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+        .hero-free { display: block; margin-top: 14px; font-size: 14px; color: var(--text-secondary); }
+
+        /* Demo strip showing keyword jumps */
+        .demo-strip {
+            max-width: 720px; margin: 30px auto 0; padding: 0 16px;
+            font-family: 'SF Mono', 'Menlo', monospace;
+            font-size: 14px; color: var(--text-secondary); line-height: 2;
         }
-        .demo {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 20px 22px;
-            font-family: ui-monospace, SF Mono, Menlo, monospace;
-            font-size: 14px;
+        .demo-strip code {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 6px; padding: 2px 8px;
+            color: var(--accent-light); font-size: 13px;
         }
-        .demo b { color: var(--accent); font-weight: 600; }
-        .demo .arrow { color: var(--muted); margin: 0 8px; }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
+        .demo-strip .arrow { color: var(--accent); margin: 0 6px; }
+
+        /* Section helpers */
+        .section-label {
+            font-size: 13px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1.5px;
+            color: var(--accent); text-align: center;
+            margin-bottom: 12px;
         }
-        .feature {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 18px 20px;
+        .section-title {
+            font-size: 44px; font-weight: 700;
+            text-align: center; letter-spacing: -1.5px;
+            margin-bottom: 56px; line-height: 1.1;
         }
-        .feature h3 {
-            margin: 0 0 6px;
-            font-size: 15px;
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 40%, #fff 100%);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .feature p {
-            margin: 0;
-            color: var(--muted);
-            font-size: 14px;
+
+        /* Features Grid */
+        .features { max-width: 960px; margin: 0 auto; padding: 40px 24px 100px; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .feature-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px;
+            transition: border-color 0.3s, transform 0.3s;
         }
+        .feature-card:hover { border-color: rgba(37, 99, 235, 0.35); }
+        .feature-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            background: var(--accent-dim);
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 16px; box-shadow: 0 0 20px rgba(37, 99, 235, 0.18);
+        }
+        .feature-icon svg { width: 24px; height: 24px; }
+        .feature-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+        .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .feature-card code {
+            background: var(--surface-2); border-radius: 4px;
+            padding: 1px 5px; font-size: 12px;
+            color: var(--accent-light);
+        }
+
+        /* How It Works */
+        .how-it-works { max-width: 960px; margin: 0 auto; padding: 60px 24px 100px; }
+        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+        .step { text-align: center; }
+        .step-num {
+            width: 48px; height: 48px; border-radius: 14px;
+            background: var(--accent-dim); color: var(--accent);
+            font-size: 20px; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 18px; border: 1px solid rgba(37, 99, 235, 0.25);
+        }
+        .step h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+        .step p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        .step code {
+            background: var(--surface-2); border-radius: 4px;
+            padding: 1px 5px; font-size: 12px; color: var(--accent-light);
+        }
+
+        /* Why */
+        .why { max-width: 960px; margin: 0 auto; padding: 0 24px 100px; }
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .why-card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: 16px; padding: 32px;
+        }
+        .why-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
+        .why-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+        /* Requirements + Footer */
+        .req { text-align: center; padding: 0 24px 60px; font-size: 14px; color: var(--text-secondary); }
         footer {
-            text-align: center;
-            color: var(--muted);
-            padding: 40px 24px;
-            font-size: 13px;
-            border-top: 1px solid var(--border);
+            max-width: 960px; margin: 0 auto;
+            padding: 40px 24px 60px; border-top: 1px solid var(--border);
         }
-        footer a { color: inherit; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+        .footer-brand .logo { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .footer-brand .logo span { color: var(--accent); }
+        .footer-brand p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+        .footer-col h4 {
+            font-size: 12px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--text-secondary); margin-bottom: 14px;
+        }
+        .footer-col a {
+            display: block; font-size: 14px;
+            color: var(--text); text-decoration: none;
+            margin-bottom: 10px; transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--accent); }
+        .footer-bottom {
+            margin-top: 40px; padding-top: 24px;
+            border-top: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .footer-bottom p { font-size: 12px; color: var(--text-secondary); }
+        .footer-socials { display: flex; gap: 16px; }
+        .footer-socials a { color: var(--text-secondary); transition: color 0.2s; }
+        .footer-socials a:hover { color: var(--text); }
+        .footer-socials svg { width: 18px; height: 18px; }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0; transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .features-grid, .why-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 40px; letter-spacing: -2px; }
+            .hero .subtitle { font-size: 16px; }
+            .hero { padding-top: 120px; }
+            .section-title { font-size: 30px; }
+            .features-grid, .steps, .why-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+            .footer-bottom { flex-direction: column; gap: 12px; }
+            nav { padding: 14px 16px; }
+            .nav-links { gap: 16px; }
+            .demo-strip { font-size: 12px; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <img src="icon-128.png" alt="Findbar" class="app-icon">
-        <h1>Findbar</h1>
-        <p class="tagline">Type a keyword in Safari's address bar, jump anywhere.</p>
-        <a href="#" class="cta">Coming soon to the App Store</a>
-    </header>
-    <main>
-        <section>
-            <h2>How it works</h2>
-            <div class="demo">
-                <div><b>g</b> swiftui animations<span class="arrow">→</span>google.com/search?q=swiftui+animations</div>
-                <div><b>gh</b> apple/swift<span class="arrow">→</span>github.com/apple/swift</div>
-                <div><b>w</b> ada lovelace<span class="arrow">→</span>wikipedia.org/wiki/Ada_Lovelace</div>
-                <div><b>!g</b> foo <b>!w</b> bar<span class="arrow">→</span>Google in current tab, Wikipedia in new tab</div>
+
+    <!-- Nav -->
+    <nav>
+        <a href="https://corvusdevs.github.io" class="nav-brand">
+            <img src="https://avatars.githubusercontent.com/u/25494090?v=4" alt="CorvusDevs">
+            Corvus<span>Devs</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="mailto:corvusdevs@outlook.com">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="icon.png" alt="Findbar" class="hero-icon">
+        <h1>Findbar<br>for Safari</h1>
+        <p class="subtitle">Type a keyword in Safari's address bar, jump anywhere. Thirty built-in shortcuts, bang chaining, regex keywords, and optional URL rewriting — all editable, all on-device. A native Safari extension for macOS, iOS, and iPadOS.</p>
+        <div class="hero-buttons">
+            <a href="https://apps.apple.com/app/findbar-for-safari/" class="hero-cta">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                <span>Get it on the App Store</span>
+            </a>
+        </div>
+        <span class="hero-free">$0.99 &middot; macOS 14.0+ &middot; iOS / iPadOS 17.0+</span>
+        <div class="demo-strip">
+            <code>g</code> swiftui<span class="arrow">&rarr;</span>Google search<br>
+            <code>w</code> ada lovelace<span class="arrow">&rarr;</span>Wikipedia<br>
+            <code>gh</code> apple/swift<span class="arrow">&rarr;</span>GitHub repo<br>
+            <code>!g</code> ios <code>!w</code> macintosh<span class="arrow">&rarr;</span>two tabs at once
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="section-label fade-in">Features</div>
+        <h2 class="section-title gradient-text fade-in">Your address bar, supercharged</h2>
+
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+                </div>
+                <h3>30 built-in keywords</h3>
+                <p><code>g</code>, <code>d</code>, <code>b</code> for search; <code>w</code>, <code>mdn</code>, <code>ad</code> for references; <code>gh</code>, <code>so</code> for code; <code>y</code>, <code>spo</code>, <code>n</code> for media; <code>npm</code>, <code>cargo</code>, <code>pip</code>, <code>brew</code> for package managers, and more.</p>
             </div>
-        </section>
-        <section>
-            <h2>What you get</h2>
-            <div class="features">
-                <div class="feature"><h3>30+ built-in shortcuts</h3><p>Google, GitHub, Wikipedia, Stack Overflow, Amazon, Reddit, npm, MDN, Translate, Hacker News, Wolfram Alpha, Wayback Machine, and more.</p></div>
-                <div class="feature"><h3>Edit everything</h3><p>Change any default, add your own, remove what you don't use. Your list, your rules.</p></div>
-                <div class="feature"><h3>Multi-tab chaining</h3><p>Run multiple searches at once: <code>!g foo !w bar</code> opens two tabs in one keystroke.</p></div>
-                <div class="feature"><h3>Regex keywords</h3><p>Pattern-matched shortcuts for power users. <code>gh/(\S+)/(\S+)</code> → repo navigation.</p></div>
-                <div class="feature"><h3>URL rewriting</h3><p>Optional, off by default: redirect twitter→nitter, reddit→old.reddit, and other privacy-friendly frontends.</p></div>
-                <div class="feature"><h3>100% on-device</h3><p>No account, no telemetry, no cloud. Your keywords stay on your Mac, iPhone, and iPad.</p></div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                </div>
+                <h3>Edit every keyword</h3>
+                <p>Change the trigger, URL template, default URL, or aliases. Add your own. Soft-delete with a 20-entry trash bin for recovery.</p>
             </div>
-        </section>
-    </main>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </div>
+                <h3>Bang chaining</h3>
+                <p>Type <code>!g foo !w bar</code> to open Google in the current tab and Wikipedia in a new one. Configurable separator.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <h3>Regex keywords</h3>
+                <p>Pattern-matched shortcuts like <code>gh/(\S+)/(\S+)</code> &rarr; <code>github.com/$1/$2</code> for issue, PR, and repo navigation in one keystroke.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+                </div>
+                <h3>URL rewriting</h3>
+                <p>Curated rules to redirect Twitter &rarr; Nitter, Reddit &rarr; old.reddit, YouTube &rarr; Piped, and other privacy-friendly frontends. All toggleable, all editable.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <h3>Live validation</h3>
+                <p>As you type, friendly errors appear inline: missing URL protocol, invalid regex, capture-group mismatches, conflicting triggers.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><text x="0" y="14" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#2563eb">&#x6587;</text><text x="11" y="22" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#2563eb">A</text></svg>
+                </div>
+                <h3>33 languages</h3>
+                <p>Built-in language picker with flag icons and native names. Defaults to your system locale; switch anytime from the top-right of the settings page.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                </div>
+                <h3>Zero-flash redirects</h3>
+                <p>Built-in keywords compile to Safari's declarativeNetRequest rules &mdash; no visible flash before the redirect fires. The fastest possible path.</p>
+            </div>
+
+            <div class="feature-card fade-in">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Privacy first</h3>
+                <p>No accounts, no cloud sync, no analytics. Your keyword list lives entirely on your device. Findbar collects zero data.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works" id="how">
+        <div class="section-label fade-in">How it works</div>
+        <h2 class="section-title gradient-text fade-in">Three steps to a faster address bar</h2>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3>Install from the App Store</h3>
+                <p>Download Findbar from the App Store. One purchase covers Mac, iPhone, and iPad via Family Sharing.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3>Enable in Safari</h3>
+                <p>Open Safari Settings &rarr; Extensions &rarr; enable Findbar. Grant the permissions it asks for.</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3>Type a keyword</h3>
+                <p>In Safari's address bar, type <code>g</code> followed by your search and press Enter. That's it. Edit and add keywords in the settings page anytime.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why -->
+    <section class="why">
+        <div class="section-label fade-in">Why Findbar</div>
+        <h2 class="section-title gradient-text fade-in">Built specifically for Safari</h2>
+
+        <div class="why-grid">
+            <div class="why-card">
+                <h3>Not a Chrome port</h3>
+                <p>Findbar uses Safari's native APIs (declarativeNetRequest, webNavigation, storage). Built ground-up for Safari, not a polyfill of Chrome's omnibox API which Safari doesn't have.</p>
+            </div>
+            <div class="why-card">
+                <h3>Zero data collection</h3>
+                <p>No accounts. No telemetry. No cloud. Your keyword list, rewrite rules, and preferences live entirely on your device. Findbar never phones home.</p>
+            </div>
+            <div class="why-card">
+                <h3>Fully localized</h3>
+                <p>Translated into 32 non-English locales (Spanish, Japanese, Arabic, German, French, and many more) &mdash; switchable in-app, independent of your system language.</p>
+            </div>
+        </div>
+    </section>
+
+    <p class="req">Requires macOS 14.0 (Sonoma) or later, or iOS / iPadOS 17.0 or later. Works with Safari 17+.</p>
+
     <footer>
-        Made by <a href="https://corvusdevs.com">CorvusDevs</a> &middot;
-        <a href="privacy.html">Privacy</a> &middot;
-        <a href="https://github.com/CorvusDevs/Findbar-For-Safari/issues">Support</a>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo"><img src="icon.png" alt="" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:6px;">Find<span>bar</span></div>
+                <p>Indie software studio.<br>Building focused, privacy-first tools for Apple platforms.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <a href="mailto:corvusdevs@outlook.com">corvusdevs@outlook.com</a>
+                <a href="https://github.com/CorvusDevs/Findbar-For-Safari">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CorvusDevs. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="https://github.com/CorvusDevs" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+            </div>
+        </div>
     </footer>
+
+    <script>
+    /* Scroll fade-in animations */
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
