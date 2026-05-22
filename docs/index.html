@@ -300,7 +300,28 @@
         }
         .lang-menu button:hover { background: rgba(255,255,255,0.08); }
         .lang-menu button.active { color: var(--accent); }
-    
+        /* Flag + label rows: align flag and text on a single baseline. */
+        .lang-menu button {
+            display: flex; align-items: center; gap: 10px;
+        }
+        .lang-flag {
+            width: 18px; height: 13px; flex-shrink: 0;
+            border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+            object-fit: cover;
+        }
+        /* Mini 文A glyph for the "Default" row + button (when auto active). */
+        .lang-auto-glyph {
+            width: 18px; height: 13px; flex-shrink: 0; display: inline-flex;
+            align-items: center; justify-content: center;
+            color: var(--text-secondary, #999); font-size: 9px; line-height: 1;
+            border-radius: 2px; background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+        }
+        .lang-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+        .lang-btn .lang-flag, .lang-btn .lang-auto-glyph { margin: 0; }
+
         /* 文A language glyph (replaces globe) */
         .lang-glyph {
             display: inline-flex; align-items: center; justify-content: center;
@@ -326,42 +347,8 @@
                 <li><a href="mailto:corvusdevs@outlook.com" data-i18n="nav_contact">Contact</a></li>
             </ul>
             <div class="lang-wrap" id="langWrap">
-                <span class="lang-glyph" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Language" style="vertical-align:middle;"><text x="7" y="17" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif" font-size="14" font-weight="600" fill="currentColor" text-anchor="middle">文</text><text x="17" y="17" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" fill="currentColor" text-anchor="middle">A</text></svg></span><button class="lang-btn" id="langBtn">English</button>
-                <div class="lang-menu" id="langMenu">
-                    <button data-lang="en">English</button>
-                    <button data-lang="ar">&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064a;&#x0629;</button>
-                    <button data-lang="cs">&#x010c;e&#x0161;tina</button>
-                    <button data-lang="da">Dansk</button>
-                    <button data-lang="de">Deutsch</button>
-                    <button data-lang="el">&#x0395;&#x03bb;&#x03bb;&#x03b7;&#x03bd;&#x03b9;&#x03ba;&#x03ac;</button>
-                    <button data-lang="es">Espa&#xF1;ol</button>
-                    <button data-lang="es-MX">Espa&#xF1;ol (M&#xE9;xico)</button>
-                    <button data-lang="fi">Suomi</button>
-                    <button data-lang="fr">Fran&#xE7;ais</button>
-                    <button data-lang="he">&#x05e2;&#x05d1;&#x05e8;&#x05d9;&#x05ea;</button>
-                    <button data-lang="hi">&#x0939;&#x093f;&#x0928;&#x094d;&#x0926;&#x0940;</button>
-                    <button data-lang="hu">Magyar</button>
-                    <button data-lang="id">Bahasa Indonesia</button>
-                    <button data-lang="it">Italiano</button>
-                    <button data-lang="ja">&#x65E5;&#x672C;&#x8A9E;</button>
-                    <button data-lang="ko">&#xD55C;&#xAD6D;&#xC5B4;</button>
-                    <button data-lang="ms">Bahasa Melayu</button>
-                    <button data-lang="nb">Norsk bokm&#xe5;l</button>
-                    <button data-lang="nl">Nederlands</button>
-                    <button data-lang="pl">Polski</button>
-                    <button data-lang="pt-BR">Portugu&#xEA;s (Brasil)</button>
-                    <button data-lang="pt-PT">Portugu&#xEA;s (Portugal)</button>
-                    <button data-lang="ro">Rom&#xE2;n&#x103;</button>
-                    <button data-lang="ru">&#x0420;&#x0443;&#x0441;&#x0441;&#x043A;&#x0438;&#x0439;</button>
-                    <button data-lang="sk">Sloven&#x10D;ina</button>
-                    <button data-lang="sv">Svenska</button>
-                    <button data-lang="th">&#x0e44;&#x0e17;&#x0e22;</button>
-                    <button data-lang="tr">T&#xFC;rk&#xE7;e</button>
-                    <button data-lang="uk">&#x0423;&#x043a;&#x0440;&#x0430;&#x0457;&#x043d;&#x0441;&#x044c;&#x043a;&#x0430;</button>
-                    <button data-lang="vi">Ti&#x1ebf;ng Vi&#x1ec7;t</button>
-                    <button data-lang="zh-Hans">&#x7B80;&#x4F53;&#x4E2D;&#x6587;</button>
-                    <button data-lang="zh-Hant">&#x7E41;&#x9AD4;&#x4E2D;&#x6587;</button>
-                </div>
+                <span class="lang-glyph" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Language" style="vertical-align:middle;"><text x="7" y="17" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif" font-size="14" font-weight="600" fill="currentColor" text-anchor="middle">文</text><text x="17" y="17" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" fill="currentColor" text-anchor="middle">A</text></svg></span><button class="lang-btn" id="langBtn"><!-- populated by JS --></button>
+                <div class="lang-menu" id="langMenu"><!-- populated by JS --></div>
             </div>
         </div>
     </nav>
@@ -561,52 +548,135 @@
         if (typeof T !== 'object' || !T.en) return;  // translations.js not loaded — degrade gracefully
         const LS_KEY = 'findbar_docs_lang';
 
-        function pickInitialLang() {
-            const url = new URL(location.href);
-            const fromQuery = url.searchParams.get('lang');
-            if (fromQuery && T[fromQuery]) return fromQuery;
-            const stored = localStorage.getItem(LS_KEY);
-            if (stored && T[stored]) return stored;
+        // [code, endonym (native name), iso2 country for flag asset].
+        // `auto` is the first entry — picks via navigator.language.
+        const LANGS = [
+            { code: 'auto',    native: 'Default',                flag: null },
+            { code: 'en',      native: 'English',                flag: 'us' },
+            { code: 'ar',      native: 'العربية',           flag: 'sa' },
+            { code: 'cs',      native: 'Čeština',                  flag: 'cz' },
+            { code: 'da',      native: 'Dansk',                  flag: 'dk' },
+            { code: 'de',      native: 'Deutsch',                flag: 'de' },
+            { code: 'el',      native: 'Ελληνικά',     flag: 'gr' },
+            { code: 'es',      native: 'Español',                flag: 'es' },
+            { code: 'es-MX',   native: 'Español (México)',       flag: 'mx' },
+            { code: 'fi',      native: 'Suomi',                  flag: 'fi' },
+            { code: 'fr',      native: 'Français',               flag: 'fr' },
+            { code: 'he',      native: 'עברית',                  flag: 'il' },
+            { code: 'hi',      native: 'हिन्दी',                     flag: 'in' },
+            { code: 'hu',      native: 'Magyar',                 flag: 'hu' },
+            { code: 'id',      native: 'Bahasa Indonesia',       flag: 'id' },
+            { code: 'it',      native: 'Italiano',               flag: 'it' },
+            { code: 'ja',      native: '日本語',                   flag: 'jp' },
+            { code: 'ko',      native: '한국어',                    flag: 'kr' },
+            { code: 'ms',      native: 'Bahasa Melayu',          flag: 'my' },
+            { code: 'nb',      native: 'Norsk bokmål',           flag: 'no' },
+            { code: 'nl',      native: 'Nederlands',             flag: 'nl' },
+            { code: 'pl',      native: 'Polski',                 flag: 'pl' },
+            { code: 'pt-BR',   native: 'Português (Brasil)',     flag: 'br' },
+            { code: 'pt-PT',   native: 'Português (Portugal)',   flag: 'pt' },
+            { code: 'ro',      native: 'Română',                 flag: 'ro' },
+            { code: 'ru',      native: 'Русский',                flag: 'ru' },
+            { code: 'sk',      native: 'Slovenčina',             flag: 'sk' },
+            { code: 'sv',      native: 'Svenska',                flag: 'se' },
+            { code: 'th',      native: 'ไทย',                     flag: 'th' },
+            { code: 'tr',      native: 'Türkçe',                 flag: 'tr' },
+            { code: 'uk',      native: 'Українська',             flag: 'ua' },
+            { code: 'vi',      native: 'Tiếng Việt',             flag: 'vn' },
+            { code: 'zh-Hans', native: '简体中文',                 flag: 'cn' },
+            { code: 'zh-Hant', native: '繁體中文',                 flag: 'tw' },
+        ];
+
+        function detectNavLang() {
             const navLang = (navigator.language || 'en');
-            // Try full code first (pt-BR), then base (pt), then en.
             if (T[navLang]) return navLang;
             const base = navLang.split('-')[0];
             if (T[base]) return base;
             return 'en';
         }
 
-        function applyLang(lang) {
+        // Returns the effective lang code to render in. 'auto' resolves
+        // to navigator.language → en fallback.
+        function effectiveLang(selection) {
+            if (!selection || selection === 'auto') return detectNavLang();
+            return T[selection] ? selection : 'en';
+        }
+
+        function pickInitialSelection() {
+            const url = new URL(location.href);
+            const fromQuery = url.searchParams.get('lang');
+            if (fromQuery && (fromQuery === 'auto' || T[fromQuery])) return fromQuery;
+            const stored = localStorage.getItem(LS_KEY);
+            if (stored && (stored === 'auto' || T[stored])) return stored;
+            return 'auto';
+        }
+
+        // Build a row (flag-or-glyph + label) into a container element.
+        function renderChip(container, lang) {
+            container.innerHTML = '';
+            if (lang.code === 'auto') {
+                const g = document.createElement('span');
+                g.className = 'lang-auto-glyph';
+                g.setAttribute('aria-hidden', 'true');
+                g.textContent = '文A';  // 文A — same glyph as the outer language icon
+                container.appendChild(g);
+            } else {
+                const img = document.createElement('img');
+                img.className = 'lang-flag';
+                img.src = `flags/${lang.flag}.svg`;
+                img.width = 18; img.height = 13;
+                img.alt = '';
+                container.appendChild(img);
+            }
+            const span = document.createElement('span');
+            span.className = 'lang-name';
+            span.textContent = lang.native;
+            container.appendChild(span);
+        }
+
+        function applyLang(selection) {
+            const lang = effectiveLang(selection);
             const dict = T[lang] || T.en;
             for (const el of document.querySelectorAll('[data-i18n]')) {
                 const key = el.dataset.i18n;
                 if (dict[key]) el.innerHTML = dict[key];
             }
-            // Reflect on <html lang> for screen readers + accent CSS.
             const baseLang = lang.split('_')[0].split('-')[0];
             document.documentElement.lang = baseLang;
-            // RTL languages need dir="rtl" so the whole page layout
-            // (nav, padding, flex) mirrors — not just glyph rendering.
             const RTL = new Set(['ar', 'he', 'fa', 'ur', 'yi']);
             document.documentElement.dir = RTL.has(baseLang) ? 'rtl' : 'ltr';
-            // Mark the current lang in the menu + update the button label.
+
             const btn = document.getElementById('langBtn');
             const menu = document.getElementById('langMenu');
-            if (btn && menu) {
+            // Trigger button reflects the SELECTION (auto vs explicit),
+            // not the resolved language — so user sees "Default" when
+            // they're letting the page auto-detect.
+            const selEntry = LANGS.find(l => l.code === selection) || LANGS[0];
+            if (btn) renderChip(btn, selEntry);
+            if (menu) {
                 for (const b of menu.querySelectorAll('button[data-lang]')) {
-                    if (b.dataset.lang === lang) {
-                        b.classList.add('active');
-                        btn.textContent = b.textContent;
-                    } else {
-                        b.classList.remove('active');
-                    }
+                    b.classList.toggle('active', b.dataset.lang === selection);
                 }
             }
         }
 
-        const initial = pickInitialLang();
+        // Build menu rows from the LANGS table.
+        function buildMenu() {
+            const menu = document.getElementById('langMenu');
+            if (!menu) return;
+            menu.innerHTML = '';
+            for (const lang of LANGS) {
+                const b = document.createElement('button');
+                b.dataset.lang = lang.code;
+                renderChip(b, lang);
+                menu.appendChild(b);
+            }
+        }
+
+        buildMenu();
+        const initial = pickInitialSelection();
         applyLang(initial);
 
-        // Wire the picker.
         const wrap = document.getElementById('langWrap');
         const btn  = document.getElementById('langBtn');
         const menu = document.getElementById('langMenu');
@@ -621,9 +691,14 @@
             menu.addEventListener('click', (e) => {
                 const b = e.target.closest('button[data-lang]');
                 if (!b) return;
-                const lang = b.dataset.lang;
-                localStorage.setItem(LS_KEY, lang);
-                applyLang(lang);
+                const selection = b.dataset.lang;
+                if (selection === 'auto') {
+                    // Clear the override so the next visit also auto-detects.
+                    localStorage.removeItem(LS_KEY);
+                } else {
+                    localStorage.setItem(LS_KEY, selection);
+                }
+                applyLang(selection);
                 menu.classList.remove('open');
             });
         }
