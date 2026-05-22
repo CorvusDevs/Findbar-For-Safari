@@ -582,7 +582,12 @@
                 if (dict[key]) el.innerHTML = dict[key];
             }
             // Reflect on <html lang> for screen readers + accent CSS.
-            document.documentElement.lang = lang.split('_')[0].split('-')[0];
+            const baseLang = lang.split('_')[0].split('-')[0];
+            document.documentElement.lang = baseLang;
+            // RTL languages need dir="rtl" so the whole page layout
+            // (nav, padding, flex) mirrors — not just glyph rendering.
+            const RTL = new Set(['ar', 'he', 'fa', 'ur', 'yi']);
+            document.documentElement.dir = RTL.has(baseLang) ? 'rtl' : 'ltr';
             // Mark the current lang in the menu + update the button label.
             const btn = document.getElementById('langBtn');
             const menu = document.getElementById('langMenu');
