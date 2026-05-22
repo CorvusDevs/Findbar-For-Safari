@@ -309,14 +309,16 @@
             border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
             object-fit: cover;
         }
-        /* Mini 文A glyph for the "Default" row + button (when auto active). */
+        /* Globe icon for the "Default" row + button (when auto active).
+           Globe — not 文A — because the outer 文A glyph already conveys
+           "language picker"; the inner icon here represents "auto-detect
+           by region", which is a geographic concept, not linguistic. */
         .lang-auto-glyph {
             width: 18px; height: 13px; flex-shrink: 0; display: inline-flex;
             align-items: center; justify-content: center;
-            color: var(--text-secondary, #999); font-size: 9px; line-height: 1;
-            border-radius: 2px; background: rgba(255,255,255,0.05);
-            box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+            color: var(--text-secondary, #999);
         }
+        .lang-auto-glyph svg { display: block; width: 14px; height: 14px; }
         .lang-btn {
             display: inline-flex; align-items: center; gap: 8px;
         }
@@ -618,7 +620,9 @@
                 const g = document.createElement('span');
                 g.className = 'lang-auto-glyph';
                 g.setAttribute('aria-hidden', 'true');
-                g.textContent = '文A';  // 文A — same glyph as the outer language icon
+                // Globe — represents "auto-detect by region", distinct
+                // from the outer 文A which conveys "language picker".
+                g.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
                 container.appendChild(g);
             } else {
                 const img = document.createElement('img');
