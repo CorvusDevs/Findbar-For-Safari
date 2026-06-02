@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+ <script>/* warm fetch for the corvus-carousel so it has data ready by render time */
+window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache:'default'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});</script>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Findbar, Type a keyword in Safari's address bar, jump anywhere</title>
@@ -374,6 +376,113 @@
  }
  .lang-glyph svg { display: block; width: 22px; height: 22px; }
 
+ /* page-carousel template v2 (2026-05-27) */
+ .corvus-carousel {
+ max-width: 1200px;
+ margin: 80px auto 40px;
+ padding: 0 24px;
+ }
+ .corvus-carousel__title {
+ font-size: 32px; font-weight: 700;
+ margin: 0 0 8px;
+ letter-spacing: -0.5px;
+ color: var(--text, #fff);
+ }
+ .corvus-carousel__sub {
+ font-size: 15px;
+ color: var(--text-secondary, #9a9a9f);
+ margin: 0 0 28px;
+ }
+ .corvus-carousel__viewport { position: relative; }
+ .corvus-carousel__track {
+ display: flex; gap: 16px;
+ overflow-x: auto; overflow-y: visible;
+ scroll-snap-type: x mandatory;
+ scroll-behavior: smooth;
+ padding: 4px 4px 16px;
+ margin: 0 -4px;
+ scrollbar-width: thin;
+ touch-action: pan-x;
+ -webkit-overflow-scrolling: touch;
+ overscroll-behavior-x: contain;
+ --fade-l: 0px; --fade-r: 0px;
+ -webkit-mask-image: linear-gradient(to right, transparent 0, black var(--fade-l), black calc(100% - var(--fade-r)), transparent 100%);
+ mask-image: linear-gradient(to right, transparent 0, black var(--fade-l), black calc(100% - var(--fade-r)), transparent 100%);
+ transition: -webkit-mask-image 0.25s, mask-image 0.25s;
+ }
+ .corvus-carousel__track::-webkit-scrollbar { height: 6px; }
+ .corvus-carousel__track::-webkit-scrollbar-thumb {
+ background: var(--border, #2a2a30); border-radius: 3px;
+ }
+ .corvus-carousel__card {
+ flex: 0 0 280px;
+ scroll-snap-align: start;
+ background: var(--surface, #18181c);
+ border: 1px solid var(--border, #2a2a30);
+ border-radius: 14px; padding: 20px;
+ text-decoration: none;
+ color: var(--text, #fff);
+ display: flex; flex-direction: column; gap: 12px;
+ transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+ }
+ .corvus-carousel__card:hover {
+ transform: translateY(-2px);
+ border-color: var(--accent, #2563eb);
+ box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+ }
+ .corvus-carousel__card-icon { width: 56px; height: 56px; border-radius: 12px; object-fit: contain; }
+ .corvus-carousel__card-name { font-size: 17px; font-weight: 600; color: var(--text, #fff); line-height: 1.2; }
+ .corvus-carousel__card-tagline {
+ font-size: 12px;
+ color: var(--accent, #2563eb);
+ text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;
+ }
+ .corvus-carousel__card-desc {
+ font-size: 13px;
+ color: var(--text-secondary, #9a9a9f);
+ line-height: 1.5; margin: 0; flex: 1;
+ display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;
+ overflow: hidden;
+ }
+ .corvus-carousel__card-cta {
+ font-size: 13px; font-weight: 600;
+ color: var(--accent, #2563eb);
+ display: inline-flex; align-items: center; gap: 4px;
+ margin-top: auto;
+ }
+ .corvus-carousel__nav {
+ position: absolute; top: 50%; transform: translateY(-50%);
+ width: 36px; height: 36px; border-radius: 50%;
+ background: var(--accent, #2563eb);
+ border: 1px solid var(--accent, #2563eb);
+ color: white; cursor: pointer;
+ display: flex; align-items: center; justify-content: center;
+ box-shadow: 0 4px 16px rgba(37,99,235,0.35);
+ transition: filter 0.2s, transform 0.2s;
+ z-index: 2;
+ }
+ .corvus-carousel__nav:hover { filter: brightness(1.1); transform: translateY(-50%) scale(1.05); }
+ .corvus-carousel__nav:disabled {
+ background: var(--surface, #18181c);
+ color: var(--text-secondary, #9a9a9f);
+ border-color: var(--border, #2a2a30);
+ box-shadow: none; cursor: default; filter: none;
+ }
+ .corvus-carousel__nav svg { width: 20px; height: 20px; fill: none; }
+ .corvus-carousel__nav--prev { left: -18px; }
+ .corvus-carousel__nav--next { right: -18px; }
+ @media (max-width: 600px) {
+ .corvus-carousel { margin-top: 48px; }
+ .corvus-carousel__title { font-size: 26px; }
+ .corvus-carousel__card { flex-basis: 240px; padding: 16px; }
+ .corvus-carousel__nav { display: none; }
+ }
+ @media (prefers-reduced-motion: reduce) {
+ .corvus-carousel__track { scroll-behavior: auto; transition: none; }
+ .corvus-carousel__card { transition: none; }
+ }
+ .corvus-carousel:has(.corvus-carousel__track:empty) { display: none; }
+
  </style>
 </head>
 <body>
@@ -610,6 +719,27 @@
 
  <p class="req" data-i18n="req">Requires macOS 14.0 (Sonoma) or later, or iOS / iPadOS 17.0 or later. Works with Safari 17+.</p>
 
+ <!-- page-carousel template v2 (2026-05-27), see ~/.corvus-tools/page-carousel/ -->
+ <section id="corvus-carousel" class="corvus-carousel" aria-labelledby="corvus-carousel-title" data-current-slug="Findbar-For-Safari">
+ <h2 id="corvus-carousel-title" class="corvus-carousel__title" data-i18n="carousel_title">More from CorvusDevs</h2>
+ <p class="corvus-carousel__sub" data-i18n="carousel_sub">Privacy-first apps for macOS, iOS, and Safari.</p>
+ <div class="corvus-carousel__viewport">
+ <button class="corvus-carousel__nav corvus-carousel__nav--prev" type="button" aria-label="Previous">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+ <path stroke-linecap="round" stroke-linejoin="round" d="M15 18l-6-6 6-6"/>
+ </svg>
+ </button>
+ <div class="corvus-carousel__track" role="list">
+ <!-- Cards injected at runtime by carousel.js -->
+ </div>
+ <button class="corvus-carousel__nav corvus-carousel__nav--next" type="button" aria-label="Next">
+ <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+ <path stroke-linecap="round" stroke-linejoin="round" d="M9 6l6 6-6 6"/>
+ </svg>
+ </button>
+ </div>
+ </section>
+
  <footer>
  <div class="footer-grid">
  <div class="footer-brand">
@@ -814,6 +944,89 @@
  menu.classList.remove('open');
  });
  }
+ })();
+ </script>
+
+ <script>
+ // page-carousel template v2 (2026-05-27) — see ~/.corvus-tools/page-carousel/
+ (function() {
+ const APPS_JSON_URL = 'https://corvusdevs.github.io/apps.json';
+ const section = document.getElementById('corvus-carousel');
+ if (!section) return;
+ const track = section.querySelector('.corvus-carousel__track');
+ if (!track) return;
+ function getCurrentSlug() {
+ const explicit = section.getAttribute('data-current-slug');
+ if (explicit) return explicit.toLowerCase();
+ const segs = location.pathname.split('/').filter(Boolean);
+ return segs.length ? segs[0].toLowerCase() : '';
+ }
+ function buildCard(app) {
+ const a = document.createElement('a');
+ a.className = 'corvus-carousel__card';
+ a.href = app.url;
+ a.setAttribute('role', 'listitem');
+ const img = document.createElement('img');
+ img.className = 'corvus-carousel__card-icon';
+ img.src = app.icon; img.alt = ''; img.loading = 'lazy';
+ img.width = 56; img.height = 56;
+ const tag = document.createElement('div');
+ tag.className = 'corvus-carousel__card-tagline';
+ tag.textContent = app.tagline || '';
+ const name = document.createElement('div');
+ name.className = 'corvus-carousel__card-name';
+ name.textContent = app.name;
+ const desc = document.createElement('p');
+ desc.className = 'corvus-carousel__card-desc';
+ desc.textContent = app.description || '';
+ const cta = document.createElement('span');
+ cta.className = 'corvus-carousel__card-cta';
+ cta.textContent = 'Learn more →';
+ a.append(img, tag, name, desc, cta);
+ return a;
+ }
+ function wireNav() {
+ const prev = section.querySelector('.corvus-carousel__nav--prev');
+ const next = section.querySelector('.corvus-carousel__nav--next');
+ if (!prev || !next) return;
+ const FADE_PX = 80;
+ const stepFn = () => Math.max(track.clientWidth * 0.8, 280 + 16);
+ prev.addEventListener('click', () => track.scrollBy({ left: -stepFn(), behavior: 'smooth' }));
+ next.addEventListener('click', () => track.scrollBy({ left: stepFn(), behavior: 'smooth' }));
+ function sync() {
+ const atStart = track.scrollLeft <= 4;
+ const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+ prev.disabled = atStart; next.disabled = atEnd;
+ track.style.setProperty('--fade-l', atStart ? '0px' : FADE_PX + 'px');
+ track.style.setProperty('--fade-r', atEnd ? '0px' : FADE_PX + 'px');
+ }
+ track.addEventListener('scroll', sync, { passive: true });
+ window.addEventListener('resize', sync, { passive: true });
+ sync();
+ }
+ function render(data) {
+ const apps = (data && Array.isArray(data.apps)) ? data.apps : [];
+ const currentSlug = getCurrentSlug();
+ const filtered = apps.filter(a => (a.slug || '').toLowerCase() !== currentSlug);
+ if (!filtered.length) { if (!track.children.length) section.style.display = 'none'; return; }
+ filtered.sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+ const frag = document.createDocumentFragment();
+ for (const app of filtered) frag.appendChild(buildCard(app));
+ track.replaceChildren(frag);
+ section.style.display = '';
+ if (!render._navWired) { wireNav(); render._navWired = true; }
+ else { window.dispatchEvent(new Event('resize')); }
+ }
+ const CACHE_KEY = 'corvusApps_v1';
+ try { const c = localStorage.getItem(CACHE_KEY); if (c) render(JSON.parse(c)); } catch (_) {}
+ const fresh = (window.__corvusAppsPromise && typeof window.__corvusAppsPromise.then === 'function')
+ ? window.__corvusAppsPromise
+ : fetch(APPS_JSON_URL, { cache: 'default' }).then(r => r.ok ? r.json() : null).catch(() => null);
+ fresh.then(data => {
+ if (!data) { if (!track.children.length) section.style.display = 'none'; return; }
+ try { localStorage.setItem(CACHE_KEY, JSON.stringify(data)); } catch (_) {}
+ render(data);
+ });
  })();
  </script>
 </body>
