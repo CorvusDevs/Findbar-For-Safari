@@ -12,7 +12,7 @@
     "context": "label"
   },
   "hero_sub": {
-    "text": "Type a keyword in Safari's address bar, jump anywhere. Thirty built-in shortcuts, bang chaining, regex keywords, and optional URL rewriting, all editable, all on-device. A native Safari extension for macOS, iOS, and iPadOS.",
+    "text": "Type a keyword in Safari's address bar, jump anywhere. Thirty built-in shortcuts, open multiple sites at once, regex keywords, and optional URL rewriting, all editable, all on-device. A native Safari extension for macOS, iOS, and iPadOS.",
     "context": "description"
   },
   "hero_cta": {
@@ -64,7 +64,7 @@
     "context": "description"
   },
   "f3_t": {
-    "text": "Bang chaining",
+    "text": "Open multiple sites",
     "context": "label"
   },
   "f3_d": {
