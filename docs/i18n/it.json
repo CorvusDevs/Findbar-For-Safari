@@ -50,5 +50,19 @@
   "f_legal": "Legale",
   "f_privacy": "Informativa sulla privacy",
   "f_connect": "Connetti",
-  "f_copyright": "Tutti i diritti riservati."
+  "f_copyright": "Tutti i diritti riservati.",
+  "f10_t": "Ricerca per parole chiave in diretta",
+  "f10_d": "Una barra di filtri nell'editor restringe la tua lista mentre digiti. Trova una delle tue 100+ abbreviazioni in due tasti.",
+  "f11_t": "50+ icone dei servizi",
+  "f11_d": "Picker dei preferiti integrato per i servizi più popolari, oppure incolla un URL qualsiasi per utilizzarli di tua scelta. Gli iconi sono sincronizzate con la tua lista di parole chiave.",
+  "f12_t": "Tre temi",
+  "f12_d": "Auto, Light o Dark. Auto segue il tuo sistema. La tua scelta persiste tra le sessioni e sui tuoi altri dispositivi Apple.",
+  "f13_t": "App universale",
+  "f13_d": "Un acquisto copre Mac, iPad e iPhone. Nessun livello Pro separato, nessuna abbonamento, nessun acquisto in-app.",
+  "f14_t": "Accensione / spegnimento immediato",
+  "f14_d": "Un interruttore master unico disabilita Findbar con un tocco, senza disinstallarlo. Perfetto per condividere un Mac o mettere in pausa durante il lavoro.",
+  "f15_t": "Ottimizzato per dispositivi mobili",
+  "f15_d": "Su iPhone, l'editor passa a una disposizione a livelli scalabili ottimizzata per l'uso con un pollice. Fogli che rispettano le aree sicure, a tutto pagina, con aree di tocco da 44 pt.",
+  "f16_t": "Cosa è di nuovo nell'aggiornamento",
+  "f16_d": "Una pagina di benvenuto al primo avvio dopo ogni aggiornamento mostra esattamente cosa è cambiato. Le righe delle Impostazioni contrassegnano le nuove funzionalità con un bollino NEW."
 }

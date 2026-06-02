@@ -50,5 +50,19 @@
   "f_legal": "Lakisääteinen",
   "f_privacy": "Tietosuojakäytäntö",
   "f_connect": "Yhdistä",
-  "f_copyright": "© 2026 CorvusDevs. Kaikki oikeudet pidätetään."
+  "f_copyright": "© 2026 CorvusDevs. Kaikki oikeudet pidätetään.",
+  "f10_t": "Live-haun avainsanat",
+  "f10_d": "Suodatinpalkki editorissa kaventaa listasi kirjoittaessasi. Löydä yli 100 oikotietääsi kahdella näppäinyhdistelmällä.",
+  "f11_t": "50+ palveluikonia",
+  "f11_d": "Omakotinen favicon-valitsin suosituille palveluille tai liitä minkä tahansa URL-osoitteen käyttääksesi omaa. Kuvakkeet synkronoituvat avainsanaluettelon kanssa.",
+  "f12_t": "Kolme teemaa",
+  "f12_d": "Auto, Light tai Dark. Auto seuraa järjestelmääsi. Valintasi säilyy uudelleenkäynnistyksissä ja muissa Apple-laitteissasi.",
+  "f13_t": "Yleispalvelu-sovellus",
+  "f13_d": "Yksi ostos kattaa Macin, iPadin ja iPhoneen. Ei erillistä Pro-tasoa, ei tilausta, ei sovelluksen sisäisiä ostoksia.",
+  "f14_t": "Päällä / pois päältä",
+  "f14_d": "Yksi master-kytke sulkee Findbarin yhdellä napautuksella ilman poistamista. Sopii täydellisesti Macin jakamiseen tai työpaukkuun.",
+  "f15_t": "Mobiilille optimoitu",
+  "f15_d": "iPhone: muokkaaja siirtyy yhden sormen käyttöön sovitettuun syventymisasetteluun. Turvallisuusalueita kunnioittavat, koko sivustan peittävät ohjeet, 44 pisteen napautuskohteet.",
+  "f16_t": "Uudistuksia päivityksessä",
+  "f16_d": "Tervetuloa-ikkuna ensimmäisellä käynnistyksellä jokaisen päivityksen jälkeen näyttää tarkasti, mitä on muuttunut. Asetusten rivit merkitsevät uusia ominaisuuksia \"UUSI\"-nimellä."
 }

@@ -50,5 +50,19 @@
   "f_legal": "Legal",
   "f_privacy": "Política de Privacidad",
   "f_connect": "Conectar",
-  "f_copyright": "© 2026 CorvusDevs. Todos los derechos reservados."
+  "f_copyright": "© 2026 CorvusDevs. Todos los derechos reservados.",
+  "f10_t": "Búsqueda en tiempo real de palabras clave",
+  "f10_d": "Una barra de filtros en el editor reduce tu lista mientras escribes. Encuentra cualquiera de tus más de 100 atajos en dos pulsaciones.",
+  "f11_t": "Más de 50 iconos de servicios",
+  "f11_d": "Selector de iconos integrado para servicios populares, o pega cualquier URL para usar los tuyos. Los iconos se sincronizan con tu lista de palabras clave.",
+  "f12_t": "Tres temas",
+  "f12_d": "Auto, Light o Dark. Auto sigue tu sistema. Tu elección se mantiene en todos los lanzamientos y en tus otros dispositivos Apple.",
+  "f13_t": "App universal",
+  "f13_d": "Una sola compra cubre Mac, iPad e iPhone. No hay nivel Pro separado, ni suscripción, ni compras dentro de la aplicación.",
+  "f14_t": "Encendido / apagado instantáneo",
+  "f14_d": "Un interruptor maestro único desactiva la Findbar en un solo toque sin desinstalar. Ideal para compartir un Mac o pausar durante el trabajo.",
+  "f15_t": "Optimizado para dispositivos móviles",
+  "f15_d": "En iPhone, el editor cambia a una disposición de profundidad escalonada diseñada para el uso con un solo pulgar. Hojas que respetan la zona segura, con sangrantes a todo el ancho y objetivos táctiles de 44 pt.",
+  "f16_t": "Novedades en la última actualización",
+  "f16_d": "Una hoja de bienvenida al iniciar la aplicación por primera vez tras cada actualización muestra exactamente qué ha cambiado. Las filas de Ajustes etiquetan las nuevas funciones con una píldora NEW."
 }

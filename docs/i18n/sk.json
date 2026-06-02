@@ -50,5 +50,19 @@
   "f_legal": "Právne",
   "f_privacy": "Politika súkromia",
   "f_connect": "Pripojenie",
-  "f_copyright": "© 2026 CorvusDevs. Všetky práva vyhradené."
+  "f_copyright": "© 2026 CorvusDevs. Všetky práva vyhradené.",
+  "f10_t": "Hľadanie kľúčových slov v živom režime",
+  "f10_d": "Filterová lišta v editorovi zúži váš zoznam pri písaní. Nájdite si jedny z vašich 100+ skratiek v dvoch stlačeniach klávesov.",
+  "f11_t": "50+ ikon služieb",
+  "f11_d": "Vstavaný výber obľúbených favicon pre populárne služby, alebo vložte ľubovoľnú URL adresu pre použitie vlastných ikon. Ikony sa synchronizujú s vašim zoznamom kľúčových slov.",
+  "f12_t": "Tri témy",
+  "f12_d": "Auto, Svetlý alebo Tmavý. Auto sa prispôsobí vášmu systému. Vaša voľba zostane zachovaná pri ďalších spusteniach aj na vašich iných zariadeniach Apple.",
+  "f13_t": "Univerzálna aplikácia",
+  "f13_d": "Jeden nákup pokrýva Mac, iPad a iPhone. Žiadny samostatný Pro plán, žiadne predplatné, žiadne nákupy v aplikácii.",
+  "f14_t": "Okamžitý zapnutie / vypnutie",
+  "f14_d": "Jedna hlavná prepínačka vypne Findbar s jedným dotykom bez odinštalovania. Ideálne na zdieľanie Macu alebo na pauzu počas práce.",
+  "f15_t": "Optimalizovaný pre mobilné zariadenia",
+  "f15_d": "Na iPhone sa editor prepne do rozloženia s postupným prehĺbением, prispôsobeného pre ovládanie jedným palcom. Listy s vedomím bezpečnej zóny, plnostránkové listy, cieľy pre dotyk veľkosti 44 bodov.",
+  "f16_t": "Čo je nové v aktualizácii",
+  "f16_d": "Poštovacie okno pri prvom spustení po každej aktualizácii presne ukazuje, čo sa zmenilo. Riadky nastavení označujú nové funkcie značkou NEW."
 }

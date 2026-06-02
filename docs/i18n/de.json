@@ -50,5 +50,19 @@
   "f_legal": "Rechtlich",
   "f_privacy": "Datenschutzrichtlinie",
   "f_connect": "Verbinden",
-  "f_copyright": "© 2026 CorvusDevs. Alle Rechte vorbehalten."
+  "f_copyright": "© 2026 CorvusDevs. Alle Rechte vorbehalten.",
+  "f10_t": "Live-Suchbegriff",
+  "f10_d": "Eine Filterleiste im Editor schränkt Ihre Liste ein, während Sie tippen. Finden Sie eines Ihrer 100+ Kurzbefehle in zwei Tastendruck.",
+  "f11_t": "50+ Service-Symbole",
+  "f11_d": "Integrierter Favoriten-Symbol-Auswahl für beliebte Dienste oder fügen Sie einfach eine beliebige URL ein, um eigene Symbole zu verwenden. Die Symbole werden mit Ihrer Stichwortliste synchronisiert.",
+  "f12_t": "Drei Themes",
+  "f12_d": "Auto, Hell oder Dunkel. Auto folgt Ihrem System. Ihre Auswahl bleibt über App-Starts und auf Ihren anderen Apple-Geräten bestehen.",
+  "f13_t": "Universelle App",
+  "f13_d": "Ein Kauf deckt Mac, iPad und iPhone ab. Kein separates Pro-Tier, kein Abo, keine In-App-Käufe.",
+  "f14_t": "Sofort ein-/ausschalten",
+  "f14_d": "Ein einziger Master-Schalter deaktiviert die Findbar mit einem Tap, ohne die App zu deinstallieren. Perfekt zum Teilen eines Macs oder zum Pausieren während der Arbeit.",
+  "f15_t": "Für mobile Geräte optimiert",
+  "f15_d": "Auf dem iPhone wechselt der Editor zu einem Drill-down-Layout, das für die Bedienung mit einem Daumen optimiert ist. Die vollflächigen, safe-area-aware-Blätter bieten 44pt-Tap-Ziele.",
+  "f16_t": "Was ist neu in der Aktualisierung",
+  "f16_d": "Ein Begrüßungsbildschirm bei der ersten Start nach jedem Update zeigt genau, was sich geändert hat. Die Zeilen in den Einstellungen kennzeichnen neue Funktionen mit einem \"NEW\"-Pill."
 }

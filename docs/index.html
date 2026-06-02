@@ -1,714 +1,820 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Findbar — Type a keyword in Safari's address bar, jump anywhere</title>
-    <meta name="description" content="Findbar turns Safari's address bar into a power-user launcher: 30 built-in keyword shortcuts, bang chaining, regex keywords, and optional URL rewriting. Native Safari extension for macOS, iOS, and iPadOS.">
-    <link rel="canonical" href="https://corvusdevs.github.io/Findbar-For-Safari/">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://corvusdevs.github.io/Findbar-For-Safari/">
-    <meta property="og:title" content="Findbar — Type a keyword in Safari, jump anywhere">
-    <meta property="og:description" content="Address-bar keyword shortcuts for Safari: g foo for Google, gh user/repo for GitHub, w foo for Wikipedia, and 27 more. Native extension for macOS, iOS, iPadOS.">
-    <meta property="og:image" content="https://corvusdevs.github.io/Findbar-For-Safari/icon.png">
-    <meta property="og:image:width" content="512">
-    <meta property="og:image:height" content="512">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="CorvusDevs">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Findbar for Safari">
-    <meta name="twitter:description" content="Type a keyword in Safari's address bar, jump anywhere. 30 built-in shortcuts + bang chaining + regex + URL rewriting.">
-    <meta name="twitter:image" content="https://corvusdevs.github.io/Findbar-For-Safari/icon.png">
-    <meta name="twitter:image:alt" content="Findbar for Safari app icon">
-    <meta name="robots" content="index, follow">
-    <meta name="keywords" content="safari extension, address bar shortcuts, keyword search, omnibox safari, custom search engines, url rewriting, regex keywords, macos, ios, ipados, findbar">
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Findbar for Safari",
-        "description": "Type a keyword in Safari's address bar to jump anywhere — 30 built-in shortcuts plus bang chaining, regex keywords, and optional URL rewriting.",
-        "operatingSystem": "macOS 14.0+, iOS 17.0+, iPadOS 17.0+",
-        "applicationCategory": "BrowserApplication",
-        "applicationSubCategory": "Productivity",
-        "screenshot": "https://corvusdevs.github.io/Findbar-For-Safari/icon.png",
-        "downloadUrl": "https://apps.apple.com/app/findbar-for-safari/",
-        "offers": { "@type": "Offer", "price": "0.99", "priceCurrency": "USD" },
-        "author": { "@type": "Organization", "name": "CorvusDevs", "url": "https://corvusdevs.github.io" }
-    }
-    </script>
-    <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
-    <style>
-        :root {
-            --bg: #0a0a0c;
-            --surface: #111114;
-            --surface-2: #19191e;
-            --border: #252530;
-            --text: #e8e8ed;
-            --text-secondary: #7c7c84;
-            --accent: #2563eb;
-            --accent-light: #5f8fff;
-            --accent-dim: rgba(37, 99, 235, 0.1);
-            --accent-glow: rgba(37, 99, 235, 0.06);
-        }
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Findbar, Type a keyword in Safari's address bar, jump anywhere</title>
+ <meta name="description" content="Findbar turns Safari's address bar into a power-user launcher: 30 built-in keyword shortcuts, bang chaining, regex keywords, and optional URL rewriting. Native Safari extension for macOS, iOS, and iPadOS.">
+ <link rel="canonical" href="https://corvusdevs.github.io/Findbar-For-Safari/">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://corvusdevs.github.io/Findbar-For-Safari/">
+ <meta property="og:title" content="Findbar, Type a keyword in Safari, jump anywhere">
+ <meta property="og:description" content="Address-bar keyword shortcuts for Safari: g foo for Google, gh user/repo for GitHub, w foo for Wikipedia, and 27 more. Native extension for macOS, iOS, iPadOS.">
+ <meta property="og:image" content="https://corvusdevs.github.io/Findbar-For-Safari/icon.png">
+ <meta property="og:image:width" content="512">
+ <meta property="og:image:height" content="512">
+ <meta property="og:locale" content="en_US">
+ <meta property="og:site_name" content="CorvusDevs">
+ <meta name="twitter:card" content="summary">
+ <meta name="twitter:title" content="Findbar for Safari">
+ <meta name="twitter:description" content="Type a keyword in Safari's address bar, jump anywhere. 30 built-in shortcuts + bang chaining + regex + URL rewriting.">
+ <meta name="twitter:image" content="https://corvusdevs.github.io/Findbar-For-Safari/icon.png">
+ <meta name="twitter:image:alt" content="Findbar for Safari app icon">
+ <meta name="robots" content="index, follow">
+ <meta name="keywords" content="safari extension, address bar shortcuts, keyword search, omnibox safari, custom search engines, url rewriting, regex keywords, macos, ios, ipados, findbar">
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@type": "SoftwareApplication",
+ "name": "Findbar for Safari",
+ "description": "Type a keyword in Safari's address bar to jump anywhere, 30 built-in shortcuts plus bang chaining, regex keywords, and optional URL rewriting.",
+ "operatingSystem": "macOS 14.0+, iOS 17.0+, iPadOS 17.0+",
+ "applicationCategory": "BrowserApplication",
+ "applicationSubCategory": "Productivity",
+ "screenshot": "https://corvusdevs.github.io/Findbar-For-Safari/icon.png",
+ "downloadUrl": "https://apps.apple.com/app/id6773464299",
+ "offers": { "@type": "Offer", "price": "0.99", "priceCurrency": "USD" },
+ "author": { "@type": "Organization", "name": "CorvusDevs", "url": "https://corvusdevs.github.io" }
+ }
+ </script>
+ <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+ <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+ <style>
+ :root {
+ --bg: #0a0a0c;
+ --surface: #111114;
+ --surface-2: #19191e;
+ --border: #252530;
+ --text: #e8e8ed;
+ --text-secondary: #7c7c84;
+ --accent: #2563eb;
+ --accent-light: #5f8fff;
+ --accent-dim: rgba(37, 99, 235, 0.1);
+ --accent-glow: rgba(37, 99, 235, 0.06);
+ }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+ * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+ body {
+ font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+ background: var(--bg);
+ color: var(--text);
+ line-height: 1.6;
+ -webkit-font-smoothing: antialiased;
+ overflow-x: hidden;
+ }
 
-        /* Nav */
-        nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 100;
-            padding: 16px 32px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 10, 12, 0.8);
-            backdrop-filter: saturate(180%) blur(20px);
-            -webkit-backdrop-filter: saturate(180%) blur(20px);
-        }
-        .nav-brand {
-            font-size: 18px; font-weight: 700;
-            color: var(--text); text-decoration: none;
-            letter-spacing: -0.3px;
-            display: flex; align-items: center; gap: 10px;
-        }
-        .nav-brand img { width: 32px; height: 32px; border-radius: 8px; display: block; }
-        .nav-brand span { color: var(--accent); }
-        .nav-links { display: flex; gap: 28px; list-style: none; }
-        .nav-links a {
-            font-size: 14px; color: var(--text-secondary);
-            text-decoration: none; transition: color 0.2s;
-        }
-        .nav-links a:hover { color: var(--text); }
+ /* Nav */
+ nav {
+ position: fixed;
+ top: 0; left: 0; right: 0;
+ z-index: 100;
+ padding: 16px 32px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ background: rgba(10, 10, 12, 0.8);
+ backdrop-filter: saturate(180%) blur(20px);
+ -webkit-backdrop-filter: saturate(180%) blur(20px);
+ }
+ .nav-brand {
+ font-size: 18px; font-weight: 700;
+ color: var(--text); text-decoration: none;
+ letter-spacing: -0.3px;
+ display: flex; align-items: center; gap: 10px;
+ }
+ .nav-brand img { width: 32px; height: 32px; border-radius: 8px; display: block; }
+ .nav-brand span { color: var(--accent); }
+ .nav-links { display: flex; gap: 28px; list-style: none; }
+ .nav-links a {
+ font-size: 14px; color: var(--text-secondary);
+ text-decoration: none; transition: color 0.2s;
+ }
+ .nav-links a:hover { color: var(--text); }
 
-        /* Hero */
-        .hero {
-            text-align: center;
-            padding: 140px 24px 80px;
-            position: relative; overflow: visible;
-        }
-        .hero::before {
-            content: ''; position: absolute;
-            top: -200px; left: 50%; transform: translateX(-50%);
-            width: 1000px; height: 1000px;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.10) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        .hero-icon {
-            width: 120px; height: 120px;
-            border-radius: 28px; margin-bottom: 28px;
-            border: 2px solid var(--border);
-            box-shadow: 0 0 60px 20px rgba(37, 99, 235, 0.22), 0 0 120px 50px rgba(37, 99, 235, 0.08);
-        }
-        .hero h1 {
-            font-size: 64px; font-weight: 800;
-            letter-spacing: -3px; line-height: 1.05;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, var(--accent-light) 100%);
-            -webkit-background-clip: text; background-clip: text;
-            -webkit-text-fill-color: transparent; color: transparent;
-        }
-        .hero .subtitle {
-            font-size: 19px; color: var(--text-secondary);
-            max-width: 620px; margin: 0 auto 40px;
-            font-weight: 400; line-height: 1.6;
-        }
-        .hero-cta {
-            display: inline-flex; align-items: center; gap: 10px;
-            padding: 16px 36px;
-            background: var(--accent);
-            color: #fff; font-size: 16px; font-weight: 600;
-            border-radius: 14px; text-decoration: none;
-            transition: all 0.2s; border: none; cursor: pointer;
-        }
-        .hero-cta:hover {
-            filter: brightness(1.15); transform: translateY(-1px);
-            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.35);
-        }
-        .hero-cta svg { width: 20px; height: 20px; }
-        .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-        .hero-free { display: block; margin-top: 14px; font-size: 14px; color: var(--text-secondary); }
+ /* Hero */
+ .hero {
+ text-align: center;
+ padding: 140px 24px 80px;
+ position: relative; overflow: visible;
+ }
+ .hero::before {
+ content: ''; position: absolute;
+ top: -200px; left: 50%; transform: translateX(-50%);
+ width: 1000px; height: 1000px;
+ background: radial-gradient(circle, rgba(37, 99, 235, 0.10) 0%, transparent 50%);
+ pointer-events: none;
+ }
+ .hero-icon {
+ width: 120px; height: 120px;
+ border-radius: 28px; margin-bottom: 28px;
+ border: 2px solid var(--border);
+ box-shadow: 0 0 60px 20px rgba(37, 99, 235, 0.22), 0 0 120px 50px rgba(37, 99, 235, 0.08);
+ }
+ .hero h1 {
+ font-size: 64px; font-weight: 800;
+ letter-spacing: -3px; line-height: 1.05;
+ margin-bottom: 20px;
+ background: linear-gradient(135deg, #ffffff 0%, var(--accent-light) 100%);
+ -webkit-background-clip: text; background-clip: text;
+ -webkit-text-fill-color: transparent; color: transparent;
+ }
+ .hero .subtitle {
+ font-size: 19px; color: var(--text-secondary);
+ max-width: 620px; margin: 0 auto 40px;
+ font-weight: 400; line-height: 1.6;
+ }
+ .hero-cta {
+ display: inline-flex; align-items: center; gap: 10px;
+ padding: 16px 36px;
+ background: var(--accent);
+ color: #fff; font-size: 16px; font-weight: 600;
+ border-radius: 14px; text-decoration: none;
+ transition: all 0.2s; border: none; cursor: pointer;
+ }
+ .hero-cta:hover {
+ filter: brightness(1.15); transform: translateY(-1px);
+ box-shadow: 0 8px 32px rgba(37, 99, 235, 0.35);
+ }
+ .hero-cta svg { width: 20px; height: 20px; }
+ .hero-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+ .hero-free { display: block; margin-top: 14px; font-size: 14px; color: var(--text-secondary); }
 
-        /* Demo strip showing keyword jumps */
-        .demo-strip {
-            max-width: 720px; margin: 30px auto 0; padding: 0 16px;
-            font-family: 'SF Mono', 'Menlo', monospace;
-            font-size: 14px; color: var(--text-secondary); line-height: 2;
-        }
-        .demo-strip code {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 6px; padding: 2px 8px;
-            color: var(--accent-light); font-size: 13px;
-        }
-        .demo-strip .arrow { color: var(--accent); margin: 0 6px; }
+ /* Demo strip showing keyword jumps */
+ .demo-strip {
+ max-width: 720px; margin: 30px auto 0; padding: 0 16px;
+ font-family: 'SF Mono', 'Menlo', monospace;
+ font-size: 14px; color: var(--text-secondary); line-height: 2;
+ }
+ .demo-strip code {
+ background: var(--surface); border: 1px solid var(--border);
+ border-radius: 6px; padding: 2px 8px;
+ color: var(--accent-light); font-size: 13px;
+ }
+ .demo-strip .arrow { color: var(--accent); margin: 0 6px; }
 
-        /* Section helpers */
-        .section-label {
-            font-size: 13px; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1.5px;
-            color: var(--accent); text-align: center;
-            margin-bottom: 12px;
-        }
-        .section-title {
-            font-size: 44px; font-weight: 700;
-            text-align: center; letter-spacing: -1.5px;
-            margin-bottom: 56px; line-height: 1.1;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 40%, #fff 100%);
-            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-        }
+ /* Section helpers */
+ .section-label {
+ font-size: 13px; font-weight: 600;
+ text-transform: uppercase; letter-spacing: 1.5px;
+ color: var(--accent); text-align: center;
+ margin-bottom: 12px;
+ }
+ .section-title {
+ font-size: 44px; font-weight: 700;
+ text-align: center; letter-spacing: -1.5px;
+ margin-bottom: 56px; line-height: 1.1;
+ }
+ .gradient-text {
+ background: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 40%, #fff 100%);
+ -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+ }
 
-        /* Features Grid */
-        .features { max-width: 960px; margin: 0 auto; padding: 40px 24px 100px; }
-        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .feature-card {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 16px; padding: 32px;
-            transition: border-color 0.3s, transform 0.3s;
-        }
-        .feature-card:hover { border-color: rgba(37, 99, 235, 0.35); }
-        .feature-icon {
-            width: 48px; height: 48px; border-radius: 12px;
-            background: var(--accent-dim);
-            display: flex; align-items: center; justify-content: center;
-            margin-bottom: 16px; box-shadow: 0 0 20px rgba(37, 99, 235, 0.18);
-        }
-        .feature-icon svg { width: 24px; height: 24px; }
-        .feature-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
-        .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-        .feature-card code {
-            background: var(--surface-2); border-radius: 4px;
-            padding: 1px 5px; font-size: 12px;
-            color: var(--accent-light);
-        }
+ /* Features Grid */
+ .features { max-width: 960px; margin: 0 auto; padding: 40px 24px 100px; }
+ .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+ .feature-card {
+ background: var(--surface); border: 1px solid var(--border);
+ border-radius: 16px; padding: 32px;
+ transition: border-color 0.3s, transform 0.3s;
+ }
+ .feature-card:hover { border-color: rgba(37, 99, 235, 0.35); }
+ .feature-icon {
+ width: 48px; height: 48px; border-radius: 12px;
+ background: var(--accent-dim);
+ display: flex; align-items: center; justify-content: center;
+ margin-bottom: 16px; box-shadow: 0 0 20px rgba(37, 99, 235, 0.18);
+ }
+ .feature-icon svg { width: 24px; height: 24px; }
+ .feature-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+ .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
 
-        /* How It Works */
-        .how-it-works { max-width: 960px; margin: 0 auto; padding: 60px 24px 100px; }
-        .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
-        .step { text-align: center; }
-        .step-num {
-            width: 48px; height: 48px; border-radius: 14px;
-            background: var(--accent-dim); color: var(--accent);
-            font-size: 20px; font-weight: 700;
-            display: flex; align-items: center; justify-content: center;
-            margin: 0 auto 18px; border: 1px solid rgba(37, 99, 235, 0.25);
-        }
-        .step h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
-        .step p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
-        .step code {
-            background: var(--surface-2); border-radius: 4px;
-            padding: 1px 5px; font-size: 12px; color: var(--accent-light);
-        }
+ /* Secondary features list (single column, icon + title + desc).
+  * Sits below the 9-card grid as a denser presentation of the
+  * remaining feature inventory; less visual weight than cards.
+  */
+ .features-list {
+ margin-top: 32px;
+ display: flex;
+ flex-direction: column;
+ gap: 4px;
+ }
+ .feature-row {
+ display: grid;
+ grid-template-columns: 56px 1fr;
+ gap: 18px;
+ align-items: start;
+ padding: 18px 20px;
+ border-radius: 12px;
+ transition: background 0.2s;
+ }
+ .feature-row:hover { background: rgba(255,255,255,0.02); }
+ .feature-row__icon {
+ width: 40px; height: 40px;
+ border-radius: 10px;
+ background: rgba(37, 99, 235, 0.12);
+ display: flex; align-items: center; justify-content: center;
+ box-shadow: 0 0 16px rgba(37, 99, 235, 0.1);
+ }
+ .feature-row__icon svg { width: 20px; height: 20px; }
+ .feature-row__body h3 {
+ font-size: 16px; font-weight: 600; margin: 0 0 4px;
+ }
+ .feature-row__body p {
+ font-size: 14px; color: var(--text-secondary);
+ line-height: 1.55; margin: 0;
+ }
+ @media (max-width: 600px) {
+ .feature-row { padding: 14px 12px; gap: 14px; grid-template-columns: 44px 1fr; }
+ .feature-row__icon { width: 36px; height: 36px; }
+ }
+ .feature-card code {
+ background: var(--surface-2); border-radius: 4px;
+ padding: 1px 5px; font-size: 12px;
+ color: var(--accent-light);
+ }
 
-        /* Why */
-        .why { max-width: 960px; margin: 0 auto; padding: 0 24px 100px; }
-        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .why-card {
-            background: var(--surface); border: 1px solid var(--border);
-            border-radius: 16px; padding: 32px;
-        }
-        .why-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
-        .why-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+ /* How It Works */
+ .how-it-works { max-width: 960px; margin: 0 auto; padding: 60px 24px 100px; }
+ .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 56px; }
+ .step { text-align: center; }
+ .step-num {
+ width: 48px; height: 48px; border-radius: 14px;
+ background: var(--accent-dim); color: var(--accent);
+ font-size: 20px; font-weight: 700;
+ display: flex; align-items: center; justify-content: center;
+ margin: 0 auto 18px; border: 1px solid rgba(37, 99, 235, 0.25);
+ }
+ .step h3 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+ .step p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+ .step code {
+ background: var(--surface-2); border-radius: 4px;
+ padding: 1px 5px; font-size: 12px; color: var(--accent-light);
+ }
 
-        /* Requirements + Footer */
-        .req { text-align: center; padding: 0 24px 60px; font-size: 14px; color: var(--text-secondary); }
-        footer {
-            max-width: 960px; margin: 0 auto;
-            padding: 40px 24px 60px; border-top: 1px solid var(--border);
-        }
-        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
-        .footer-brand .logo { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
-        .footer-brand .logo span { color: var(--accent); }
-        .footer-brand p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
-        .footer-col h4 {
-            font-size: 12px; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1px;
-            color: var(--text-secondary); margin-bottom: 14px;
-        }
-        .footer-col a {
-            display: block; font-size: 14px;
-            color: var(--text); text-decoration: none;
-            margin-bottom: 10px; transition: color 0.2s;
-        }
-        .footer-col a:hover { color: var(--accent); }
-        .footer-bottom {
-            margin-top: 40px; padding-top: 24px;
-            border-top: 1px solid var(--border);
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .footer-bottom p { font-size: 12px; color: var(--text-secondary); }
-        .footer-socials { display: flex; gap: 16px; }
-        .footer-socials a { color: var(--text-secondary); transition: color 0.2s; }
-        .footer-socials a:hover { color: var(--text); }
-        .footer-socials svg { width: 18px; height: 18px; }
+ /* Why */
+ .why { max-width: 960px; margin: 0 auto; padding: 0 24px 100px; }
+ .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+ .why-card {
+ background: var(--surface); border: 1px solid var(--border);
+ border-radius: 16px; padding: 32px;
+ }
+ .why-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
+ .why-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
 
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0; transform: translateY(30px);
-            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .fade-in.visible { opacity: 1; transform: translateY(0); }
+ /* Requirements + Footer */
+ .req { text-align: center; padding: 0 24px 60px; font-size: 14px; color: var(--text-secondary); }
+ footer {
+ max-width: 960px; margin: 0 auto;
+ padding: 40px 24px 60px; border-top: 1px solid var(--border);
+ }
+ .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; }
+ .footer-brand .logo { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+ .footer-brand .logo span { color: var(--accent); }
+ .footer-brand p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+ .footer-col h4 {
+ font-size: 12px; font-weight: 600;
+ text-transform: uppercase; letter-spacing: 1px;
+ color: var(--text-secondary); margin-bottom: 14px;
+ }
+ .footer-col a {
+ display: block; font-size: 14px;
+ color: var(--text); text-decoration: none;
+ margin-bottom: 10px; transition: color 0.2s;
+ }
+ .footer-col a:hover { color: var(--accent); }
+ .footer-bottom {
+ margin-top: 40px; padding-top: 24px;
+ border-top: 1px solid var(--border);
+ display: flex; justify-content: space-between; align-items: center;
+ }
+ .footer-bottom p { font-size: 12px; color: var(--text-secondary); }
+ .footer-socials { display: flex; gap: 16px; }
+ .footer-socials a { color: var(--text-secondary); transition: color 0.2s; }
+ .footer-socials a:hover { color: var(--text); }
+ .footer-socials svg { width: 18px; height: 18px; }
 
-        /* Responsive */
-        @media (max-width: 900px) {
-            .features-grid, .why-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 40px; letter-spacing: -2px; }
-            .hero .subtitle { font-size: 16px; }
-            .hero { padding-top: 120px; }
-            .section-title { font-size: 30px; }
-            .features-grid, .steps, .why-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-            .footer-bottom { flex-direction: column; gap: 12px; }
-            nav { padding: 14px 16px; }
-            .nav-links { gap: 16px; }
-            .demo-strip { font-size: 12px; }
-        }
+ /* Scroll animations */
+ .fade-in {
+ opacity: 0; transform: translateY(30px);
+ transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+ }
+ .fade-in.visible { opacity: 1; transform: translateY(0); }
 
-        /* Language picker — docs page */
-        .lang-wrap {
-            position: relative; margin-left: 16px; flex-shrink: 0;
-            display: inline-flex; align-items: center; gap: 6px;
-        }
-        .lang-btn {
-            background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
-            padding: 6px 28px 6px 12px; color: var(--text); font-size: 13px; cursor: pointer;
-            white-space: nowrap;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%237c7c84' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat; background-position: right 10px center;
-        }
-        .lang-menu {
-            display: none; position: absolute; top: calc(100% + 6px); right: 0; z-index: 300;
-            background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
-            padding: 6px 0; min-width: 180px; max-height: 420px; overflow-y: auto;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-        }
-        .lang-menu.open { display: block; }
-        .lang-menu button {
-            display: block; width: 100%; padding: 8px 16px; background: none; border: none;
-            color: var(--text); font-size: 13px; cursor: pointer; text-align: left; white-space: nowrap;
-        }
-        .lang-menu button:hover { background: rgba(255,255,255,0.08); }
-        .lang-menu button.active { color: var(--accent); }
-        /* Flag + label rows: align flag and text on a single baseline. */
-        .lang-menu button {
-            display: flex; align-items: center; gap: 10px;
-        }
-        .lang-flag {
-            width: 18px; height: 13px; flex-shrink: 0;
-            border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
-            object-fit: cover;
-        }
-        /* Globe icon for the "Default" row + button (when auto active).
-           Globe — not 文A — because the outer 文A glyph already conveys
-           "language picker"; the inner icon here represents "auto-detect
-           by region", which is a geographic concept, not linguistic. */
-        .lang-auto-glyph {
-            width: 18px; height: 13px; flex-shrink: 0; display: inline-flex;
-            align-items: center; justify-content: center;
-            color: var(--text-secondary, #999);
-        }
-        .lang-auto-glyph svg { display: block; width: 14px; height: 14px; }
-        .lang-btn {
-            display: inline-flex; align-items: center; gap: 8px;
-        }
-        .lang-btn .lang-flag, .lang-btn .lang-auto-glyph { margin: 0; }
+ /* Responsive */
+ @media (max-width: 900px) {
+ .features-grid, .why-grid { grid-template-columns: repeat(2, 1fr); }
+ }
+ @media (max-width: 600px) {
+ .hero h1 { font-size: 40px; letter-spacing: -2px; }
+ .hero .subtitle { font-size: 16px; }
+ .hero { padding-top: 120px; }
+ .section-title { font-size: 30px; }
+ .features-grid, .steps, .why-grid { grid-template-columns: 1fr; }
+ .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+ .footer-bottom { flex-direction: column; gap: 12px; }
+ nav { padding: 14px 16px; }
+ .nav-links { gap: 16px; }
+ .demo-strip { font-size: 12px; }
+ }
 
-        /* 文A language glyph (replaces globe) */
-        .lang-glyph {
-            display: inline-flex; align-items: center; justify-content: center;
-            color: var(--text-secondary, #999); pointer-events: none;
-        }
-        .lang-glyph svg { display: block; width: 22px; height: 22px; }
+ /* Language picker, docs page */
+ .lang-wrap {
+ position: relative; margin-left: 16px; flex-shrink: 0;
+ display: inline-flex; align-items: center; gap: 6px;
+ }
+ .lang-btn {
+ background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+ padding: 6px 28px 6px 12px; color: var(--text); font-size: 13px; cursor: pointer;
+ white-space: nowrap;
+ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%237c7c84' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
+ background-repeat: no-repeat; background-position: right 10px center;
+ }
+ .lang-menu {
+ display: none; position: absolute; top: calc(100% + 6px); right: 0; z-index: 300;
+ background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+ padding: 6px 0; min-width: 180px; max-height: 420px; overflow-y: auto;
+ box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+ }
+ .lang-menu.open { display: block; }
+ .lang-menu button {
+ display: block; width: 100%; padding: 8px 16px; background: none; border: none;
+ color: var(--text); font-size: 13px; cursor: pointer; text-align: left; white-space: nowrap;
+ }
+ .lang-menu button:hover { background: rgba(255,255,255,0.08); }
+ .lang-menu button.active { color: var(--accent); }
+ /* Flag + label rows: align flag and text on a single baseline. */
+ .lang-menu button {
+ display: flex; align-items: center; gap: 10px;
+ }
+ .lang-flag {
+ width: 18px; height: 13px; flex-shrink: 0;
+ border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+ object-fit: cover;
+ }
+ /* Globe icon for the "Default" row + button (when auto active).
+ Globe, not 文A, because the outer 文A glyph already conveys
+ "language picker"; the inner icon here represents "auto-detect
+ by region", which is a geographic concept, not linguistic. */
+ .lang-auto-glyph {
+ width: 18px; height: 13px; flex-shrink: 0; display: inline-flex;
+ align-items: center; justify-content: center;
+ color: var(--text-secondary, #999);
+ }
+ .lang-auto-glyph svg { display: block; width: 14px; height: 14px; }
+ .lang-btn {
+ display: inline-flex; align-items: center; gap: 8px;
+ }
+ .lang-btn .lang-flag, .lang-btn .lang-auto-glyph { margin: 0; }
 
-    </style>
+ /* 文A language glyph (replaces globe) */
+ .lang-glyph {
+ display: inline-flex; align-items: center; justify-content: center;
+ color: var(--text-secondary, #999); pointer-events: none;
+ }
+ .lang-glyph svg { display: block; width: 22px; height: 22px; }
+
+ </style>
 </head>
 <body>
 
-    <!-- Nav -->
-    <nav>
-        <a href="https://corvusdevs.github.io" class="nav-brand">
-            <img src="https://avatars.githubusercontent.com/u/25494090?v=4" alt="CorvusDevs">
-            Corvus<span>Devs</span>
-        </a>
-        <div style="display:flex;align-items:center;">
-            <ul class="nav-links">
-                <li><a href="#features" data-i18n="nav_features">Features</a></li>
-                <li><a href="#how" data-i18n="nav_how">How it works</a></li>
-                <li><a href="mailto:corvusdevs@outlook.com" data-i18n="nav_contact">Contact</a></li>
-            </ul>
-            <div class="lang-wrap" id="langWrap">
-                <span class="lang-glyph" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Language" style="vertical-align:middle;"><text x="7" y="17" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif" font-size="14" font-weight="600" fill="currentColor" text-anchor="middle">文</text><text x="17" y="17" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" fill="currentColor" text-anchor="middle">A</text></svg></span><button class="lang-btn" id="langBtn"><!-- populated by JS --></button>
-                <div class="lang-menu" id="langMenu"><!-- populated by JS --></div>
-            </div>
-        </div>
-    </nav>
+ <!-- Nav -->
+ <nav>
+ <a href="https://corvusdevs.github.io" class="nav-brand">
+ <img src="https://avatars.githubusercontent.com/u/25494090?v=4" alt="CorvusDevs">
+ Corvus<span>Devs</span>
+ </a>
+ <div style="display:flex;align-items:center;">
+ <ul class="nav-links">
+ <li><a href="#features" data-i18n="nav_features">Features</a></li>
+ <li><a href="#how" data-i18n="nav_how">How it works</a></li>
+ <li><a href="mailto:corvusdevs@outlook.com" data-i18n="nav_contact">Contact</a></li>
+ </ul>
+ <div class="lang-wrap" id="langWrap">
+ <span class="lang-glyph" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Language" style="vertical-align:middle;"><text x="7" y="17" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', sans-serif" font-size="14" font-weight="600" fill="currentColor" text-anchor="middle">文</text><text x="17" y="17" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700" fill="currentColor" text-anchor="middle">A</text></svg></span><button class="lang-btn" id="langBtn"><!-- populated by JS --></button>
+ <div class="lang-menu" id="langMenu"><!-- populated by JS --></div>
+ </div>
+ </div>
+ </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        <img src="icon.png" alt="Findbar" class="hero-icon">
-        <h1>Findbar<br>for Safari</h1>
-        <p class="subtitle" data-i18n="hero_sub">Type a keyword in Safari's address bar, jump anywhere. Thirty built-in shortcuts, bang chaining, regex keywords, and optional URL rewriting — all editable, all on-device. A native Safari extension for macOS, iOS, and iPadOS.</p>
-        <div class="hero-buttons">
-            <a href="https://apps.apple.com/app/findbar-for-safari/" class="hero-cta">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-                <span data-i18n="hero_cta">Get it on the App Store</span>
-            </a>
-        </div>
-        <span class="hero-free" data-i18n="hero_meta">$0.99 &middot; macOS 14.0+ &middot; iOS / iPadOS 17.0+</span>
-        <div class="demo-strip">
-            <code>g</code> swiftui<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_google">Google search</span><br>
-            <code>w</code> ada lovelace<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_wikipedia">Wikipedia</span><br>
-            <code>gh</code> apple/swift<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_github">GitHub repo</span><br>
-            <code>!g</code> ios <code>!w</code> macintosh<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_two_tabs">two tabs at once</span>
-        </div>
-    </section>
+ <!-- Hero -->
+ <section class="hero">
+ <img src="icon.png" alt="Findbar" class="hero-icon">
+ <h1>Findbar<br>for Safari</h1>
+ <p class="subtitle" data-i18n="hero_sub">Type a keyword in Safari's address bar, jump anywhere. Thirty built-in shortcuts, bang chaining, regex keywords, and optional URL rewriting, all editable, all on-device. A native Safari extension for macOS, iOS, and iPadOS.</p>
+ <div class="hero-buttons">
+ <a href="https://apps.apple.com/app/id6773464299" class="hero-cta">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+ <span data-i18n="hero_cta">Get it on the App Store</span>
+ </a>
+ </div>
+ <span class="hero-free" data-i18n="hero_meta">$0.99 &middot; macOS 14.0+ &middot; iOS / iPadOS 17.0+</span>
+ <div class="demo-strip">
+ <code>g</code> swiftui<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_google">Google search</span><br>
+ <code>w</code> ada lovelace<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_wikipedia">Wikipedia</span><br>
+ <code>gh</code> apple/swift<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_github">GitHub repo</span><br>
+ <code>!g</code> ios <code>!w</code> macintosh<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_two_tabs">two tabs at once</span>
+ </div>
+ </section>
 
-    <!-- Features -->
-    <section class="features" id="features">
-        <div class="section-label fade-in" data-i18n="sec_features">Features</div>
-        <h2 class="section-title gradient-text fade-in" data-i18n="sec_features_title">Your address bar, supercharged</h2>
+ <!-- Features -->
+ <section class="features" id="features">
+ <div class="section-label fade-in" data-i18n="sec_features">Features</div>
+ <h2 class="section-title gradient-text fade-in" data-i18n="sec_features_title">Your address bar, supercharged</h2>
 
-        <div class="features-grid">
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-                </div>
-                <h3 data-i18n="f1_t">30 built-in keywords</h3>
-                <p data-i18n="f1_d"><code>g</code>, <code>d</code>, <code>b</code> for search; <code>w</code>, <code>mdn</code>, <code>ad</code> for references; <code>gh</code>, <code>so</code> for code; <code>y</code>, <code>spo</code>, <code>n</code> for media; <code>npm</code>, <code>cargo</code>, <code>pip</code>, <code>brew</code> for package managers, and more.</p>
-            </div>
+ <div class="features-grid">
+ <div class="feature-card fade-in">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+ </div>
+ <h3 data-i18n="f1_t">30 built-in keywords</h3>
+ <p data-i18n="f1_d"><code>g</code>, <code>d</code>, <code>b</code> for search; <code>w</code>, <code>mdn</code>, <code>ad</code> for references; <code>gh</code>, <code>so</code> for code; <code>y</code>, <code>spo</code>, <code>n</code> for media; <code>npm</code>, <code>cargo</code>, <code>pip</code>, <code>brew</code> for package managers, and more.</p>
+ </div>
 
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-                </div>
-                <h3 data-i18n="f2_t">Edit every keyword</h3>
-                <p data-i18n="f2_d">Change the trigger, URL template, default URL, or aliases. Add your own. Soft-delete with a 20-entry trash bin for recovery.</p>
-            </div>
+ <div class="feature-card fade-in">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+ </div>
+ <h3 data-i18n="f2_t">Edit every keyword</h3>
+ <p data-i18n="f2_d">Change the trigger, URL template, default URL, or aliases. Add your own. Soft-delete with a 20-entry trash bin for recovery.</p>
+ </div>
 
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                </div>
-                <h3 data-i18n="f3_t">Bang chaining</h3>
-                <p data-i18n="f3_d">Type <code>!g foo !w bar</code> to open Google in the current tab and Wikipedia in a new one. Configurable separator.</p>
-            </div>
+ <div class="feature-card fade-in">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+ </div>
+ <h3 data-i18n="f3_t">Bang chaining</h3>
+ <p data-i18n="f3_d">Type <code>!g foo !w bar</code> to open Google in the current tab and Wikipedia in a new one. Configurable separator.</p>
+ </div>
 
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                </div>
-                <h3 data-i18n="f4_t">Regex keywords</h3>
-                <p data-i18n="f4_d">Pattern-matched shortcuts like <code>gh/(\S+)/(\S+)</code> &rarr; <code>github.com/$1/$2</code> for issue, PR, and repo navigation in one keystroke.</p>
-            </div>
+ <div class="feature-card fade-in">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+ </div>
+ <h3 data-i18n="f4_t">Regex keywords</h3>
+ <p data-i18n="f4_d">Pattern-matched shortcuts like <code>gh/(\S+)/(\S+)</code> &rarr; <code>github.com/$1/$2</code> for issue, PR, and repo navigation in one keystroke.</p>
+ </div>
 
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-                </div>
-                <h3 data-i18n="f5_t">URL rewriting</h3>
-                <p data-i18n="f5_d">Curated rules to redirect Twitter &rarr; Nitter, Reddit &rarr; old.reddit, YouTube &rarr; Piped, and other privacy-friendly frontends. All toggleable, all editable.</p>
-            </div>
+ <div class="feature-card fade-in">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+ </div>
+ <h3 data-i18n="f5_t">URL rewriting</h3>
+ <p data-i18n="f5_d">Curated rules to redirect Twitter &rarr; Nitter, Reddit &rarr; old.reddit, YouTube &rarr; Piped, and other privacy-friendly frontends. All toggleable, all editable.</p>
+ </div>
 
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                </div>
-                <h3 data-i18n="f6_t">Live validation</h3>
-                <p data-i18n="f6_d">As you type, friendly errors appear inline: missing URL protocol, invalid regex, capture-group mismatches, conflicting triggers.</p>
-            </div>
+ <div class="feature-card fade-in">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+ </div>
+ <h3 data-i18n="f6_t">Live validation</h3>
+ <p data-i18n="f6_d">As you type, friendly errors appear inline: missing URL protocol, invalid regex, capture-group mismatches, conflicting triggers.</p>
+ </div>
 
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" aria-hidden="true"><text x="0" y="14" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#2563eb">&#x6587;</text><text x="11" y="22" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#2563eb">A</text></svg>
-                </div>
-                <h3 data-i18n="f7_t">33 languages</h3>
-                <p data-i18n="f7_d">Built-in language picker with flag icons and native names. Defaults to your system locale; switch anytime from the top-right of the settings page.</p>
-            </div>
+ <div class="feature-card fade-in">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" aria-hidden="true"><text x="0" y="14" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#2563eb">&#x6587;</text><text x="11" y="22" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#2563eb">A</text></svg>
+ </div>
+ <h3 data-i18n="f7_t">33 languages</h3>
+ <p data-i18n="f7_d">Built-in language picker with flag icons and native names. Defaults to your system locale; switch anytime from the top-right of the settings page.</p>
+ </div>
 
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                </div>
-                <h3 data-i18n="f8_t">Zero-flash redirects</h3>
-                <p data-i18n="f8_d">Built-in keywords compile to Safari's declarativeNetRequest rules &mdash; no visible flash before the redirect fires. The fastest possible path.</p>
-            </div>
+ <div class="feature-card fade-in">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+ </div>
+ <h3 data-i18n="f8_t">Zero-flash redirects</h3>
+ <p data-i18n="f8_d">Built-in keywords compile to Safari's declarativeNetRequest rules, no visible flash before the redirect fires. The fastest possible path.</p>
+ </div>
 
-            <div class="feature-card fade-in">
-                <div class="feature-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                </div>
-                <h3 data-i18n="f9_t">Privacy first</h3>
-                <p data-i18n="f9_d">No accounts, no cloud sync, no analytics. Your keyword list lives entirely on your device. Findbar collects zero data.</p>
-            </div>
-        </div>
-    </section>
+ <div class="feature-card fade-in">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+ </div>
+ <h3 data-i18n="f9_t">Privacy first</h3>
+ <p data-i18n="f9_d">No accounts, no cloud sync, no analytics. Your keyword list lives entirely on your device. Findbar collects zero data.</p>
+ </div>
+ </div>
 
-    <!-- How it works -->
-    <section class="how-it-works" id="how">
-        <div class="section-label fade-in" data-i18n="sec_how">How it works</div>
-        <h2 class="section-title gradient-text fade-in" data-i18n="sec_how_title">Three steps to a faster address bar</h2>
+ <div class="features-list">
+ <div class="feature-row fade-in">
+ <div class="feature-row__icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+ </div>
+ <div class="feature-row__body">
+ <h3 data-i18n="f10_t">Live keyword search</h3>
+ <p data-i18n="f10_d">A filter bar in the editor narrows your list as you type. Find any of your 100+ shortcuts in two keystrokes.</p>
+ </div>
+ </div>
+ <div class="feature-row fade-in">
+ <div class="feature-row__icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+ </div>
+ <div class="feature-row__body">
+ <h3 data-i18n="f11_t">50+ service icons</h3>
+ <p data-i18n="f11_d">Built-in favicon picker for popular services, or paste any URL to use your own. Icons sync with your keyword list.</p>
+ </div>
+ </div>
+ <div class="feature-row fade-in">
+ <div class="feature-row__icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+ </div>
+ <div class="feature-row__body">
+ <h3 data-i18n="f12_t">Three themes</h3>
+ <p data-i18n="f12_d">Auto, Light, or Dark. Auto follows your system. Your choice persists across launches and your other Apple devices.</p>
+ </div>
+ </div>
+ <div class="feature-row fade-in">
+ <div class="feature-row__icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+ </div>
+ <div class="feature-row__body">
+ <h3 data-i18n="f13_t">Universal app</h3>
+ <p data-i18n="f13_d">One purchase covers Mac, iPad, and iPhone. No separate Pro tier, no subscription, no in-app purchases.</p>
+ </div>
+ </div>
+ <div class="feature-row fade-in">
+ <div class="feature-row__icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="16" cy="12" r="3"/></svg>
+ </div>
+ <div class="feature-row__body">
+ <h3 data-i18n="f14_t">Instant on / off</h3>
+ <p data-i18n="f14_d">A single master toggle disables Findbar in one tap without uninstalling. Perfect for sharing a Mac or pausing during work.</p>
+ </div>
+ </div>
+ <div class="feature-row fade-in">
+ <div class="feature-row__icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+ </div>
+ <div class="feature-row__body">
+ <h3 data-i18n="f15_t">Mobile-tuned</h3>
+ <p data-i18n="f15_d">On iPhone, the editor switches to a drill-down layout sized for one-thumb use. Safe-area aware, full-bleed sheets, 44pt tap targets.</p>
+ </div>
+ </div>
+ <div class="feature-row fade-in">
+ <div class="feature-row__icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
+ </div>
+ <div class="feature-row__body">
+ <h3 data-i18n="f16_t">What's New on update</h3>
+ <p data-i18n="f16_d">A welcome sheet on first launch after every update shows exactly what changed. Settings rows tag new features with a NEW pill.</p>
+ </div>
+ </div>
+ </div>
+ </section>
 
-        <div class="steps">
-            <div class="step">
-                <div class="step-num">1</div>
-                <h3 data-i18n="s1_t">Install from the App Store</h3>
-                <p data-i18n="s1_d">Download Findbar from the App Store. One purchase covers Mac, iPhone, and iPad via Family Sharing.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">2</div>
-                <h3 data-i18n="s2_t">Enable in Safari</h3>
-                <p data-i18n="s2_d">Open Safari Settings &rarr; Extensions &rarr; enable Findbar. Grant the permissions it asks for.</p>
-            </div>
-            <div class="step">
-                <div class="step-num">3</div>
-                <h3 data-i18n="s3_t">Type a keyword</h3>
-                <p data-i18n="s3_d">In Safari's address bar, type <code>g</code> followed by your search and press Enter. That's it. Edit and add keywords in the settings page anytime.</p>
-            </div>
-        </div>
-    </section>
+ <!-- How it works -->
+ <section class="how-it-works" id="how">
+ <div class="section-label fade-in" data-i18n="sec_how">How it works</div>
+ <h2 class="section-title gradient-text fade-in" data-i18n="sec_how_title">Three steps to a faster address bar</h2>
 
-    <!-- Why -->
-    <section class="why">
-        <div class="section-label fade-in" data-i18n="sec_why">Why Findbar</div>
-        <h2 class="section-title gradient-text fade-in" data-i18n="sec_why_title">Built specifically for Safari</h2>
+ <div class="steps">
+ <div class="step">
+ <div class="step-num">1</div>
+ <h3 data-i18n="s1_t">Install from the App Store</h3>
+ <p data-i18n="s1_d">Download Findbar from the App Store. One purchase covers Mac, iPhone, and iPad via Family Sharing.</p>
+ </div>
+ <div class="step">
+ <div class="step-num">2</div>
+ <h3 data-i18n="s2_t">Enable in Safari</h3>
+ <p data-i18n="s2_d">Open Safari Settings &rarr; Extensions &rarr; enable Findbar. Grant the permissions it asks for.</p>
+ </div>
+ <div class="step">
+ <div class="step-num">3</div>
+ <h3 data-i18n="s3_t">Type a keyword</h3>
+ <p data-i18n="s3_d">In Safari's address bar, type <code>g</code> followed by your search and press Enter. That's it. Edit and add keywords in the settings page anytime.</p>
+ </div>
+ </div>
+ </section>
 
-        <div class="why-grid">
-            <div class="why-card">
-                <h3 data-i18n="w1_t">Not a Chrome port</h3>
-                <p data-i18n="w1_d">Findbar uses Safari's native APIs (declarativeNetRequest, webNavigation, storage). Built ground-up for Safari, not a polyfill of Chrome's omnibox API which Safari doesn't have.</p>
-            </div>
-            <div class="why-card">
-                <h3 data-i18n="w2_t">Zero data collection</h3>
-                <p data-i18n="w2_d">No accounts. No telemetry. No cloud. Your keyword list, rewrite rules, and preferences live entirely on your device. Findbar never phones home.</p>
-            </div>
-            <div class="why-card">
-                <h3 data-i18n="w3_t">Fully localized</h3>
-                <p data-i18n="w3_d">Translated into 32 non-English locales (Spanish, Japanese, Arabic, German, French, and many more) &mdash; switchable in-app, independent of your system language.</p>
-            </div>
-        </div>
-    </section>
+ <!-- Why -->
+ <section class="why">
+ <div class="section-label fade-in" data-i18n="sec_why">Why Findbar</div>
+ <h2 class="section-title gradient-text fade-in" data-i18n="sec_why_title">Built specifically for Safari</h2>
 
-    <p class="req" data-i18n="req">Requires macOS 14.0 (Sonoma) or later, or iOS / iPadOS 17.0 or later. Works with Safari 17+.</p>
+ <div class="why-grid">
+ <div class="why-card">
+ <h3 data-i18n="w1_t">Not a Chrome port</h3>
+ <p data-i18n="w1_d">Findbar uses Safari's native APIs (declarativeNetRequest, webNavigation, storage). Built ground-up for Safari, not a polyfill of Chrome's omnibox API which Safari doesn't have.</p>
+ </div>
+ <div class="why-card">
+ <h3 data-i18n="w2_t">Zero data collection</h3>
+ <p data-i18n="w2_d">No accounts. No telemetry. No cloud. Your keyword list, rewrite rules, and preferences live entirely on your device. Findbar never phones home.</p>
+ </div>
+ <div class="why-card">
+ <h3 data-i18n="w3_t">Fully localized</h3>
+ <p data-i18n="w3_d">Translated into 32 non-English locales (Spanish, Japanese, Arabic, German, French, and many more), switchable in-app, independent of your system language.</p>
+ </div>
+ </div>
+ </section>
 
-    <footer>
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <div class="logo"><img src="icon.png" alt="" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:6px;">Find<span>bar</span></div>
-                <p data-i18n="f_brand">Indie software studio.<br>Building focused, privacy-first tools for Apple platforms.</p>
-            </div>
-            <div class="footer-col">
-                <h4 data-i18n="f_legal">Legal</h4>
-                <a href="privacy.html" data-i18n="f_privacy">Privacy Policy</a>
-            </div>
-            <div class="footer-col">
-                <h4 data-i18n="f_connect">Connect</h4>
-                <a href="mailto:corvusdevs@outlook.com">corvusdevs@outlook.com</a>
-                <a href="https://github.com/CorvusDevs/Findbar-For-Safari">GitHub</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p data-i18n="f_copyright">&copy; 2026 CorvusDevs. All rights reserved.</p>
-            <div class="footer-socials">
-                <a href="https://github.com/CorvusDevs" aria-label="GitHub">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
-            </div>
-        </div>
-    </footer>
+ <p class="req" data-i18n="req">Requires macOS 14.0 (Sonoma) or later, or iOS / iPadOS 17.0 or later. Works with Safari 17+.</p>
 
-    <!-- T = {<lang>: {<key>: <text>}} — generated by scripts/translate-docs.py -->
-    <script src="translations.js"></script>
-    <script>
-    /* Scroll fade-in animations */
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+ <footer>
+ <div class="footer-grid">
+ <div class="footer-brand">
+ <div class="logo"><img src="icon.png" alt="" style="width:22px;height:22px;border-radius:5px;vertical-align:middle;margin-right:6px;">Find<span>bar</span></div>
+ <p data-i18n="f_brand">Indie software studio.<br>Building focused, privacy-first tools for Apple platforms.</p>
+ </div>
+ <div class="footer-col">
+ <h4 data-i18n="f_legal">Legal</h4>
+ <a href="privacy.html" data-i18n="f_privacy">Privacy Policy</a>
+ </div>
+ <div class="footer-col">
+ <h4 data-i18n="f_connect">Connect</h4>
+ <a href="mailto:corvusdevs@outlook.com">corvusdevs@outlook.com</a>
+ <a href="https://github.com/CorvusDevs/Findbar-For-Safari">GitHub</a>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <p data-i18n="f_copyright">&copy; 2026 CorvusDevs. All rights reserved.</p>
+ <div class="footer-socials">
+ <a href="https://github.com/CorvusDevs" aria-label="GitHub">
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+ </a>
+ </div>
+ </div>
+ </footer>
 
-    /* Language picker + i18n. The T object is loaded from translations.js
-       above. We persist the user's choice in localStorage so it survives
-       reloads, and detect their default from <html lang>, navigator.language,
-       or the ?lang= query string (in priority order). */
-    (function () {
-        if (typeof T !== 'object' || !T.en) return;  // translations.js not loaded — degrade gracefully
-        const LS_KEY = 'findbar_docs_lang';
+ <!-- T = {<lang>: {<key>: <text>}}, generated by scripts/translate-docs.py -->
+ <script src="translations.js"></script>
+ <script>
+ /* Scroll fade-in animations */
+ const observer = new IntersectionObserver((entries) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ entry.target.classList.add('visible');
+ observer.unobserve(entry.target);
+ }
+ });
+ }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // [code, endonym (native name), iso2 country for flag asset].
-        // `auto` is the first entry — picks via navigator.language.
-        const LANGS = [
-            { code: 'auto',    native: 'Default',                flag: null },
-            { code: 'en',      native: 'English',                flag: 'us' },
-            { code: 'ar',      native: 'العربية',           flag: 'sa' },
-            { code: 'cs',      native: 'Čeština',                  flag: 'cz' },
-            { code: 'da',      native: 'Dansk',                  flag: 'dk' },
-            { code: 'de',      native: 'Deutsch',                flag: 'de' },
-            { code: 'el',      native: 'Ελληνικά',     flag: 'gr' },
-            { code: 'es',      native: 'Español',                flag: 'es' },
-            { code: 'es-MX',   native: 'Español (México)',       flag: 'mx' },
-            { code: 'fi',      native: 'Suomi',                  flag: 'fi' },
-            { code: 'fr',      native: 'Français',               flag: 'fr' },
-            { code: 'he',      native: 'עברית',                  flag: 'il' },
-            { code: 'hi',      native: 'हिन्दी',                     flag: 'in' },
-            { code: 'hu',      native: 'Magyar',                 flag: 'hu' },
-            { code: 'id',      native: 'Bahasa Indonesia',       flag: 'id' },
-            { code: 'it',      native: 'Italiano',               flag: 'it' },
-            { code: 'ja',      native: '日本語',                   flag: 'jp' },
-            { code: 'ko',      native: '한국어',                    flag: 'kr' },
-            { code: 'ms',      native: 'Bahasa Melayu',          flag: 'my' },
-            { code: 'nb',      native: 'Norsk bokmål',           flag: 'no' },
-            { code: 'nl',      native: 'Nederlands',             flag: 'nl' },
-            { code: 'pl',      native: 'Polski',                 flag: 'pl' },
-            { code: 'pt-BR',   native: 'Português (Brasil)',     flag: 'br' },
-            { code: 'pt-PT',   native: 'Português (Portugal)',   flag: 'pt' },
-            { code: 'ro',      native: 'Română',                 flag: 'ro' },
-            { code: 'ru',      native: 'Русский',                flag: 'ru' },
-            { code: 'sk',      native: 'Slovenčina',             flag: 'sk' },
-            { code: 'sv',      native: 'Svenska',                flag: 'se' },
-            { code: 'th',      native: 'ไทย',                     flag: 'th' },
-            { code: 'tr',      native: 'Türkçe',                 flag: 'tr' },
-            { code: 'uk',      native: 'Українська',             flag: 'ua' },
-            { code: 'vi',      native: 'Tiếng Việt',             flag: 'vn' },
-            { code: 'zh-Hans', native: '简体中文',                 flag: 'cn' },
-            { code: 'zh-Hant', native: '繁體中文',                 flag: 'tw' },
-        ];
+ /* Language picker + i18n. The T object is loaded from translations.js
+ above. We persist the user's choice in localStorage so it survives
+ reloads, and detect their default from <html lang>, navigator.language,
+ or the ?lang= query string (in priority order). */
+ (function () {
+ if (typeof T !== 'object' || !T.en) return; // translations.js not loaded, degrade gracefully
+ const LS_KEY = 'findbar_docs_lang';
 
-        function detectNavLang() {
-            const navLang = (navigator.language || 'en');
-            if (T[navLang]) return navLang;
-            const base = navLang.split('-')[0];
-            if (T[base]) return base;
-            return 'en';
-        }
+ // [code, endonym (native name), iso2 country for flag asset].
+ // `auto` is the first entry, picks via navigator.language.
+ const LANGS = [
+ { code: 'auto', native: 'Default', flag: null },
+ { code: 'en', native: 'English', flag: 'us' },
+ { code: 'ar', native: 'العربية', flag: 'sa' },
+ { code: 'cs', native: 'Čeština', flag: 'cz' },
+ { code: 'da', native: 'Dansk', flag: 'dk' },
+ { code: 'de', native: 'Deutsch', flag: 'de' },
+ { code: 'el', native: 'Ελληνικά', flag: 'gr' },
+ { code: 'es', native: 'Español', flag: 'es' },
+ { code: 'es-MX', native: 'Español (México)', flag: 'mx' },
+ { code: 'fi', native: 'Suomi', flag: 'fi' },
+ { code: 'fr', native: 'Français', flag: 'fr' },
+ { code: 'he', native: 'עברית', flag: 'il' },
+ { code: 'hi', native: 'हिन्दी', flag: 'in' },
+ { code: 'hu', native: 'Magyar', flag: 'hu' },
+ { code: 'id', native: 'Bahasa Indonesia', flag: 'id' },
+ { code: 'it', native: 'Italiano', flag: 'it' },
+ { code: 'ja', native: '日本語', flag: 'jp' },
+ { code: 'ko', native: '한국어', flag: 'kr' },
+ { code: 'ms', native: 'Bahasa Melayu', flag: 'my' },
+ { code: 'nb', native: 'Norsk bokmål', flag: 'no' },
+ { code: 'nl', native: 'Nederlands', flag: 'nl' },
+ { code: 'pl', native: 'Polski', flag: 'pl' },
+ { code: 'pt-BR', native: 'Português (Brasil)', flag: 'br' },
+ { code: 'pt-PT', native: 'Português (Portugal)', flag: 'pt' },
+ { code: 'ro', native: 'Română', flag: 'ro' },
+ { code: 'ru', native: 'Русский', flag: 'ru' },
+ { code: 'sk', native: 'Slovenčina', flag: 'sk' },
+ { code: 'sv', native: 'Svenska', flag: 'se' },
+ { code: 'th', native: 'ไทย', flag: 'th' },
+ { code: 'tr', native: 'Türkçe', flag: 'tr' },
+ { code: 'uk', native: 'Українська', flag: 'ua' },
+ { code: 'vi', native: 'Tiếng Việt', flag: 'vn' },
+ { code: 'zh-Hans', native: '简体中文', flag: 'cn' },
+ { code: 'zh-Hant', native: '繁體中文', flag: 'tw' },
+ ];
 
-        // Returns the effective lang code to render in. 'auto' resolves
-        // to navigator.language → en fallback.
-        function effectiveLang(selection) {
-            if (!selection || selection === 'auto') return detectNavLang();
-            return T[selection] ? selection : 'en';
-        }
+ function detectNavLang() {
+ const navLang = (navigator.language || 'en');
+ if (T[navLang]) return navLang;
+ const base = navLang.split('-')[0];
+ if (T[base]) return base;
+ return 'en';
+ }
 
-        function pickInitialSelection() {
-            const url = new URL(location.href);
-            const fromQuery = url.searchParams.get('lang');
-            if (fromQuery && (fromQuery === 'auto' || T[fromQuery])) return fromQuery;
-            const stored = localStorage.getItem(LS_KEY);
-            if (stored && (stored === 'auto' || T[stored])) return stored;
-            return 'auto';
-        }
+ // Returns the effective lang code to render in. 'auto' resolves
+ // to navigator.language → en fallback.
+ function effectiveLang(selection) {
+ if (!selection || selection === 'auto') return detectNavLang();
+ return T[selection] ? selection : 'en';
+ }
 
-        // Build a row (flag-or-glyph + label) into a container element.
-        function renderChip(container, lang) {
-            container.innerHTML = '';
-            if (lang.code === 'auto') {
-                const g = document.createElement('span');
-                g.className = 'lang-auto-glyph';
-                g.setAttribute('aria-hidden', 'true');
-                // Globe — represents "auto-detect by region", distinct
-                // from the outer 文A which conveys "language picker".
-                g.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
-                container.appendChild(g);
-            } else {
-                const img = document.createElement('img');
-                img.className = 'lang-flag';
-                img.src = `flags/${lang.flag}.svg`;
-                img.width = 18; img.height = 13;
-                img.alt = '';
-                container.appendChild(img);
-            }
-            const span = document.createElement('span');
-            span.className = 'lang-name';
-            span.textContent = lang.native;
-            container.appendChild(span);
-        }
+ function pickInitialSelection() {
+ const url = new URL(location.href);
+ const fromQuery = url.searchParams.get('lang');
+ if (fromQuery && (fromQuery === 'auto' || T[fromQuery])) return fromQuery;
+ const stored = localStorage.getItem(LS_KEY);
+ if (stored && (stored === 'auto' || T[stored])) return stored;
+ return 'auto';
+ }
 
-        function applyLang(selection) {
-            const lang = effectiveLang(selection);
-            const dict = T[lang] || T.en;
-            for (const el of document.querySelectorAll('[data-i18n]')) {
-                const key = el.dataset.i18n;
-                if (dict[key]) el.innerHTML = dict[key];
-            }
-            const baseLang = lang.split('_')[0].split('-')[0];
-            document.documentElement.lang = baseLang;
-            const RTL = new Set(['ar', 'he', 'fa', 'ur', 'yi']);
-            document.documentElement.dir = RTL.has(baseLang) ? 'rtl' : 'ltr';
+ // Build a row (flag-or-glyph + label) into a container element.
+ function renderChip(container, lang) {
+ container.innerHTML = '';
+ if (lang.code === 'auto') {
+ const g = document.createElement('span');
+ g.className = 'lang-auto-glyph';
+ g.setAttribute('aria-hidden', 'true');
+ // Globe, represents "auto-detect by region", distinct
+ // from the outer 文A which conveys "language picker".
+ g.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>';
+ container.appendChild(g);
+ } else {
+ const img = document.createElement('img');
+ img.className = 'lang-flag';
+ img.src = `flags/${lang.flag}.svg`;
+ img.width = 18; img.height = 13;
+ img.alt = '';
+ container.appendChild(img);
+ }
+ const span = document.createElement('span');
+ span.className = 'lang-name';
+ span.textContent = lang.native;
+ container.appendChild(span);
+ }
 
-            const btn = document.getElementById('langBtn');
-            const menu = document.getElementById('langMenu');
-            // Trigger button reflects the SELECTION (auto vs explicit),
-            // not the resolved language — so user sees "Default" when
-            // they're letting the page auto-detect.
-            const selEntry = LANGS.find(l => l.code === selection) || LANGS[0];
-            if (btn) renderChip(btn, selEntry);
-            if (menu) {
-                for (const b of menu.querySelectorAll('button[data-lang]')) {
-                    b.classList.toggle('active', b.dataset.lang === selection);
-                }
-            }
-        }
+ function applyLang(selection) {
+ const lang = effectiveLang(selection);
+ const dict = T[lang] || T.en;
+ for (const el of document.querySelectorAll('[data-i18n]')) {
+ const key = el.dataset.i18n;
+ if (dict[key]) el.innerHTML = dict[key];
+ }
+ const baseLang = lang.split('_')[0].split('-')[0];
+ document.documentElement.lang = baseLang;
+ const RTL = new Set(['ar', 'he', 'fa', 'ur', 'yi']);
+ document.documentElement.dir = RTL.has(baseLang) ? 'rtl' : 'ltr';
 
-        // Build menu rows from the LANGS table.
-        function buildMenu() {
-            const menu = document.getElementById('langMenu');
-            if (!menu) return;
-            menu.innerHTML = '';
-            for (const lang of LANGS) {
-                const b = document.createElement('button');
-                b.dataset.lang = lang.code;
-                renderChip(b, lang);
-                menu.appendChild(b);
-            }
-        }
+ const btn = document.getElementById('langBtn');
+ const menu = document.getElementById('langMenu');
+ // Trigger button reflects the SELECTION (auto vs explicit),
+ // not the resolved language, so user sees "Default" when
+ // they're letting the page auto-detect.
+ const selEntry = LANGS.find(l => l.code === selection) || LANGS[0];
+ if (btn) renderChip(btn, selEntry);
+ if (menu) {
+ for (const b of menu.querySelectorAll('button[data-lang]')) {
+ b.classList.toggle('active', b.dataset.lang === selection);
+ }
+ }
+ }
 
-        buildMenu();
-        const initial = pickInitialSelection();
-        applyLang(initial);
+ // Build menu rows from the LANGS table.
+ function buildMenu() {
+ const menu = document.getElementById('langMenu');
+ if (!menu) return;
+ menu.innerHTML = '';
+ for (const lang of LANGS) {
+ const b = document.createElement('button');
+ b.dataset.lang = lang.code;
+ renderChip(b, lang);
+ menu.appendChild(b);
+ }
+ }
 
-        const wrap = document.getElementById('langWrap');
-        const btn  = document.getElementById('langBtn');
-        const menu = document.getElementById('langMenu');
-        if (btn && menu && wrap) {
-            btn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                menu.classList.toggle('open');
-            });
-            document.addEventListener('click', (e) => {
-                if (!wrap.contains(e.target)) menu.classList.remove('open');
-            });
-            menu.addEventListener('click', (e) => {
-                const b = e.target.closest('button[data-lang]');
-                if (!b) return;
-                const selection = b.dataset.lang;
-                if (selection === 'auto') {
-                    // Clear the override so the next visit also auto-detects.
-                    localStorage.removeItem(LS_KEY);
-                } else {
-                    localStorage.setItem(LS_KEY, selection);
-                }
-                applyLang(selection);
-                menu.classList.remove('open');
-            });
-        }
-    })();
-    </script>
+ buildMenu();
+ const initial = pickInitialSelection();
+ applyLang(initial);
+
+ const wrap = document.getElementById('langWrap');
+ const btn = document.getElementById('langBtn');
+ const menu = document.getElementById('langMenu');
+ if (btn && menu && wrap) {
+ btn.addEventListener('click', (e) => {
+ e.stopPropagation();
+ menu.classList.toggle('open');
+ });
+ document.addEventListener('click', (e) => {
+ if (!wrap.contains(e.target)) menu.classList.remove('open');
+ });
+ menu.addEventListener('click', (e) => {
+ const b = e.target.closest('button[data-lang]');
+ if (!b) return;
+ const selection = b.dataset.lang;
+ if (selection === 'auto') {
+ // Clear the override so the next visit also auto-detects.
+ localStorage.removeItem(LS_KEY);
+ } else {
+ localStorage.setItem(LS_KEY, selection);
+ }
+ applyLang(selection);
+ menu.classList.remove('open');
+ });
+ }
+ })();
+ </script>
 </body>
 </html>
