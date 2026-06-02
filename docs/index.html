@@ -828,9 +828,12 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
 
  function detectNavLang() {
  const navLang = (navigator.language || 'en');
- if (T[navLang]) return navLang;
+ // Match against the PICKER's BCP-47 codes (es-MX, pt-BR, zh-Hans, …),
+ // not the storage codes — applyLang normalizes downstream.
+ const PICKER_CODES = LANGS.map(l => l.code).filter(c => c !== 'auto');
+ if (PICKER_CODES.includes(navLang)) return navLang;
  const base = navLang.split('-')[0];
- if (T[base]) return base;
+ if (PICKER_CODES.includes(base)) return base;
  return 'en';
  }
 
@@ -875,9 +878,19 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  container.appendChild(span);
  }
 
+ // BCP-47 (picker codes) → web-ext (translations.js keys). The picker uses
+ // 'es-MX', 'pt-BR', 'zh-Hans', 'zh-Hant' (standard); translations.js stores
+ // 'es_MX', 'pt_BR', 'zh_CN', 'zh_TW' (web-ext). Without this normalization,
+ // T['es-MX'] is undefined and the page silently falls back to English.
+ function toStorageLang(lang) {
+ const map = { 'es-MX': 'es_MX', 'pt-BR': 'pt_BR', 'pt-PT': 'pt_PT',
+                'zh-Hans': 'zh_CN', 'zh-Hant': 'zh_TW' };
+ return map[lang] || lang;
+ }
+
  function applyLang(selection) {
  const lang = effectiveLang(selection);
- const dict = T[lang] || T.en;
+ const dict = T[toStorageLang(lang)] || T.en;
  for (const el of document.querySelectorAll('[data-i18n]')) {
  const key = el.dataset.i18n;
  if (dict[key]) el.innerHTML = dict[key];
