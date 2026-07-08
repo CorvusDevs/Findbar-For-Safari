@@ -109,6 +109,20 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <link rel="icon" type="image/png" sizes="32x32" href="../../icon.png">
  <link rel="apple-touch-icon" sizes="180x180" href="../../icon.png">
  <style>
+        /* ac-no-horizontal-scroll v1 */
+        html, body {
+            overflow-x: clip;
+            max-width: 100%;
+        }
+        img, video, iframe {
+            max-width: 100%;
+            height: auto;
+        }
+        pre, table {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
  :root {
  --bg: #0a0a0c;
  --surface: #111114;
@@ -550,7 +564,57 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  }
  .corvus-carousel:has(.corvus-carousel__track:empty) { display: none; }
 
- </style>
+ 
+        /* ac-nav-hamburger v1 */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: 1px solid var(--border, rgba(255,255,255,0.12));
+            border-radius: 8px;
+            color: var(--text, #e8e8ed);
+            cursor: pointer;
+            padding: 8px;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-toggle svg { display: block; }
+        .nav-brand { flex-shrink: 0; }
+        @media (max-width: 720px) {
+            .nav-toggle { display: inline-flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: var(--bg, rgba(10,10,12,0.95));
+                border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+                border-bottom: 1px solid var(--border, rgba(255,255,255,0.08));
+                padding: 4px 24px 8px;
+                margin: 0;
+                list-style: none;
+                gap: 0;
+                -webkit-backdrop-filter: saturate(180%) blur(20px);
+                backdrop-filter: saturate(180%) blur(20px);
+            }
+            .nav-links li { width: 100%; }
+            .nav-links li a {
+                display: block;
+                padding: 14px 0;
+                border-top: 1px solid var(--border, rgba(255,255,255,0.08));
+            }
+            .nav-links li:first-child a { border-top: 0; }
+            body.nav-open .nav-links { display: flex; }
+            body.nav-open .nav-toggle { background: var(--surface, rgba(255,255,255,0.06)); }
+        }
+
+        /* ac-footer-mobile v1 */
+        @media (max-width: 720px) {
+            body { min-height: 0; }
+            footer { padding-bottom: 24px; padding-top: 24px; }
+        }
+</style>
 </head>
 <body>
 
@@ -561,7 +625,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  Corvus<span>Devs</span>
  </a>
  <div style="display:flex;align-items:center;">
- <ul class="nav-links">
+ <!-- ac-nav-hamburger v2 --><button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="var o=document.body.classList.toggle('nav-open');this.setAttribute('aria-expanded',o);event.stopPropagation();"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button><script>(function(){document.addEventListener("click",function(e){if(!document.body.classList.contains("nav-open"))return;var n=document.querySelector("nav");if(n&&!n.contains(e.target)){document.body.classList.remove("nav-open");var b=document.querySelector(".nav-toggle");if(b)b.setAttribute("aria-expanded","false");}});})();</script><ul class="nav-links">
  <li><a href="#features" data-i18n="nav_features">Funkcje</a></li>
  <li><a href="#how" data-i18n="nav_how">Jak to działa</a></li>
  <li><a href="mailto:corvusdevs@outlook.com" data-i18n="nav_contact">Kontakt</a></li>
@@ -734,6 +798,24 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <div class="feature-row__body">
  <h3 data-i18n="f16_t">Co nowego w tej aktualizacji</h3>
  <p data-i18n="f16_d">Przy pierwszym uruchomieniu po każdej aktualizacji wyświetlana jest witajna informująca dokładnie o wprowadzonych zmianach. Wiersze ustawień oznaczają nowe funkcje znacznikiem NEW.</p>
+ </div>
+ </div>
+ <div class="feature-row fade-in">
+ <div class="feature-row__icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+ </div>
+ <div class="feature-row__body">
+ <h3 data-i18n="f17_t">Importuj z DuckDuckGo</h3>
+ <p data-i18n="f17_d">Importuj skróty wyszukiwania bezpośrednio z katalogu tysięcy stron DuckDuckGo.</p>
+ </div>
+ </div>
+ <div class="feature-row fade-in">
+ <div class="feature-row__icon">
+ <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+ </div>
+ <div class="feature-row__body">
+ <h3 data-i18n="f18_t">Sklepy według regionu</h3>
+ <p data-i18n="f18_d">Twoj skrót Amazon automatycznie otwiera sklep w Twoim kraju.</p>
  </div>
  </div>
  </div>

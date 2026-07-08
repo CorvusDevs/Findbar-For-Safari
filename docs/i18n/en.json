@@ -175,6 +175,10 @@
     "text": "A welcome sheet on first launch after every update shows exactly what changed. Settings rows tag new features with a NEW pill.",
     "context": "description"
   },
+  "f17_t": "Import from DuckDuckGo",
+  "f17_d": "Import search shortcuts straight from DuckDuckGo's catalog of thousands of sites.",
+  "f18_t": "Region-aware stores",
+  "f18_d": "Your Amazon shortcut opens your country's store automatically.",
   "sec_how": {
     "text": "How it works",
     "context": "label"

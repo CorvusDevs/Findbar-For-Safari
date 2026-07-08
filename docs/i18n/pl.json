@@ -64,5 +64,9 @@
   "f15_t": "Przeznaczony dla urządzeń mobilnych",
   "f15_d": "Na iPhone-editorze przełącza się na układ drill-down dostosowany do obsługi jedną kciukiem. Arkusze uwzględniające bezpieczną strefę, rozchodzące się na całą szerokość, przyciski do dotykowania o rozmiarze 44 pt.",
   "f16_t": "Co nowego w tej aktualizacji",
-  "f16_d": "Przy pierwszym uruchomieniu po każdej aktualizacji wyświetlana jest witajna informująca dokładnie o wprowadzonych zmianach. Wiersze ustawień oznaczają nowe funkcje znacznikiem NEW."
+  "f16_d": "Przy pierwszym uruchomieniu po każdej aktualizacji wyświetlana jest witajna informująca dokładnie o wprowadzonych zmianach. Wiersze ustawień oznaczają nowe funkcje znacznikiem NEW.",
+  "f17_t": "Importuj z DuckDuckGo",
+  "f17_d": "Importuj skróty wyszukiwania bezpośrednio z katalogu tysięcy stron DuckDuckGo.",
+  "f18_t": "Sklepy według regionu",
+  "f18_d": "Twoj skrót Amazon automatycznie otwiera sklep w Twoim kraju."
 }

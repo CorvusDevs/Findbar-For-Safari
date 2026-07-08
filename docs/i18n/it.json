@@ -64,5 +64,9 @@
   "f15_t": "Ottimizzato per dispositivi mobili",
   "f15_d": "Su iPhone, l'editor passa a una disposizione a livelli scalabili ottimizzata per l'uso con un pollice. Fogli che rispettano le aree sicure, a tutto pagina, con aree di tocco da 44 pt.",
   "f16_t": "Cosa è di nuovo nell'aggiornamento",
-  "f16_d": "Una pagina di benvenuto al primo avvio dopo ogni aggiornamento mostra esattamente cosa è cambiato. Le righe delle Impostazioni contrassegnano le nuove funzionalità con un bollino NEW."
+  "f16_d": "Una pagina di benvenuto al primo avvio dopo ogni aggiornamento mostra esattamente cosa è cambiato. Le righe delle Impostazioni contrassegnano le nuove funzionalità con un bollino NEW.",
+  "f17_t": "Importa da DuckDuckGo",
+  "f17_d": "Importa le scorciatoie di ricerca direttamente dal catalogo di migliaia di siti di DuckDuckGo.",
+  "f18_t": "Negozi per regione",
+  "f18_d": "La tua scorciatoia Amazon apre automaticamente lo store del tuo paese."
 }

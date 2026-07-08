@@ -64,5 +64,9 @@
   "f15_t": "Otimizado para dispositivos móveis",
   "f15_d": "No iPhone, o editor alterna para uma disposição de perfuração dimensionada para o uso com um polegar. Folhas com consciência da área segura, de borda a borda, e alvos de toque de 44 pt.",
   "f16_t": "O que há de novo na atualização",
-  "f16_d": "Uma folha de boas-vindas no primeiro lançamento após cada atualização mostra exatamente o que mudou. As linhas de definições marcam novas funcionalidades com uma etiqueta NEW."
+  "f16_d": "Uma folha de boas-vindas no primeiro lançamento após cada atualização mostra exatamente o que mudou. As linhas de definições marcam novas funcionalidades com uma etiqueta NEW.",
+  "f17_t": "Importar do DuckDuckGo",
+  "f17_d": "Importe atalhos de pesquisa diretamente do catálogo de milhares de sites do DuckDuckGo.",
+  "f18_t": "Lojas por região",
+  "f18_d": "A sua atalho da Amazon abre automaticamente a loja do seu país."
 }

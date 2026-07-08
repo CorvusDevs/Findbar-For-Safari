@@ -64,5 +64,9 @@
   "f15_t": "Optimeret til mobile enheder",
   "f15_d": "På iPhone skifter redaktøren til en drill-down-layout, der er dimensioneret til brug med én tommelfinger. Sikkerhedsområde-bevidste, fuld-bleed-sheets, 44 pt-trygtegn.",
   "f16_t": "Nye funktioner i opdateringen",
-  "f16_d": "Et velkomstark ved første start efter hver opdatering viser præcis, hvad der er ændret. Indstillingsrækker markerer nye funktioner med en NEW-pille."
+  "f16_d": "Et velkomstark ved første start efter hver opdatering viser præcis, hvad der er ændret. Indstillingsrækker markerer nye funktioner med en NEW-pille.",
+  "f17_t": "Importer fra DuckDuckGo",
+  "f17_d": "Importer søgegenveje direkte fra DuckDuckGos katalog over tusindvis af sider.",
+  "f18_t": "Regionale butikker",
+  "f18_d": "Din Amazon-genvej åbner automatisk din lands butiks side."
 }

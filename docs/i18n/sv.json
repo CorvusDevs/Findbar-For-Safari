@@ -64,5 +64,9 @@
   "f15_t": "Optimerad för mobila enheter",
   "f15_d": "På iPhone växlar redigeraren till en drill-down-layout anpassad för användning med ett tum. Ark med medvetenhet om säkerhetszoner, fullbleed, och tryckmål på 44 pt.",
   "f16_t": "Nyheter i den senaste uppdateringen",
-  "f16_d": "En välkomstskärm vid första start efter varje uppdatering visar exakt vad som har ändrats. Raderna i Inställningar markerar nya funktioner med en NEW-pill."
+  "f16_d": "En välkomstskärm vid första start efter varje uppdatering visar exakt vad som har ändrats. Raderna i Inställningar markerar nya funktioner med en NEW-pill.",
+  "f17_t": "Importera från DuckDuckGo",
+  "f17_d": "Importera sökgenvägar direkt från DuckDuckGos katalog över tusentals webbplatser.",
+  "f18_t": "Regionala butiker",
+  "f18_d": "Din Amazon-genväg öppnar automatiskt din lands butik."
 }

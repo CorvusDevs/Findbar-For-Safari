@@ -64,5 +64,9 @@
   "f15_t": "Optimizado para dispositivos móviles",
   "f15_d": "En iPhone, el editor cambia a una disposición de profundidad escalonada diseñada para el uso con un solo pulgar. Hojas con conciencia de la zona segura y a todo ancho, con objetivos de toque de 44 pt.",
   "f16_t": "Novedades en la actualización",
-  "f16_d": "Una hoja de bienvenida al iniciar la aplicación por primera vez tras cada actualización muestra exactamente los cambios realizados. Las filas de Ajustes etiquetan las nuevas funciones con una píldora NUEVA."
+  "f16_d": "Una hoja de bienvenida al iniciar la aplicación por primera vez tras cada actualización muestra exactamente los cambios realizados. Las filas de Ajustes etiquetan las nuevas funciones con una píldora NUEVA.",
+  "f17_t": "Importar desde DuckDuckGo",
+  "f17_d": "Importe atajos de búsqueda directamente del catálogo de miles de sitios de DuckDuckGo.",
+  "f18_t": "Tiendas por región",
+  "f18_d": "Tu atajo de Amazon abre automáticamente la tienda de tu país."
 }

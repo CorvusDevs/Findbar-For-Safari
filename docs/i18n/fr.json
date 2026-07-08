@@ -64,5 +64,9 @@
   "f15_t": "Optimisé pour mobile",
   "f15_d": "Sur iPhone, l'éditeur bascule vers une disposition en cascade dimensionnée pour une utilisation à une seule pouce. Feuilles sensibles aux zones de sécurité, à pleine largeur, et des cibles de toucher de 44 pt.",
   "f16_t": "Nouveautés de la dernière mise à jour",
-  "f16_d": "Une feuille d'accueil lors du premier lancement après chaque mise à jour indique exactement ce qui a changé. Les lignes des paramètres marquent les nouvelles fonctionnalités avec une étiquette NEW."
+  "f16_d": "Une feuille d'accueil lors du premier lancement après chaque mise à jour indique exactement ce qui a changé. Les lignes des paramètres marquent les nouvelles fonctionnalités avec une étiquette NEW.",
+  "f17_t": "Importer depuis DuckDuckGo",
+  "f17_d": "Importez des raccourcis de recherche directement depuis le catalogue de milliers de sites de DuckDuckGo.",
+  "f18_t": "Boutiques selon la région",
+  "f18_d": "Votre raccourci Amazon ouvre automatiquement le magasin de votre pays."
 }

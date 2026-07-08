@@ -64,5 +64,9 @@
   "f15_t": "Mobiilille optimoitu",
   "f15_d": "iPhone: muokkaaja siirtyy yhden sormen käyttöön sovitettuun syventymisasetteluun. Turvallisuusalueita kunnioittavat, koko sivustan peittävät ohjeet, 44 pisteen napautuskohteet.",
   "f16_t": "Uudistuksia päivityksessä",
-  "f16_d": "Tervetuloa-ikkuna ensimmäisellä käynnistyksellä jokaisen päivityksen jälkeen näyttää tarkasti, mitä on muuttunut. Asetusten rivit merkitsevät uusia ominaisuuksia \"UUSI\"-nimellä."
+  "f16_d": "Tervetuloa-ikkuna ensimmäisellä käynnistyksellä jokaisen päivityksen jälkeen näyttää tarkasti, mitä on muuttunut. Asetusten rivit merkitsevät uusia ominaisuuksia \"UUSI\"-nimellä.",
+  "f17_t": "Tuo DuckDuckGo",
+  "f17_d": "Tuo haku-oikotiet suoraan DuckDuckGo:n tuhansien verkkosivustojen kataloogista.",
+  "f18_t": "Alueelliset kaupat",
+  "f18_d": "Amazon-oikotie avaa automaattisesti maasi myymälän."
 }

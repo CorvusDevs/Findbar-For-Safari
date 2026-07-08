@@ -64,5 +64,9 @@
   "f15_t": "Optimizat pentru dispozitive mobile",
   "f15_d": "Pe iPhone, editorul se schimbă într-un așezare de tip drill-down dimensionată pentru utilizarea cu un deget. Foile conștiente de zona sigură, cu margini complete, și ținte de atingere de 44pt.",
   "f16_t": "Ce este nou în actualizare",
-  "f16_d": "O foaie de bun venit la prima lansare după fiecare actualizare arată exact ce s-a schimbat. Rândurile de setări marchează funcțiile noi cu un etichetă NEW."
+  "f16_d": "O foaie de bun venit la prima lansare după fiecare actualizare arată exact ce s-a schimbat. Rândurile de setări marchează funcțiile noi cu un etichetă NEW.",
+  "f17_t": "Importați de la DuckDuckGo.",
+  "f17_d": "Importă scurtături de căutare direct din catalogul DuckDuckGo cu mii de site-uri.",
+  "f18_t": "Magazine în funcție de regiune",
+  "f18_d": "Scurtătura Amazon deschide automat magazinul țării dumneavoastră."
 }

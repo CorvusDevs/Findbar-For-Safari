@@ -64,5 +64,9 @@
   "f15_t": "Optimalizováno pro mobilní zařízení",
   "f15_d": "Na iPhone přepne editor na rozložení s postupným prohlubováním, optimalizované pro ovládání jedním prstem. Využívá bezpečné zóny, plnostránkové listy a tlačítka pro dotyk o velikosti 44 bodů.",
   "f16_t": "Co je nového v aktualizaci",
-  "f16_d": "Při prvním spuštění po každé aktualizaci se zobrazí přivítací obrazovka, která přesně ukazuje, co se změnilo. Řádky nastavení nová funkce označují novým štítkem NEW."
+  "f16_d": "Při prvním spuštění po každé aktualizaci se zobrazí přivítací obrazovka, která přesně ukazuje, co se změnilo. Řádky nastavení nová funkce označují novým štítkem NEW.",
+  "f17_t": "Importovat z DuckDuckGo",
+  "f17_d": "Importujte zkratky pro vyhledávání přímo z katalogu tisíců stránek DuckDuckGo.",
+  "f18_t": "Obchody podle regionu",
+  "f18_d": "Váš zkratka Amazonu automaticky otevře obchod vaší země."
 }

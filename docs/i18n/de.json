@@ -64,5 +64,9 @@
   "f15_t": "Für mobile Geräte optimiert",
   "f15_d": "Auf dem iPhone wechselt der Editor zu einem Drill-down-Layout, das für die Bedienung mit einem Daumen optimiert ist. Die vollflächigen, safe-area-aware-Blätter bieten 44pt-Tap-Ziele.",
   "f16_t": "Was ist neu in der Aktualisierung",
-  "f16_d": "Ein Begrüßungsbildschirm bei der ersten Start nach jedem Update zeigt genau, was sich geändert hat. Die Zeilen in den Einstellungen kennzeichnen neue Funktionen mit einem \"NEW\"-Pill."
+  "f16_d": "Ein Begrüßungsbildschirm bei der ersten Start nach jedem Update zeigt genau, was sich geändert hat. Die Zeilen in den Einstellungen kennzeichnen neue Funktionen mit einem \"NEW\"-Pill.",
+  "f17_t": "Importieren von DuckDuckGo",
+  "f17_d": "Importieren Sie Suchkurzbefehle direkt aus dem Katalog von tausenden Websites von DuckDuckGo.",
+  "f18_t": "Regionale Shops",
+  "f18_d": "Ihr Amazon-Kurzbefehl öffnet automatisch den Ladengeschäft Ihres Landes."
 }

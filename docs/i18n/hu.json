@@ -64,5 +64,9 @@
   "f15_t": "Mobilra optimalizált",
   "f15_d": "Az iPhone-on a szerkesztő egy ujjal könnyen kezelhető, méretezett, mélyített elrendezésbe vált. Biztonsági zónát figyelembe vevő, teljes szélességű lapok, 44 pontos érintési célpontok.",
   "f16_t": "Újítások a frissítésben",
-  "f16_d": "Az első indítás után minden frissítésnél megjelenik egy üdvözlőlap, amely pontosan azt mutatja, mire változott. A Beállítások sorai új funkciókat egy NEW pillal jelölnek."
+  "f16_d": "Az első indítás után minden frissítésnél megjelenik egy üdvözlőlap, amely pontosan azt mutatja, mire változott. A Beállítások sorai új funkciókat egy NEW pillal jelölnek.",
+  "f17_t": "Importálás a DuckDuckGo-ból",
+  "f17_d": "Importálja a gyorsbillentyűket közvetlenül a DuckDuckGo több ezer weboldalát tartalmazó katalógusából.",
+  "f18_t": "Régió szerinti boltok",
+  "f18_d": "Az Amazon gyorsbillentyűje automatikusan megnyitja az Ön országának üzletét."
 }

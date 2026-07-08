@@ -64,5 +64,9 @@
   "f15_t": "Optimert for mobil",
   "f15_d": "På iPhone bytter redigeringsverktøyet til en drill-down-layout som er dimensjonert for bruk med én tommel. Arkene er bevisst på trygge områder, har full sidebredde, og har tryggekryss for berøring på 44 pt.",
   "f16_t": "Nyheter i denne oppdateringen",
-  "f16_d": "Et velkomstark ved første start etter hver oppdatering viser nøyaktig hva som har endret seg. Innstillingsrader merker nye funksjoner med en NEW-pill."
+  "f16_d": "Et velkomstark ved første start etter hver oppdatering viser nøyaktig hva som har endret seg. Innstillingsrader merker nye funksjoner med en NEW-pill.",
+  "f17_t": "Importer fra DuckDuckGo",
+  "f17_d": "Importer søkeveier direkte fra DuckDuckGos katalog over tusenvis av nettsteder.",
+  "f18_t": "Regionale butikker",
+  "f18_d": "Din Amazon-snarvei åpner automatisk butikk for ditt land."
 }

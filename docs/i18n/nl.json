@@ -64,5 +64,9 @@
   "f15_t": "Optimal voor mobiel",
   "f15_d": "Op iPhone schakelt de editor over naar een drill-down-layout, afgestemd op gebruik met één duim. De interface is veiligheidsgebieden bewust, heeft full-bleed-bladen en biedt 44pt-tapdoelen.",
   "f16_t": "Wat is er nieuw in de update",
-  "f16_d": "Een welkomstpagina bij de eerste lancering na elke update toont precies wat er is veranderd. Instellingenregels markeren nieuwe functies met een NEW-pill."
+  "f16_d": "Een welkomstpagina bij de eerste lancering na elke update toont precies wat er is veranderd. Instellingenregels markeren nieuwe functies met een NEW-pill.",
+  "f17_t": "Importeer van DuckDuckGo",
+  "f17_d": "Importeer zoek-snelkoppelingen direct uit het DuckDuckGo-catalogus met duizenden sites.",
+  "f18_t": "Regionale winkels",
+  "f18_d": "Uw Amazon-snelkoppeling opent automatisch de winkel van uw land."
 }

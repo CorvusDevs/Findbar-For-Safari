@@ -64,5 +64,9 @@
   "f15_t": "Mobil için optimize edilmiş",
   "f15_d": "iPhone'da düzenleyici, tek parmak kullanımı için optimize edilmiş, iç içe geçme düzenine geçer. Güvenli alanı algılayan, tam sayfa kaplamalı paneller ve 44pt dokunma hedefleri.",
   "f16_t": "Güncellemede Yeni",
-  "f16_d": "İlk başlatma ve her güncelleden sonra açılan hoş geldin sayfası, tam olarak nelerin değiştiğini gösterir. Ayarlar satırları yeni özellikleri \"NEW\" etiketi ile işaretler."
+  "f16_d": "İlk başlatma ve her güncelleden sonra açılan hoş geldin sayfası, tam olarak nelerin değiştiğini gösterir. Ayarlar satırları yeni özellikleri \"NEW\" etiketi ile işaretler.",
+  "f17_t": "DuckDuckGo'dan İçe Aktar",
+  "f17_d": "DuckDuckGo'nun binlerce site içeren kataloğundan arama kısayollarını doğrudan içe aktarın.",
+  "f18_t": "Bölgeye göre mağazalar",
+  "f18_d": "Amazon kısayolunuz, ülkenizin mağazasını otomatik olarak açar."
 }
