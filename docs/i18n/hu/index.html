@@ -567,7 +567,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  }
  .corvus-carousel:has(.corvus-carousel__track:empty) { display: none; }
 
- 
+
         /* ac-nav-hamburger v1 */
         .nav-toggle {
             display: none;
@@ -621,6 +621,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
 .nav-brand span,.footer-brand .logo > span,.corvus-carousel__card-tagline,.corvus-carousel__card-cta{color:#60a5fa}
 /* accessibility-contrast:end */
 </style>
+<link rel="stylesheet" href="../../landing-refinement.css">
   <link rel="stylesheet" href="../../gallery.css">
 </head>
 <body>
@@ -648,134 +649,113 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <section class="hero">
  <img src="../../icon.png" alt="Findbar" class="hero-icon">
  <h1>Findbar<br>for Safari</h1>
- <p class="subtitle" data-i18n="hero_sub">Adjon meg egy kulcsszót a Safari címsorában, és ugorjon el bárhova. Harminc beépített parancs, több oldal egyidejű megnyitása, regex kulcsszavak és választható URL-átírás, mind szerkeszthető, mind eszközön futtatva. Egy natív Safari bővítmény macOS, iOS és iPadOS számára.</p>
- <div class="hero-buttons">
+ <p class="subtitle" data-i18n="hero_sub">A Safari címsorában írja be a "g" betűt, majd a keresési kifejezést, és nyomja meg az Enter billentyűt. Ez az egész. A kulcsszavakat bármikor szerkesztheti és hozzáadhatja a Beállítások oldalon.</p>
+ <div class="demo-strip">
+ <bdi class="demo-command" dir="ltr"><code>g</code> swiftui</bdi><span class="arrow">&rarr;</span><span data-i18n="demo_arrow_google">Google keresés</span><br>
+ <bdi class="demo-command" dir="ltr"><code>w</code> ada lovelace</bdi><span class="arrow">&rarr;</span><span data-i18n="demo_arrow_wikipedia">Wikipédia</span><br>
+ <bdi class="demo-command" dir="ltr"><code>gh</code> apple/swift</bdi><span class="arrow">&rarr;</span><span data-i18n="demo_arrow_github">GitHub tároló</span><br>
+ <bdi class="demo-command" dir="ltr"><code>!g</code> ios <code>!w</code> macintosh</bdi><span class="arrow">&rarr;</span><span data-i18n="demo_arrow_two_tabs">két fül egyszerre</span>
+ </div>
+<div class="hero-buttons">
  <a href="https://apps.apple.com/app/id6773464299" class="hero-cta" data-product-store>
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
  <span data-i18n="hero_cta">Kapható az App Store-ban</span>
  </a>
  </div>
  <span class="hero-free" data-i18n="hero_meta">macOS 14.0+ · iOS / iPadOS 17.0+</span>
- <div class="demo-strip">
- <code>g</code> swiftui<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_google">Google keresés</span><br>
- <code>w</code> ada lovelace<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_wikipedia">Wikipédia</span><br>
- <code>gh</code> apple/swift<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_github">GitHub tároló</span><br>
- <code>!g</code> ios <code>!w</code> macintosh<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_two_tabs">két fül egyszerre</span>
- </div>
+
  </section>
 
  <!-- Features -->
  <!-- OFFICIAL-GALLERY:START -->
-<section class="official-gallery" aria-labelledby="official-gallery-title"><h2 id="official-gallery-title">Képernyőképek</h2><div class="official-gallery-grid"><figure><a href="../../assets/gallery/mac-1.jpg"><img lang="en" src="../../assets/gallery/mac-1.jpg" alt="Findbar For Safari: Keyword navigation in the Safari address bar (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">Keyword navigation in the Safari address bar</span></figcaption></figure><figure><a href="../../assets/gallery/mac-2.jpg"><img lang="en" src="../../assets/gallery/mac-2.jpg" alt="Findbar For Safari: Editable keywords (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">Editable keywords</span></figcaption></figure><figure><a href="../../assets/gallery/mac-4.jpg"><img lang="en" src="../../assets/gallery/mac-4.jpg" alt="Findbar For Safari: URL rewriting rules (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">URL rewriting rules</span></figcaption></figure><figure><a href="../../assets/gallery/phone-3.jpg"><img lang="en" src="../../assets/gallery/phone-3.jpg" alt="Findbar For Safari: Search engines on iPhone (iPhone)" width="663" height="1440" loading="lazy" decoding="async"></a><figcaption><strong>iPhone</strong><span lang="en">Search engines on iPhone</span></figcaption></figure><figure><a href="../../assets/gallery/pad-5.jpg"><img lang="en" src="../../assets/gallery/pad-5.jpg" alt="Findbar For Safari: Findbar settings on iPad (iPad)" width="1440" height="1079" loading="lazy" decoding="async"></a><figcaption><strong>iPad</strong><span lang="en">Findbar settings on iPad</span></figcaption></figure></div></section>
+<section class="official-gallery" aria-labelledby="official-gallery-title"><h2 id="official-gallery-title">Képernyőképek</h2><div class="official-gallery-lead"><figure><a href="../../assets/gallery/mac-1.jpg"><img lang="en" src="../../assets/gallery/mac-1.jpg" alt="Findbar For Safari: Keyword navigation in the Safari address bar (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">Keyword navigation in the Safari address bar</span></figcaption></figure></div><details class="official-gallery-more"><summary><span data-gallery-more>További képernyőképek</span> <span class="official-gallery-count" aria-hidden="true">(4)</span></summary><div class="official-gallery-grid"><figure><a href="../../assets/gallery/mac-2.jpg"><img lang="en" src="../../assets/gallery/mac-2.jpg" alt="Findbar For Safari: Editable keywords (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">Editable keywords</span></figcaption></figure><figure><a href="../../assets/gallery/mac-4.jpg"><img lang="en" src="../../assets/gallery/mac-4.jpg" alt="Findbar For Safari: URL rewriting rules (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">URL rewriting rules</span></figcaption></figure><figure><a href="../../assets/gallery/phone-3.jpg"><img lang="en" src="../../assets/gallery/phone-3.jpg" alt="Findbar For Safari: Search engines on iPhone (iPhone)" width="663" height="1440" loading="lazy" decoding="async"></a><figcaption><strong>iPhone</strong><span lang="en">Search engines on iPhone</span></figcaption></figure><figure><a href="../../assets/gallery/pad-5.jpg"><img lang="en" src="../../assets/gallery/pad-5.jpg" alt="Findbar For Safari: Findbar settings on iPad (iPad)" width="1440" height="1079" loading="lazy" decoding="async"></a><figcaption><strong>iPad</strong><span lang="en">Findbar settings on iPad</span></figcaption></figure></div></details></section>
 <!-- OFFICIAL-GALLERY:END -->
 <section class="features" id="features">
  <div class="section-label fade-in" data-i18n="sec_features">Funkciók</div>
  <h2 class="section-title gradient-text fade-in" data-i18n="sec_features_title">A címsor, megerősítve</h2>
 
- <div class="features-grid">
- <div class="feature-card fade-in">
+ <div class="features-grid primary-benefits"><div class="feature-card fade-in">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
  </div>
  <h3 data-i18n="f1_t">30 beépített kulcsszó</h3>
  <p data-i18n="f1_d">A g, d, b billentyűkkel keresés, a w, mdn, ad-val hivatkozások, a gh, so-val kód, a y, spo, n-val média, az npm, cargo, pip, brew csomagkezelők és további funkciók érhetők el.</p>
- </div>
-
- <div class="feature-card fade-in">
+ </div><div class="feature-card fade-in">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
  </div>
  <h3 data-i18n="f2_t">Minden kulcsszó szerkesztése</h3>
  <p data-i18n="f2_d">Változtassa az indítót, az URL-sablont, az alapértelmezett URL-t vagy az aliasokat; adjon hozzá sajátakat, vagy lágyan törölje őket egy 20 elemes koszla tartályba a helyreállítás érdekében.</p>
- </div>
-
- <div class="feature-card fade-in">
+ </div><div class="feature-card fade-in">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
  </div>
  <h3 data-i18n="f3_t">Több weboldal megnyitása</h3>
  <p data-i18n="f3_d">A !g foo !w bar parancs megnyitja a Google-t a jelenlegi fülben és a Wikipédiát egy új fülben; a választójele testreszabható.</p>
- </div>
-
- <div class="feature-card fade-in">
+ </div></div><details class="feature-details"><summary><span data-i18n="f4_t">Regex kulcsszavak</span></summary><div class="features-grid"><div class="feature-card ">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
  </div>
  <h3 data-i18n="f4_t">Regex kulcsszavak</h3>
  <p data-i18n="f4_d">A minták alapján párosított gyorsparancsok, például gh/(\S+)/(\S+) → github.com/$1/$2 az issue, PR és repo navigációhoz egyetlen billentyűütéssel.</p>
- </div>
-
- <div class="feature-card fade-in">
+ </div><div class="feature-card ">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
  </div>
  <h3 data-i18n="f5_t">URL átírás</h3>
- <p data-i18n="f5_d">A szöveg fordítása:
-A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányítására szolgáló, személyre szabható és szerkeszthető, magánvédelmet biztosító szabályok gyűjteménye.</p>
- </div>
-
- <div class="feature-card fade-in">
+ <p data-i18n="f5_d">A választható szabályok közösségi felületekre irányítanak át. Elérhetőségük változó; minden szabály szerkeszthető vagy kikapcsolható.</p>
+ </div><div class="feature-card ">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
  </div>
  <h3 data-i18n="f6_t">Élő érvényesítés</h3>
  <p data-i18n="f6_d">A gépelés közben az inline hibajelzések megjelennek: hiányzó URL-protokoll, érvénytelen regex, páratlan fogószorosok, konfliktusos indítók.</p>
- </div>
-
- <div class="feature-card fade-in">
- <div class="feature-icon">
- <svg viewBox="0 0 24 24" aria-hidden="true"><text x="0" y="14" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#2563eb">&#x6587;</text><text x="11" y="22" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#2563eb">A</text></svg>
- </div>
- <h3 data-i18n="f7_t">33 nyelv</h3>
- <p data-i18n="f7_d">Beépített nyelvválasztó zászlókkal és eredeti neveken, alapértelmezetten a rendszer helyiértékre állítva, amely a beállítások oldalának jobb felső sarkában bármikor átállítható.</p>
- </div>
-
- <div class="feature-card fade-in">
+ </div><div class="feature-card ">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
  </div>
  <h3 data-i18n="f8_t">Villanymosó-váltások</h3>
  <p data-i18n="f8_d">A beépített kulcsszavak a Safari nyilatkozatosNetRequest szabályaira fordulnak át, a átirányítás előtt nincs látható villogás, a lehető leggyorsabb út.</p>
+ </div></div><div class="why-card fade-in">
+ <h3 data-i18n="w1_t">Nem Chrome port</h3>
+ <p data-i18n="w1_d">A Findbar a Safari natív API-jait (declarativeNetRequest, webNavigation, storage) használja, kifejezetten a Safari számára épült, nem pedig a Chrome omnibox API-jának egy pótlása, amit a Safari nem támogat.</p>
+ </div></details><details class="feature-details"><summary><span data-i18n="f12_t">Három téma</span></summary><div class="features-grid"><div class="feature-card ">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" aria-hidden="true"><text x="0" y="14" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#2563eb">&#x6587;</text><text x="11" y="22" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#2563eb">A</text></svg>
  </div>
-
- <div class="feature-card fade-in">
+ <h3 data-i18n="f7_t">33 nyelv</h3>
+ <p data-i18n="f7_d">Beépített nyelvválasztó zászlókkal és eredeti neveken, alapértelmezetten a rendszer helyiértékre állítva, amely a beállítások oldalának jobb felső sarkában bármikor átállítható.</p>
+ </div><div class="feature-card ">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
  </div>
  <h3 data-i18n="f9_t">Adatvédelmi első</h3>
  <p data-i18n="f9_d">Nincs fiók, nincs felhőszinkronizálás, nincs elemzés: a kulcsszótárák teljesen az eszközén tárolódnak, a Findbar egyetlen adatot sem gyűjt.</p>
- </div>
- </div>
-
- <div class="features-list">
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
  </div>
  <div class="feature-row__body">
  <h3 data-i18n="f10_t">Élő kulcsszavas keresés</h3>
- <p data-i18n="f10_d">A szűrősáv a szerkesztőben szűkíti a listát, ahogy gépel. Találjon meg bármelyik 100+ gyorsítótárazott parancsát mindössze két billentyűlennyel.</p>
+ <p data-i18n="f10_d">Találd meg saját parancsaidat gépelés közben.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
  </div>
  <div class="feature-row__body">
  <h3 data-i18n="f11_t">50+ szolgáltatási ikon</h3>
- <p data-i18n="f11_d">Beépített ikonválasztó a népszerű szolgáltatásokhoz, vagy másoljon be bármilyen URL-t a saját ikonokhoz. Az ikonok szinkronban tartanak a kulcsszavak listájával.</p>
+ <p data-i18n="f11_d">Válassz szolgáltatásikont vagy saját URL-t. Az ikonok a kulcsszólistával együtt ezen az eszközön tárolódnak.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
  </div>
  <div class="feature-row__body">
  <h3 data-i18n="f12_t">Három téma</h3>
- <p data-i18n="f12_d">Auto, Világos vagy Sötét. Az Auto követi a rendszerét, a választása pedig minden indításnál és a többi Apple eszközén is fennmarad.</p>
+ <p data-i18n="f12_d">Az Auto az eszköz rendszermegjelenését követi. A téma ezen az eszközön tárolódik.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
  </div>
@@ -783,8 +763,7 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  <h3 data-i18n="f13_t">Univerzális alkalmazás</h3>
  <p data-i18n="f13_d">Egy vásárlás fedezeti a Mac, iPad és iPhone számára. Nincs külön Pro szint, nincs előfizetés, nincs alkalmazáson belüli vásárlás.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="16" cy="12" r="3"/></svg>
  </div>
@@ -792,8 +771,7 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  <h3 data-i18n="f14_t">Azonnali be-/kikapcsolás</h3>
  <p data-i18n="f14_d">Egyetlen mesterkapcsolóval egy érintéssel letiltható a Findbar, telepítés nélkül. Ideális egy Mac megosztásához vagy a munka közbeni szüneteltetéshez.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
  </div>
@@ -801,8 +779,7 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  <h3 data-i18n="f15_t">Mobilra optimalizált</h3>
  <p data-i18n="f15_d">Az iPhone-on a szerkesztő egy ujjal könnyen kezelhető, méretezett, mélyített elrendezésbe vált. Biztonsági zónát figyelembe vevő, teljes szélességű lapok, 44 pontos érintési célpontok.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
  </div>
@@ -810,8 +787,7 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  <h3 data-i18n="f16_t">Újítások a frissítésben</h3>
  <p data-i18n="f16_d">Az első indítás után minden frissítésnél megjelenik egy üdvözlőlap, amely pontosan azt mutatja, mire változott. A Beállítások sorai új funkciókat egy NEW pillal jelölnek.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
  </div>
@@ -819,8 +795,7 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  <h3 data-i18n="f17_t">Importálás a DuckDuckGo-ból</h3>
  <p data-i18n="f17_d">Importálja a gyorsbillentyűket közvetlenül a DuckDuckGo több ezer weboldalát tartalmazó katalógusából.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
  </div>
@@ -828,33 +803,31 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  <h3 data-i18n="f18_t">Régió szerinti boltok</h3>
  <p data-i18n="f18_d">Az Amazon gyorsbillentyűje automatikusan megnyitja az Ön országának üzletét.</p>
  </div>
- </div>
- </div>
- </section>
+ </div></div></details></section>
 
  <!-- How it works -->
  <section class="how-it-works" id="how">
- <div class="section-label fade-in" data-i18n="sec_how">Működése</div>
- <h2 class="section-title gradient-text fade-in" data-i18n="sec_how_title">Gyorsabb címsor: 3 lépés</h2>
+ <div class="section-label " data-i18n="sec_how">Működése</div>
+ <details class="installation-details"><summary data-i18n="sec_how_title">Gyorsabb címsor: 3 lépés</summary>
 
  <div class="steps">
- <div class="step fade-in">
+ <div class="step ">
  <div class="step-num">1</div>
  <h3 data-i18n="s1_t">Telepítés az App Store-ból</h3>
- <p data-i18n="s1_d">Töltse le a Findbar alkalmazást az App Store-ból; egy vásárlás a Mac, az iPhone és az iPad számára is érvényes a Családi megosztás révén.</p>
+ <p data-i18n="s1_d">Egy vásárlás fedezeti a Mac, iPad és iPhone számára. Nincs külön Pro szint, nincs előfizetés, nincs alkalmazáson belüli vásárlás.</p>
  </div>
- <div class="step fade-in">
+ <div class="step ">
  <div class="step-num">2</div>
  <h3 data-i18n="s2_t">Engedélyezés a Safari-ban</h3>
  <p data-i18n="s2_d">Nyissa ki a Safari Beállítások → Kiegészítések menüpontot, engedélyezze a Findbar, és adja meg a kért engedélyeket.</p>
  </div>
- <div class="step fade-in">
+ <div class="step ">
  <div class="step-num">3</div>
  <h3 data-i18n="s3_t">Írjon be egy kulcsszót</h3>
  <p data-i18n="s3_d">A Safari címsorában írja be a "g" betűt, majd a keresési kifejezést, és nyomja meg az Enter billentyűt. Ez az egész. A kulcsszavakat bármikor szerkesztheti és hozzáadhatja a Beállítások oldalon.</p>
  </div>
  </div>
- </section>
+ </details></section>
 
  <!-- Why -->
  <section class="why">
@@ -862,10 +835,7 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  <h2 class="section-title gradient-text fade-in" data-i18n="sec_why_title">Safari-ra szabottan</h2>
 
  <div class="why-grid">
- <div class="why-card fade-in">
- <h3 data-i18n="w1_t">Nem Chrome port</h3>
- <p data-i18n="w1_d">A Findbar a Safari natív API-jait (declarativeNetRequest, webNavigation, storage) használja, kifejezetten a Safari számára épült, nem pedig a Chrome omnibox API-jának egy pótlása, amit a Safari nem támogat.</p>
- </div>
+
  <div class="why-card fade-in">
  <h3 data-i18n="w2_t">Adatgyűjtés nélkül</h3>
  <p data-i18n="w2_d">Nincs fiók, nincs telemetria, nincs felhő: a kulcsszótár, az átírási szabályok és az előállítások kizárólag az eszközén tárolódnak; a Findbar soha nem küld adatokat a szerverre.</p>
@@ -880,7 +850,13 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  <p class="req fade-in" data-i18n="req">A funkció a macOS 14.0 (Sonoma) vagy későbbi verziókat, az iOS/iPadOS 17.0 vagy későbbi verziókat, valamint a Safari 17+ böngészőt igényli.</p>
 
  <!-- page-carousel template v2 (2026-05-27), see ~/.corvus-tools/page-carousel/ -->
- <section id="corvus-carousel" class="corvus-carousel" aria-labelledby="corvus-carousel-title" data-current-slug="Findbar-For-Safari">
+ <div role="group" class="closing-purchase" aria-label="App Store"><div class="hero-buttons">
+ <a href="https://apps.apple.com/app/id6773464299" class="hero-cta" data-product-store>
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+ <span data-i18n="hero_cta">Kapható az App Store-ban</span>
+ </a>
+ </div></div>
+<section id="corvus-carousel" class="corvus-carousel" aria-labelledby="corvus-carousel-title" data-current-slug="Findbar-For-Safari">
  <h2 id="corvus-carousel-title" class="corvus-carousel__title" data-i18n="carousel_title">More from CorvusDevs</h2>
  <p class="corvus-carousel__sub" data-i18n="carousel_sub">Privacy-first apps for macOS, iOS, and Safari.</p>
  <div class="corvus-carousel__viewport">
@@ -947,6 +923,8 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  (function () {
  if (typeof T !== 'object' || !T.en) return; // translations.js not loaded, degrade gracefully
  const LS_KEY = 'findbar_docs_lang';
+ const translationsURL = new URL(document.querySelector('script[src$="translations.js"]').getAttribute('src'), location.href);
+ const assetBase = new URL('.', translationsURL);
 
  // [code, endonym (native name), iso2 country for flag asset].
  // `auto` is the first entry, picks via navigator.language.
@@ -987,30 +965,37 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  { code: 'zh-Hant', native: '繁體中文', flag: 'tw' },
  ];
 
- function detectNavLang() {
- const navLang = (navigator.language || 'en');
- // Match against the PICKER's BCP-47 codes (es-MX, pt-BR, zh-Hans, …),
- // not the storage codes — applyLang normalizes downstream.
- const PICKER_CODES = LANGS.map(l => l.code).filter(c => c !== 'auto');
- if (PICKER_CODES.includes(navLang)) return navLang;
- const base = navLang.split('-')[0];
- if (PICKER_CODES.includes(base)) return base;
- return 'en';
+ // Normalize picker, URL and catalog aliases before selecting a dictionary.
+ function normalizeLang(value) {
+ const tag = String(value || '').replace(/_/g, '-').toLowerCase();
+ const aliases = { 'zh-cn': 'zh-Hans', 'zh-tw': 'zh-Hant', 'zh': 'zh-Hans', 'pt': 'pt-PT' };
+ const canonical = aliases[tag] || tag;
+ const entry = LANGS.find(l => l.code.toLowerCase() === canonical.toLowerCase());
+ return entry ? entry.code : null;
  }
 
- // Returns the effective lang code to render in. 'auto' resolves
- // to navigator.language → en fallback.
+ function detectNavLang() {
+ const language = navigator.language || 'en';
+ return normalizeLang(language) || normalizeLang(language.split('-')[0]) || 'en';
+ }
+
  function effectiveLang(selection) {
  if (!selection || selection === 'auto') return detectNavLang();
- return T[selection] ? selection : 'en';
+ const lang = normalizeLang(selection);
+ return lang && T[toStorageLang(lang)] ? lang : 'en';
  }
 
  function pickInitialSelection() {
  const url = new URL(location.href);
- const fromQuery = url.searchParams.get('lang');
- if (fromQuery && (fromQuery === 'auto' || T[fromQuery])) return fromQuery;
- const stored = localStorage.getItem(LS_KEY);
- if (stored && (stored === 'auto' || T[stored])) return stored;
+ const fromQuery = normalizeLang(url.searchParams.get('lang'));
+ if (fromQuery && (fromQuery === 'auto' || T[toStorageLang(fromQuery)])) return fromQuery;
+ // An explicitly localized URL is stable even when another page saved a preference.
+ const path = url.pathname.match(/\/i18n\/([^/]+)(?:\/|$)/);
+ const fromPath = path && normalizeLang(decodeURIComponent(path[1]));
+ if (fromPath && T[toStorageLang(fromPath)]) return fromPath;
+ let stored = null;
+ try { stored = normalizeLang(localStorage.getItem(LS_KEY)); } catch (_) {}
+ if (stored && (stored === 'auto' || T[toStorageLang(stored)])) return stored;
  return 'auto';
  }
 
@@ -1028,7 +1013,7 @@ A Twitter → Nitter, Reddit → old.reddit, YouTube → Piped átirányításá
  } else {
  const img = document.createElement('img');
  img.className = 'lang-flag';
- img.src = `flags/${lang.flag}.svg`;
+ img.src = new URL(`flags/${lang.flag}.svg`, assetBase).href;
  img.width = 18; img.height = 13;
  img.alt = '';
  container.appendChild(img);

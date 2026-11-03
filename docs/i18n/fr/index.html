@@ -567,7 +567,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  }
  .corvus-carousel:has(.corvus-carousel__track:empty) { display: none; }
 
- 
+
         /* ac-nav-hamburger v1 */
         .nav-toggle {
             display: none;
@@ -621,6 +621,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
 .nav-brand span,.footer-brand .logo > span,.corvus-carousel__card-tagline,.corvus-carousel__card-cta{color:#60a5fa}
 /* accessibility-contrast:end */
 </style>
+<link rel="stylesheet" href="../../landing-refinement.css">
   <link rel="stylesheet" href="../../gallery.css">
 </head>
 <body>
@@ -648,133 +649,113 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <section class="hero">
  <img src="../../icon.png" alt="Findbar" class="hero-icon">
  <h1>Findbar<br>for Safari</h1>
- <p class="subtitle" data-i18n="hero_sub">Tapez un mot-clé dans la barre d'adresse de Safari et accédez instantanément à n'importe quel site. Trente raccourcis intégrés vous permettent d'ouvrir plusieurs sites en même temps, avec des mots-clés regex et un réécriture d'URL optionnelle, tous modifiables et tous traités sur l'appareil. Une extension native Safari pour macOS, iOS et iPadOS.</p>
- <div class="hero-buttons">
+ <p class="subtitle" data-i18n="hero_sub">Dans la barre d'adresse de Safari, tapez g suivi de votre recherche, puis appuyez sur Entrée. C'est tout. Modifiez et ajoutez des mots-clés dans la page Réglages à tout moment.</p>
+ <div class="demo-strip">
+ <bdi class="demo-command" dir="ltr"><code>g</code> swiftui</bdi><span class="arrow">&rarr;</span><span data-i18n="demo_arrow_google">Recherche Google</span><br>
+ <bdi class="demo-command" dir="ltr"><code>w</code> ada lovelace</bdi><span class="arrow">&rarr;</span><span data-i18n="demo_arrow_wikipedia">Wikipédia</span><br>
+ <bdi class="demo-command" dir="ltr"><code>gh</code> apple/swift</bdi><span class="arrow">&rarr;</span><span data-i18n="demo_arrow_github">Dépôt GitHub</span><br>
+ <bdi class="demo-command" dir="ltr"><code>!g</code> ios <code>!w</code> macintosh</bdi><span class="arrow">&rarr;</span><span data-i18n="demo_arrow_two_tabs">deux onglets en même temps</span>
+ </div>
+<div class="hero-buttons">
  <a href="https://apps.apple.com/app/id6773464299" class="hero-cta" data-product-store>
  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
  <span data-i18n="hero_cta">L'obtenir sur l'App Store</span>
  </a>
  </div>
  <span class="hero-free" data-i18n="hero_meta">macOS 14.0+ · iOS / iPadOS 17.0+</span>
- <div class="demo-strip">
- <code>g</code> swiftui<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_google">Recherche Google</span><br>
- <code>w</code> ada lovelace<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_wikipedia">Wikipédia</span><br>
- <code>gh</code> apple/swift<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_github">Dépôt GitHub</span><br>
- <code>!g</code> ios <code>!w</code> macintosh<span class="arrow">&rarr;</span><span data-i18n="demo_arrow_two_tabs">deux onglets en même temps</span>
- </div>
+
  </section>
 
  <!-- Features -->
  <!-- OFFICIAL-GALLERY:START -->
-<section class="official-gallery" aria-labelledby="official-gallery-title"><h2 id="official-gallery-title">Captures d’écran</h2><div class="official-gallery-grid"><figure><a href="../../assets/gallery/mac-1.jpg"><img lang="en" src="../../assets/gallery/mac-1.jpg" alt="Findbar For Safari: Keyword navigation in the Safari address bar (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">Keyword navigation in the Safari address bar</span></figcaption></figure><figure><a href="../../assets/gallery/mac-2.jpg"><img lang="en" src="../../assets/gallery/mac-2.jpg" alt="Findbar For Safari: Editable keywords (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">Editable keywords</span></figcaption></figure><figure><a href="../../assets/gallery/mac-4.jpg"><img lang="en" src="../../assets/gallery/mac-4.jpg" alt="Findbar For Safari: URL rewriting rules (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">URL rewriting rules</span></figcaption></figure><figure><a href="../../assets/gallery/phone-3.jpg"><img lang="en" src="../../assets/gallery/phone-3.jpg" alt="Findbar For Safari: Search engines on iPhone (iPhone)" width="663" height="1440" loading="lazy" decoding="async"></a><figcaption><strong>iPhone</strong><span lang="en">Search engines on iPhone</span></figcaption></figure><figure><a href="../../assets/gallery/pad-5.jpg"><img lang="en" src="../../assets/gallery/pad-5.jpg" alt="Findbar For Safari: Findbar settings on iPad (iPad)" width="1440" height="1079" loading="lazy" decoding="async"></a><figcaption><strong>iPad</strong><span lang="en">Findbar settings on iPad</span></figcaption></figure></div></section>
+<section class="official-gallery" aria-labelledby="official-gallery-title"><h2 id="official-gallery-title">Captures d’écran</h2><div class="official-gallery-lead"><figure><a href="../../assets/gallery/mac-1.jpg"><img lang="en" src="../../assets/gallery/mac-1.jpg" alt="Findbar For Safari: Keyword navigation in the Safari address bar (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">Keyword navigation in the Safari address bar</span></figcaption></figure></div><details class="official-gallery-more"><summary><span data-gallery-more>Plus de captures d’écran</span> <span class="official-gallery-count" aria-hidden="true">(4)</span></summary><div class="official-gallery-grid"><figure><a href="../../assets/gallery/mac-2.jpg"><img lang="en" src="../../assets/gallery/mac-2.jpg" alt="Findbar For Safari: Editable keywords (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">Editable keywords</span></figcaption></figure><figure><a href="../../assets/gallery/mac-4.jpg"><img lang="en" src="../../assets/gallery/mac-4.jpg" alt="Findbar For Safari: URL rewriting rules (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">URL rewriting rules</span></figcaption></figure><figure><a href="../../assets/gallery/phone-3.jpg"><img lang="en" src="../../assets/gallery/phone-3.jpg" alt="Findbar For Safari: Search engines on iPhone (iPhone)" width="663" height="1440" loading="lazy" decoding="async"></a><figcaption><strong>iPhone</strong><span lang="en">Search engines on iPhone</span></figcaption></figure><figure><a href="../../assets/gallery/pad-5.jpg"><img lang="en" src="../../assets/gallery/pad-5.jpg" alt="Findbar For Safari: Findbar settings on iPad (iPad)" width="1440" height="1079" loading="lazy" decoding="async"></a><figcaption><strong>iPad</strong><span lang="en">Findbar settings on iPad</span></figcaption></figure></div></details></section>
 <!-- OFFICIAL-GALLERY:END -->
 <section class="features" id="features">
  <div class="section-label fade-in" data-i18n="sec_features">Fonctionnalités</div>
  <h2 class="section-title gradient-text fade-in" data-i18n="sec_features_title">Votre barre d'adresse, surpuissante</h2>
 
- <div class="features-grid">
- <div class="feature-card fade-in">
+ <div class="features-grid primary-benefits"><div class="feature-card fade-in">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
  </div>
  <h3 data-i18n="f1_t">30 mots-clés intégrés</h3>
  <p data-i18n="f1_d">Utilisez g, d ou b pour rechercher ; w, mdn ou ad pour les références ; gh ou so pour le code ; y, spo ou n pour les médias ; npm, cargo, pip ou brew pour les gestionnaires de paquets, et bien d'autres.</p>
- </div>
-
- <div class="feature-card fade-in">
+ </div><div class="feature-card fade-in">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
  </div>
  <h3 data-i18n="f2_t">Modifier tous les mots-clés</h3>
  <p data-i18n="f2_d">Modifiez le déclencheur, le modèle URL, l'URL par défaut ou les alias, ajoutez les vôtres, et supprimez-les temporairement dans la corbeille (20 éléments) pour une récupération ultérieure.</p>
- </div>
-
- <div class="feature-card fade-in">
+ </div><div class="feature-card fade-in">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
  </div>
  <h3 data-i18n="f3_t">Ouvrez plusieurs sites</h3>
  <p data-i18n="f3_d">Tapez !g foo !w bar pour ouvrir Google dans l'onglet actuel et Wikipédia dans un nouvel onglet, avec un séparateur configurable.</p>
- </div>
-
- <div class="feature-card fade-in">
+ </div></div><details class="feature-details"><summary><span data-i18n="f4_t">Mots-clés Regex</span></summary><div class="features-grid"><div class="feature-card ">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
  </div>
  <h3 data-i18n="f4_t">Mots-clés Regex</h3>
  <p data-i18n="f4_d">Les raccourcis correspondant à des modèles, tels que gh/(\S+)/(\S+) → github.com/$1/$2 pour la navigation vers les problèmes, les PR et les dépôts, permettent d'accomplir ces actions en une seule touche.</p>
- </div>
-
- <div class="feature-card fade-in">
+ </div><div class="feature-card ">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
  </div>
  <h3 data-i18n="f5_t">Réécriture URL</h3>
- <p data-i18n="f5_d">Des règles personnalisées pour rediriger Twitter vers Nitter, Reddit vers old.reddit, YouTube vers Piped, et d'autres interfaces respectueuses de la vie privée, toutes activables et modifiables.</p>
- </div>
-
- <div class="feature-card fade-in">
+ <p data-i18n="f5_d">Des règles facultatives redirigent vers des interfaces communautaires. Leur disponibilité varie ; vous pouvez modifier ou désactiver chaque règle.</p>
+ </div><div class="feature-card ">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
  </div>
  <h3 data-i18n="f6_t">Validation en direct</h3>
  <p data-i18n="f6_d">Alors que vous tapez, des erreurs amicales apparaissent en ligne : protocole URL manquant, expression régulière invalide, correspondances de groupes de capture incorrectes, déclencheurs conflictuels.</p>
- </div>
-
- <div class="feature-card fade-in">
- <div class="feature-icon">
- <svg viewBox="0 0 24 24" aria-hidden="true"><text x="0" y="14" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#2563eb">&#x6587;</text><text x="11" y="22" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#2563eb">A</text></svg>
- </div>
- <h3 data-i18n="f7_t">33 langues</h3>
- <p data-i18n="f7_d">Sélecteur de langue intégré avec drapeaux et noms natifs, par défaut sur votre région système, modifiable à tout moment en haut à droite de la page Réglages.</p>
- </div>
-
- <div class="feature-card fade-in">
+ </div><div class="feature-card ">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
  </div>
  <h3 data-i18n="f8_t">Redirections sans flash</h3>
  <p data-i18n="f8_d">Les mots-clés intégrés se compilent en règles declarativeNetRequest de Safari, sans flash visible avant la redirection, offrant le chemin le plus rapide possible.</p>
+ </div></div><div class="why-card fade-in">
+ <h3 data-i18n="w1_t">Pas une version Chrome</h3>
+ <p data-i18n="w1_d">La Findbar utilise les API natives de Safari (declarativeNetRequest, webNavigation, storage) et a été conçue entièrement pour Safari, contrairement aux polyfills de l'API omnibox de Chrome que Safari ne possède pas.</p>
+ </div></details><details class="feature-details"><summary><span data-i18n="f12_t">Trois thèmes</span></summary><div class="features-grid"><div class="feature-card ">
+ <div class="feature-icon">
+ <svg viewBox="0 0 24 24" aria-hidden="true"><text x="0" y="14" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#2563eb">&#x6587;</text><text x="11" y="22" font-family="-apple-system, sans-serif" font-size="12" font-weight="600" fill="#2563eb">A</text></svg>
  </div>
-
- <div class="feature-card fade-in">
+ <h3 data-i18n="f7_t">33 langues</h3>
+ <p data-i18n="f7_d">Sélecteur de langue intégré avec drapeaux et noms natifs, par défaut sur votre région système, modifiable à tout moment en haut à droite de la page Réglages.</p>
+ </div><div class="feature-card ">
  <div class="feature-icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
  </div>
  <h3 data-i18n="f9_t">Vie privée d'abord</h3>
  <p data-i18n="f9_d">Aucun compte, aucune synchronisation cloud, aucune analyse : votre liste de mots-clés réside entièrement sur votre appareil, Findbar ne collecte aucune donnée.</p>
- </div>
- </div>
-
- <div class="features-list">
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
  </div>
  <div class="feature-row__body">
  <h3 data-i18n="f10_t">Recherche de mots-clés en direct</h3>
- <p data-i18n="f10_d">Une barre de filtres dans l'éditeur réduit votre liste au fur et à mesure que vous tapez. Trouvez l'un de vos plus de 100 raccourcis en deux frappes.</p>
+ <p data-i18n="f10_d">Retrouvez vos propres raccourcis à mesure que vous tapez.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
  </div>
  <div class="feature-row__body">
  <h3 data-i18n="f11_t">50+ icônes de services</h3>
- <p data-i18n="f11_d">Sélecteur de favicon intégré pour les services populaires, ou collez n'importe quel URL pour utiliser les vôtres. Les icônes sont synchronisées avec votre liste de mots-clés.</p>
+ <p data-i18n="f11_d">Choisissez une icône de service ou une URL personnalisée. Les icônes sont enregistrées avec vos mots-clés sur cet appareil.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
  </div>
  <div class="feature-row__body">
  <h3 data-i18n="f12_t">Trois thèmes</h3>
- <p data-i18n="f12_d">Auto, Light ou Sombre. Auto suit votre système. Votre choix persiste entre les lancements et sur vos autres appareils Apple.</p>
+ <p data-i18n="f12_d">Auto suit l’apparence du système de cet appareil. Le thème est enregistré sur cet appareil.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
  </div>
@@ -782,8 +763,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <h3 data-i18n="f13_t">Application universelle</h3>
  <p data-i18n="f13_d">Une seule licence couvre Mac, iPad et iPhone. Pas de version Pro, pas d'abonnement, pas d'achats dans l'application.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="5" width="22" height="14" rx="7"/><circle cx="16" cy="12" r="3"/></svg>
  </div>
@@ -791,8 +771,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <h3 data-i18n="f14_t">Mise en marche / arrêt instantané</h3>
  <p data-i18n="f14_d">Un interrupteur principal unique désactive Findbar en un seul clic, sans désinstallation. Idéal pour partager un Mac ou mettre en pause pendant le travail.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
  </div>
@@ -800,8 +779,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <h3 data-i18n="f15_t">Optimisé pour mobile</h3>
  <p data-i18n="f15_d">Sur iPhone, l'éditeur bascule vers une disposition en cascade dimensionnée pour une utilisation à une seule pouce. Feuilles sensibles aux zones de sécurité, à pleine largeur, et des cibles de toucher de 44 pt.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
  </div>
@@ -809,8 +787,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <h3 data-i18n="f16_t">Nouveautés de la dernière mise à jour</h3>
  <p data-i18n="f16_d">Une feuille d'accueil lors du premier lancement après chaque mise à jour indique exactement ce qui a changé. Les lignes des paramètres marquent les nouvelles fonctionnalités avec une étiquette NEW.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
  </div>
@@ -818,8 +795,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <h3 data-i18n="f17_t">Importer depuis DuckDuckGo</h3>
  <p data-i18n="f17_d">Importez des raccourcis de recherche directement depuis le catalogue de milliers de sites de DuckDuckGo.</p>
  </div>
- </div>
- <div class="feature-row fade-in">
+ </div><div class="feature-row ">
  <div class="feature-row__icon">
  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
  </div>
@@ -827,33 +803,31 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <h3 data-i18n="f18_t">Boutiques selon la région</h3>
  <p data-i18n="f18_d">Votre raccourci Amazon ouvre automatiquement le magasin de votre pays.</p>
  </div>
- </div>
- </div>
- </section>
+ </div></div></details></section>
 
  <!-- How it works -->
  <section class="how-it-works" id="how">
- <div class="section-label fade-in" data-i18n="sec_how">Comment ça marche</div>
- <h2 class="section-title gradient-text fade-in" data-i18n="sec_how_title">Trois étapes pour une barre d'adresse plus rapide</h2>
+ <div class="section-label " data-i18n="sec_how">Comment ça marche</div>
+ <details class="installation-details"><summary data-i18n="sec_how_title">Trois étapes pour une barre d&#x27;adresse plus rapide</summary>
 
  <div class="steps">
- <div class="step fade-in">
+ <div class="step ">
  <div class="step-num">1</div>
  <h3 data-i18n="s1_t">Installer depuis l'App Store</h3>
- <p data-i18n="s1_d">Téléchargez Findbar sur l'App Store : un seul achat couvre Mac, iPhone et iPad via le partage familial.</p>
+ <p data-i18n="s1_d">Une seule licence couvre Mac, iPad et iPhone. Pas de version Pro, pas d'abonnement, pas d'achats dans l'application.</p>
  </div>
- <div class="step fade-in">
+ <div class="step ">
  <div class="step-num">2</div>
  <h3 data-i18n="s2_t">Activer dans Safari</h3>
  <p data-i18n="s2_d">Ouvrez Réglages Safari > Extensions, activez Findbar, puis accordez les permissions demandées.</p>
  </div>
- <div class="step fade-in">
+ <div class="step ">
  <div class="step-num">3</div>
  <h3 data-i18n="s3_t">Tapez un mot-clé</h3>
  <p data-i18n="s3_d">Dans la barre d'adresse de Safari, tapez g suivi de votre recherche, puis appuyez sur Entrée. C'est tout. Modifiez et ajoutez des mots-clés dans la page Réglages à tout moment.</p>
  </div>
  </div>
- </section>
+ </details></section>
 
  <!-- Why -->
  <section class="why">
@@ -861,10 +835,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <h2 class="section-title gradient-text fade-in" data-i18n="sec_why_title">Conçu spécifiquement pour Safari</h2>
 
  <div class="why-grid">
- <div class="why-card fade-in">
- <h3 data-i18n="w1_t">Pas une version Chrome</h3>
- <p data-i18n="w1_d">La Findbar utilise les API natives de Safari (declarativeNetRequest, webNavigation, storage) et a été conçue entièrement pour Safari, contrairement aux polyfills de l'API omnibox de Chrome que Safari ne possède pas.</p>
- </div>
+
  <div class="why-card fade-in">
  <h3 data-i18n="w2_t">Aucune collecte de données</h3>
  <p data-i18n="w2_d">Aucun compte, aucune télémétrie, aucun cloud : votre liste de mots-clés, vos règles de réécriture et vos préférences sont stockées entièrement sur votre appareil. Findbar ne communique jamais avec l'extérieur.</p>
@@ -879,7 +850,13 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <p class="req fade-in" data-i18n="req">Requiert macOS 14.0 (Sonoma) ou ultérieur, ou iOS/iPadOS 17.0 ou ultérieur, et fonctionne avec Safari 17+.</p>
 
  <!-- page-carousel template v2 (2026-05-27), see ~/.corvus-tools/page-carousel/ -->
- <section id="corvus-carousel" class="corvus-carousel" aria-labelledby="corvus-carousel-title" data-current-slug="Findbar-For-Safari">
+ <div role="group" class="closing-purchase" aria-label="App Store"><div class="hero-buttons">
+ <a href="https://apps.apple.com/app/id6773464299" class="hero-cta" data-product-store>
+ <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+ <span data-i18n="hero_cta">L'obtenir sur l'App Store</span>
+ </a>
+ </div></div>
+<section id="corvus-carousel" class="corvus-carousel" aria-labelledby="corvus-carousel-title" data-current-slug="Findbar-For-Safari">
  <h2 id="corvus-carousel-title" class="corvus-carousel__title" data-i18n="carousel_title">More from CorvusDevs</h2>
  <p class="corvus-carousel__sub" data-i18n="carousel_sub">Privacy-first apps for macOS, iOS, and Safari.</p>
  <div class="corvus-carousel__viewport">
@@ -946,6 +923,8 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  (function () {
  if (typeof T !== 'object' || !T.en) return; // translations.js not loaded, degrade gracefully
  const LS_KEY = 'findbar_docs_lang';
+ const translationsURL = new URL(document.querySelector('script[src$="translations.js"]').getAttribute('src'), location.href);
+ const assetBase = new URL('.', translationsURL);
 
  // [code, endonym (native name), iso2 country for flag asset].
  // `auto` is the first entry, picks via navigator.language.
@@ -986,30 +965,37 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  { code: 'zh-Hant', native: '繁體中文', flag: 'tw' },
  ];
 
- function detectNavLang() {
- const navLang = (navigator.language || 'en');
- // Match against the PICKER's BCP-47 codes (es-MX, pt-BR, zh-Hans, …),
- // not the storage codes — applyLang normalizes downstream.
- const PICKER_CODES = LANGS.map(l => l.code).filter(c => c !== 'auto');
- if (PICKER_CODES.includes(navLang)) return navLang;
- const base = navLang.split('-')[0];
- if (PICKER_CODES.includes(base)) return base;
- return 'en';
+ // Normalize picker, URL and catalog aliases before selecting a dictionary.
+ function normalizeLang(value) {
+ const tag = String(value || '').replace(/_/g, '-').toLowerCase();
+ const aliases = { 'zh-cn': 'zh-Hans', 'zh-tw': 'zh-Hant', 'zh': 'zh-Hans', 'pt': 'pt-PT' };
+ const canonical = aliases[tag] || tag;
+ const entry = LANGS.find(l => l.code.toLowerCase() === canonical.toLowerCase());
+ return entry ? entry.code : null;
  }
 
- // Returns the effective lang code to render in. 'auto' resolves
- // to navigator.language → en fallback.
+ function detectNavLang() {
+ const language = navigator.language || 'en';
+ return normalizeLang(language) || normalizeLang(language.split('-')[0]) || 'en';
+ }
+
  function effectiveLang(selection) {
  if (!selection || selection === 'auto') return detectNavLang();
- return T[selection] ? selection : 'en';
+ const lang = normalizeLang(selection);
+ return lang && T[toStorageLang(lang)] ? lang : 'en';
  }
 
  function pickInitialSelection() {
  const url = new URL(location.href);
- const fromQuery = url.searchParams.get('lang');
- if (fromQuery && (fromQuery === 'auto' || T[fromQuery])) return fromQuery;
- const stored = localStorage.getItem(LS_KEY);
- if (stored && (stored === 'auto' || T[stored])) return stored;
+ const fromQuery = normalizeLang(url.searchParams.get('lang'));
+ if (fromQuery && (fromQuery === 'auto' || T[toStorageLang(fromQuery)])) return fromQuery;
+ // An explicitly localized URL is stable even when another page saved a preference.
+ const path = url.pathname.match(/\/i18n\/([^/]+)(?:\/|$)/);
+ const fromPath = path && normalizeLang(decodeURIComponent(path[1]));
+ if (fromPath && T[toStorageLang(fromPath)]) return fromPath;
+ let stored = null;
+ try { stored = normalizeLang(localStorage.getItem(LS_KEY)); } catch (_) {}
+ if (stored && (stored === 'auto' || T[toStorageLang(stored)])) return stored;
  return 'auto';
  }
 
@@ -1027,7 +1013,7 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  } else {
  const img = document.createElement('img');
  img.className = 'lang-flag';
- img.src = `flags/${lang.flag}.svg`;
+ img.src = new URL(`flags/${lang.flag}.svg`, assetBase).href;
  img.width = 18; img.height = 13;
  img.alt = '';
  container.appendChild(img);

@@ -12,7 +12,7 @@
     "context": "label"
   },
   "hero_sub": {
-    "text": "Type a keyword in Safari's address bar, jump anywhere. Thirty built-in shortcuts, open multiple sites at once, regex keywords, and optional URL rewriting, all editable, all on-device. A native Safari extension for macOS, iOS, and iPadOS.",
+    "text": "In Safari's address bar, type g followed by your search and press Enter. That's it. Edit and add keywords in the settings page anytime.",
     "context": "description"
   },
   "hero_cta": {
@@ -84,7 +84,7 @@
     "context": "label"
   },
   "f5_d": {
-    "text": "Curated rules to redirect Twitter → Nitter, Reddit → old.reddit, YouTube → Piped, and other privacy-friendly frontends. All toggleable, all editable.",
+    "text": "Optional rules redirect to community frontends. Their availability varies; edit or disable any rule.",
     "context": "description"
   },
   "f6_t": {
@@ -124,7 +124,7 @@
     "context": "label"
   },
   "f10_d": {
-    "text": "A filter bar in the editor narrows your list as you type. Find any of your 100+ shortcuts in two keystrokes.",
+    "text": "Find your own shortcuts as you type.",
     "context": "description"
   },
   "f11_t": {
@@ -132,7 +132,7 @@
     "context": "label"
   },
   "f11_d": {
-    "text": "Built-in favicon picker for popular services, or paste any URL to use your own. Icons sync with your keyword list.",
+    "text": "Choose a service icon or a custom URL. Icons are saved with your keyword list on this device.",
     "context": "description"
   },
   "f12_t": {
@@ -140,7 +140,7 @@
     "context": "label"
   },
   "f12_d": {
-    "text": "Auto, Light, or Dark. Auto follows your system. Your choice persists across launches and your other Apple devices.",
+    "text": "Auto follows this device's system appearance. Your theme is saved on this device.",
     "context": "description"
   },
   "f13_t": {
@@ -192,7 +192,7 @@
     "context": "label"
   },
   "s1_d": {
-    "text": "Download Findbar from the App Store. One purchase covers Mac, iPhone, and iPad via Family Sharing.",
+    "text": "One purchase covers Mac, iPad, and iPhone. No separate Pro tier, no subscription, no in-app purchases.",
     "context": "description"
   },
   "s2_t": {
