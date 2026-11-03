@@ -1,0 +1,66 @@
+{
+  "appStoreId": 6773464299,
+  "sourcePage": "https://apps.apple.com/us/app/findbar-for-safari/id6773464299?uo=4",
+  "items": [
+    {
+      "platform": "Mac",
+      "description": "Keyword navigation in the Safari address bar",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/a9/86/ff/a986ffa9-ee8f-e4c1-0f78-81285a690311/01-address-bar_framed.png/2880x1800bb.jpg",
+      "sourceWidth": 2880,
+      "sourceHeight": 1800,
+      "asset": "assets/gallery/mac-1.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 70924,
+      "sha256": "474f42b39c346b8e892f2c5a3d4d569612f0fb9262c20699c0f978154e3ef51d"
+    },
+    {
+      "platform": "Mac",
+      "description": "Editable keywords",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/dd/31/75/dd31754a-03bf-36ee-159f-77dcf52c8349/02-allkeywords_framed.png/2880x1800bb.jpg",
+      "sourceWidth": 2880,
+      "sourceHeight": 1800,
+      "asset": "assets/gallery/mac-2.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 61467,
+      "sha256": "d60cd930fd4dd4298cf939971d049ac61b2d29a8823d212e116db67a5ffc5cc0"
+    },
+    {
+      "platform": "Mac",
+      "description": "URL rewriting rules",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/26/49/2b/26492b21-3526-08aa-b86f-181f3728b6a8/04-url-rewriting_framed.png/2880x1800bb.jpg",
+      "sourceWidth": 2880,
+      "sourceHeight": 1800,
+      "asset": "assets/gallery/mac-4.jpg",
+      "width": 1440,
+      "height": 900,
+      "bytes": 112055,
+      "sha256": "e4fc52d9e58f9bef9f9832743750c8dfa1bb5605dadf853fac1857615fc79f87"
+    },
+    {
+      "platform": "iPhone",
+      "description": "Search engines on iPhone",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/00/68/82/006882bc-4f8e-bcb8-4e8a-3818d81eab9d/03-search-engines_framed.png/1320x2868bb.jpg",
+      "sourceWidth": 1320,
+      "sourceHeight": 2868,
+      "asset": "assets/gallery/phone-3.jpg",
+      "width": 663,
+      "height": 1440,
+      "bytes": 106794,
+      "sha256": "88bd55e5ef8e7b44220b261e5f9334665a1786b075272c47a873bc39a52e2d32"
+    },
+    {
+      "platform": "iPad",
+      "description": "Findbar settings on iPad",
+      "source": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/8d/b0/0f/8db00f7c-6989-659d-7ae9-e84183db52d6/05-settings_framed.png/2732x2048bb.jpg",
+      "sourceWidth": 2732,
+      "sourceHeight": 2048,
+      "asset": "assets/gallery/pad-5.jpg",
+      "width": 1440,
+      "height": 1079,
+      "bytes": 108905,
+      "sha256": "097070a947941bfc52a14a84569d35da8e5cf6c4eb47edfb3a52f9a6d4b4f422"
+    }
+  ]
+}

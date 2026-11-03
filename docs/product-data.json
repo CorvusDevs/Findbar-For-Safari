@@ -1,0 +1,25 @@
+{
+  "slug": "Findbar-For-Safari",
+  "name": "Findbar",
+  "appStoreId": 6773464299,
+  "version": "1.1.2",
+  "releaseDate": "2026-08-10T00:06:34Z",
+  "originalReleaseDate": "2026-06-02T07:00:00Z",
+  "platforms": [
+    "macOS",
+    "iPhone",
+    "iPad"
+  ],
+  "requirements": {
+    "macOS": "14.0",
+    "iOS": "17.0",
+    "iPadOS": "17.0"
+  },
+  "store": {
+    "kind": "app-store",
+    "label": "App Store",
+    "url": "https://apps.apple.com/app/id6773464299"
+  },
+  "metadataSource": "https://itunes.apple.com/lookup?id=6773464299&country=us",
+  "sourceCatalog": "https://corvusdevs.github.io/apps.json"
+}

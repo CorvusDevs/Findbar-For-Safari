@@ -4,7 +4,7 @@
  <script>/* warm fetch for the corvus-carousel so it has data ready by render time */
 window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache:'default'}).then(function(r){return r.ok?r.json():null;}).catch(function(){return null;});</script>
  <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
  <title>Findbar, شريط العنوان، محسّن</title>
  <meta name="description" content="اكتب كلمة مفتاحية في شريط عناوين Safari، وانتقل إلى أي مكان. ثلاثون اختصارًا مدمجًا لفتح مواقع متعددة في وقت واحد، مع دعم كلمات البحث باستخدام regex وإمكانية…">
  <link rel="canonical" href="https://corvusdevs.github.io/Findbar-For-Safari/i18n/ar/">
@@ -92,20 +92,23 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  <meta name="twitter:image:alt" content="Findbar for Safari app icon">
  <meta name="robots" content="index, follow">
  <meta name="keywords" content="safari extension, address bar shortcuts, keyword search, omnibox safari, custom search engines, url rewriting, regex keywords, macos, ios, ipados, findbar">
- <script type="application/ld+json">
- {
- "@context": "https://schema.org",
- "@type": "SoftwareApplication",
- "name": "Findbar for Safari",
- "description": "Type a keyword in Safari's address bar to jump anywhere, 30 built-in shortcuts plus the ability to open multiple sites at once, regex keywords, and optional URL rewriting.",
- "operatingSystem": "macOS 14.0+, iOS 17.0+, iPadOS 17.0+",
- "applicationCategory": "BrowserApplication",
- "applicationSubCategory": "Productivity",
- "screenshot": "https://corvusdevs.github.io/Findbar-For-Safari/icon.png",
- "downloadUrl": "https://apps.apple.com/app/id6773464299",
- "author": { "@type": "Organization", "name": "CorvusDevs", "url": "https://corvusdevs.github.io" }
- }
- </script>
+ <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Findbar for Safari",
+  "description": "Type a keyword in Safari's address bar to jump anywhere, 30 built-in shortcuts plus the ability to open multiple sites at once, regex keywords, and optional URL rewriting.",
+  "operatingSystem": "macOS 14.0+, iOS 17.0+, iPadOS 17.0+",
+  "applicationCategory": "BrowserApplication",
+  "applicationSubCategory": "Productivity",
+  "screenshot": "https://corvusdevs.github.io/Findbar-For-Safari/icon.png",
+  "downloadUrl": "https://apps.apple.com/app/id6773464299",
+  "author": {
+    "@type": "Organization",
+    "name": "CorvusDevs",
+    "url": "https://corvusdevs.github.io"
+  },
+  "softwareVersion": "1.1.2"
+}</script>
  <link rel="icon" type="image/png" sizes="32x32" href="../../icon.png">
  <link rel="apple-touch-icon" sizes="180x180" href="../../icon.png">
  <style>
@@ -614,7 +617,11 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
             body { min-height: 0; }
             footer { padding-bottom: 24px; padding-top: 24px; }
         }
+/* accessibility-contrast v1 */
+.nav-brand span,.footer-brand .logo > span,.corvus-carousel__card-tagline,.corvus-carousel__card-cta{color:#60a5fa}
+/* accessibility-contrast:end */
 </style>
+  <link rel="stylesheet" href="../../gallery.css">
 </head>
 <body>
 
@@ -658,7 +665,10 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  </section>
 
  <!-- Features -->
- <section class="features" id="features">
+ <!-- OFFICIAL-GALLERY:START -->
+<section class="official-gallery" aria-labelledby="official-gallery-title"><h2 id="official-gallery-title">لقطات الشاشة</h2><div class="official-gallery-grid"><figure><a href="../../assets/gallery/mac-1.jpg"><img lang="en" src="../../assets/gallery/mac-1.jpg" alt="Findbar For Safari: Keyword navigation in the Safari address bar (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">Keyword navigation in the Safari address bar</span></figcaption></figure><figure><a href="../../assets/gallery/mac-2.jpg"><img lang="en" src="../../assets/gallery/mac-2.jpg" alt="Findbar For Safari: Editable keywords (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">Editable keywords</span></figcaption></figure><figure><a href="../../assets/gallery/mac-4.jpg"><img lang="en" src="../../assets/gallery/mac-4.jpg" alt="Findbar For Safari: URL rewriting rules (Mac App Store)" width="1440" height="900" loading="lazy" decoding="async"></a><figcaption><strong>Mac App Store</strong><span lang="en">URL rewriting rules</span></figcaption></figure><figure><a href="../../assets/gallery/phone-3.jpg"><img lang="en" src="../../assets/gallery/phone-3.jpg" alt="Findbar For Safari: Search engines on iPhone (iPhone)" width="663" height="1440" loading="lazy" decoding="async"></a><figcaption><strong>iPhone</strong><span lang="en">Search engines on iPhone</span></figcaption></figure><figure><a href="../../assets/gallery/pad-5.jpg"><img lang="en" src="../../assets/gallery/pad-5.jpg" alt="Findbar For Safari: Findbar settings on iPad (iPad)" width="1440" height="1079" loading="lazy" decoding="async"></a><figcaption><strong>iPad</strong><span lang="en">Findbar settings on iPad</span></figcaption></figure></div></section>
+<!-- OFFICIAL-GALLERY:END -->
+<section class="features" id="features">
  <div class="section-label fade-in" data-i18n="sec_features">الميزات</div>
  <h2 class="section-title gradient-text fade-in" data-i18n="sec_features_title">شريط العنوان، محسّن</h2>
 
@@ -1191,5 +1201,6 @@ window.__corvusAppsPromise=fetch('https://corvusdevs.github.io/apps.json',{cache
  });
  })();
  </script>
+  <script src="../../gallery.js" defer></script>
 </body>
 </html>
